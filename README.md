@@ -1,6 +1,6 @@
 # tahi
 
-A proof of concept on an all-of-government pattern library for New Zealand.
+A proof of concept of an all-of-government pattern library for New Zealand.
 
 ## Getting Started
 
