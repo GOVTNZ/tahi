@@ -1,6 +1,6 @@
 # *Draft* government design principles v0.1
 
-The following are a set of principles to accompany all-of-government design system assets.  These are for comment and contribution, and where appropriate will reflect [https://www.digital.govt.nz/standards-and-guidance/digital-service-design-standard/](the NZ government Digital Service Design Standard) release in **June 2018**:
+The following are a set of principles to accompany all-of-government design system assets.  These are for comment and contribution, and where appropriate will reflect [the NZ government Digital Service Design Standard](https://www.digital.govt.nz/standards-and-guidance/digital-service-design-standard/) release in **June 2018**:
 
 ## NZ government *draft* design principles
 
