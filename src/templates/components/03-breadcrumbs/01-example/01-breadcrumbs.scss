@@ -1,0 +1,132 @@
+// Standard
+//
+// Markup: 01-breadcrumbs.html
+//
+// Styleguide: 3.01
+
+
+// ############################################
+// Breadcrumbs
+// ############################################
+
+
+// ================================================
+// Block Styles
+// ================================================
+
+.c-breadcrumbs {
+    position: relative;
+    z-index: 10;
+    margin: rem($g-bu * 2.5) 0;
+
+
+    // ================================================
+    // Element Styles
+    // ================================================
+
+    &__inner {
+        @extend %l-outer-container;
+    }
+
+    &__list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__item {
+        display: block;
+        padding-left: 30px;
+
+        @include media($g-bp-tiny-and-up) {
+            display: inline-block;
+            vertical-align: bottom;
+            padding-left: 0;
+        }
+
+        &--home {
+            position: absolute;
+            padding-left: 0;
+
+            @include media($g-bp-tiny-and-up) {
+                position: static;
+            }
+        }
+
+        &:first-child {
+            #{e-nest()}__link {
+                margin-left: 0;
+            }
+        }
+
+        &:last-child {
+            display: none;
+
+            #{e-nest()}__link {
+                font-weight: bold;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    &__link {
+        @extend %h-font-gustan-book;
+
+        display: inline-block;
+        margin: 0 rem($g-hbu);
+        font-size: ms(-1);
+        line-height: rem($g-bu + $g-hbu);
+        color: #476299;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__text {
+        @extend %h-font-gustan-book;
+
+        display: inline-block;
+        margin: 0 rem($g-hbu);
+        font-size: ms(-1);
+        line-height: rem($g-bu + $g-hbu);
+        color: #404040;
+        text-decoration: none;
+    }
+
+    &__icon {
+        margin-bottom: rem(-2px);
+        fill: #404040;
+    }
+
+
+    // ================================================
+    // Modifiers
+    // ================================================
+
+    // Used to pull hero section up and underneath the breadcrumbs
+
+    &--overlayed {
+        margin-bottom: rem(-$g-bu * 6);
+    }
+
+
+    // ================================================
+    // Media Queries
+    // ================================================
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-small-and-up) {
+        // // scss-lint:enable DeclarationOrder
+
+        &__item {
+            &:last-child {
+                display: inline-block;
+            }
+        }
+    }
+}

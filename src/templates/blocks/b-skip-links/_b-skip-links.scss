@@ -1,0 +1,31 @@
+// Block vars
+$b-skip-link-background-color: $g-color-charcoal-light;
+
+
+.b-skip-links {
+    @extend %l-outer-container;
+
+    &__anchor:link {
+        position: absolute;
+        top: -20rem;
+        left: 0;
+        z-index: 100;
+        padding: rem($g-bu);
+        border-bottom-right-radius: 3px;
+        background: transparent;
+        color: $g-color-white01;
+        text-decoration: none;
+        transform: translateY(-40px);
+        transition: transform $g-anim-hover ease-out, background $g-anim-hover linear;
+
+        &:hover {
+            color: $g-color-white01;
+            text-decoration: underline;
+        }
+
+        &:focus {
+            background: $b-skip-link-background-color;
+            transform: translateY(20rem);
+        }
+    }
+}

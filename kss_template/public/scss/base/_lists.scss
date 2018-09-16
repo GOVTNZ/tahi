@@ -1,0 +1,17 @@
+// Default list styles defined in this stylesheet
+.kss-style {
+
+    ul,
+    ol {
+        padding: 0 0 0 $kss-vertical-rhythm;
+        margin: $kss-vertical-rhythm 0;
+    }
+
+    li p:last-child {
+        margin: 0;
+    }
+
+    dd {
+        margin: 0 0 0 $kss-vertical-rhythm;
+    }
+}

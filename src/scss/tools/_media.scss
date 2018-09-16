@@ -1,0 +1,10 @@
+// ############################################
+// Media Query Mixin
+// ############################################
+
+// Populates the media query with breakpoints.
+@mixin media($query) {
+    @media screen and ($query) {
+        @content;
+    }
+}

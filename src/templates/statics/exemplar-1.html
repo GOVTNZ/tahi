@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exemplar One | Tahi - Pattern Library for NZ Government</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="../css/main.css">
+	</head>
+	<body class="js-enabled">
+	<!-- {Urgent notification start} -->
+		{% import "blocks/b-icon-box/b-icon-box.html" as biconbox %}
+		{{ biconbox.iconbox(
+		    icon = 'alert-icon',
+		    modifier = 'urgent',
+		    at_top = true,
+		    title = 'Tsunami Alert - East Coast of New Zealand',
+		    content_variation = '3',
+		    content_msg = 'There is a Tsunami Alert across the eastern coastline of New Zealand from 2300 on 12 June 2018.  People are asked to move to higher ground and stand by for emergency updates. This message is from <strong>The Ministry of Civil Defence &amp; Emergency Management</strong>',
+		    is_dismissible = false,
+		    unique_id ='1113')
+		}}
+	<!-- {Urgent notification end} -->
+
+
+				<header class="govtnz-header " role="banner" data-module="header">
+						<div class="containerinner">
+					  
+						  <div class="govtnz-header__logo ">
+							<a href="#" class="govtnz-header__link govtnz-header__link--homepage">
+							  <span class="govtnz-header__logotype">
+					<img class="logo" src="https://mkirkpat.github.io/logo-edited-white.png" />
+								<span class="govtnz-header__logotype-text">
+								  Govt.nz
+								</span>
+								
+							  </span>
+							</a>
+						  </div>
+					
+						</div>
+					  </header>
+
+
+
+	<article class="grid">
+		<div class="grid__row">
+			<!-- {Breadcrumb start} -->
+			<section class="grid__col grid__col--full">
+				<div class="c-breadcrumbs {{extra_class}}">
+				    <nav class="c-breadcrumbs__inner" {% if has_arialabel %}aria-label="You are here:"{% endif %} style="padding: 0;">
+				        <ul class="c-breadcrumbs__list">
+				            <li class="c-breadcrumbs__item c-breadcrumbs__item--home">
+				                <a href="#" class="c-breadcrumbs__link" aria-label="Home">
+				                    <span class="h-visuallyhidden">Home</span>
+				                    <svg class="h-icon h-icon--large c-breadcrumbs__icon" viewBox="0 0 48 48" id="home-icon" xmlns="http://www.w3.org/2000/svg">
+				                      <title>_</title>
+				                      <path d="M24.06 1L1 25.35h5.41V47h13.53V33.47h8.12V47h13.53V25.35H47z"/>
+				                    </svg>
+				                </a>
+				            </li>
+				            <li class="c-breadcrumbs__item"> <span aria-hidden="true">&#8250;</span> <a class="c-breadcrumbs__link" href="#">English Court</a></li>
+				            <li class="c-breadcrumbs__item"> <span aria-hidden="true">&#8250;</span> <a class="c-breadcrumbs__link" href="#">Charters</a></li>
+				            <li class="c-breadcrumbs__item"> <span aria-hidden="true">&#8250;</span> <span class="h-visuallyhidden">Current: </span><span class="c-breadcrumbs__text">Magna Carta 1215AD</span></li>
+				        </ul>
+				    </nav>
+				</div>
+			</section>
+			<!-- {Breadcrumb end} -->
+		</div>
+
+		<div class="grid__row no-margin">
+			<div class="grid__col">
+				<h1>What to do in a Tsunami</h1>
+			</div>
+		</div>
+
+		<div class="grid__row">
+			<section class="grid__col grid__col--two-thirds">
+				<p>
+					The text of Magna Carta of 1215 bears many traces of haste, and is the product of much bargaining. Most of its clauses deal with specific, and often long-standing, grievances rather than with general principles of law. Some of the grievances are clear; others can be understood only in the context of the feudal society in which they arose. The precise meaning of a few clauses is still uncertain.
+				</p>
+				<p>
+					This translation is from G.R.C. Davis, Magna Carta (London: British Museum, 1963), pp. 23–33.
+				</p>
+			</section>
+			<section class="grid__col grid__col--one-third">
+				<aside class="c-sharing-and-output-panel" aria-labelledby="c-sharing-and-output-panel__title">
+				    <h2 id="c-sharing-and-output-panel__title" class="c-sharing-and-output-panel__title">Share</h2>
+				    <ul class="c-sharing-and-output-panel__social-list">
+				        <li class="c-sharing-and-output-panel__social-item">
+				            <a href="https://www.facebook.com/" class="c-sharing-and-output-panel__social-link" target="_blank">
+				                <span class="h-visuallyhidden">Facebook, opens in a new window</span>
+				                <svg class="h-icon h-icon--x-large c-sharing-and-output-panel__social-icon">
+				                    <use xlink:href="../img/icons/svg-sprite.svg#facebook"></use>
+				                </svg>
+				            </a>
+				        </li>
+				        <li class="c-sharing-and-output-panel__social-item">
+				            <a href="https://twitter.com/" class="c-sharing-and-output-panel__social-link" target="_blank">
+				                <span class="h-visuallyhidden">Twitter, opens in a new window</span>
+				                <svg class="h-icon h-icon--x-large c-sharing-and-output-panel__social-icon">
+				                    <use xlink:href="../img/icons/svg-sprite.svg#twitter"></use>
+				                </svg>
+				            </a>
+				        </li>
+				        <li class="c-sharing-and-output-panel__social-item">
+				            <a href="https://www.linkedin.com/" class="c-sharing-and-output-panel__social-link" target="_blank">
+				                <span class="h-visuallyhidden">LinkedIn, opens in a new window</span>
+				                <svg class="h-icon h-icon--x-large c-sharing-and-output-panel__social-icon">
+				                    <use xlink:href="../img/icons/svg-sprite.svg#linkedin"></use>
+				                </svg>
+				            </a>
+				        </li>
+					</ul>
+				    <ul class="c-sharing-and-output-panel__tool-list">
+				        <li class="c-sharing-and-output-panel__tool-item">
+				            <a href="javascript:if(window.print)window.print()" class="c-sharing-and-output-panel__tool-link">
+				                <svg class="h-icon h-icon--large c-print__icon c-sharing-and-output-panel__tool-icon">
+				                    <use xlink:href="../img/icons/svg-sprite.svg#print-icon"></use>
+				                </svg>
+				                Print this page
+				            </a>
+				        </li>
+				        <li class="c-sharing-and-output-panel__tool-item">
+				            <a href="#" class="c-sharing-and-output-panel__tool-link">
+				                <svg class="h-icon h-icon--large c-sharing-and-output-panel__tool-icon">
+				                    <use xlink:href="../img/icons/svg-sprite.svg#email-icon"></use>
+				                </svg>
+				                Email this page
+				            </a>
+				        </li>
+				    </ul>
+				</aside>
+			</section>
+		</div>
+
+		<div class="grid__row">
+			<!-- {Section specific notifications starts} -->
+			<section class="grid__col grid__col--full">
+				{% import "blocks/b-icon-box/b-icon-box.html" as biconbox %}
+				{{ biconbox.iconbox(
+				    content_variation = '3',
+				    icon = 'bell-icon',
+				    extra_class = '',
+				    title = 'Clauses omitted for the sake of clarity',
+				    is_dismissible = true,
+				    content_msg = 'Clauses that were omitted in 1225AD by King Henry III have been removed from this edition.<br><a href="#">View an unabridged full version</a>.
+		',
+				    unique_id = '1111')
+				}}
+			</section>
+			<!-- {Section specific notifications ends} -->
+		</div>
+
+
+
+		<div class="grid__row">
+			<!-- {Call to action block start} -->
+			<section class="grid__col grid__col--full">
+				<div class="b-cta">
+				    <a class="b-button b-cta__button b-button b-button--with-icon" href="#">
+				        Observe the rights of the Church
+				    </a>
+				    <p class="b-cta__button-help-text b-cta__button-help-text">
+				    	Ecclesiastical rank required for Church elections
+				    </p>
+				</div>
+			</section>
+			<!-- {Call to action block end} -->
+		</div>
+
+	
+
+		<div class="grid__row">
+			<!-- {Accordion start} -->
+			<section class="grid__col grid__col--full">
+				{% import "blocks/b-show-hide/b-show-hide.html" as b_showhide %}
+				{{ b_showhide.b_showhide(
+				    extra_class= '',
+				    is_opened = false,
+				    title = 'If you are an earl, baron or other person that holds lands directly of the Crown, or their heir',
+				    title_extra_class = '',
+				    icon_name = false,
+				    secondary_info = false,
+				    has_content = true,
+				    content_msg = '<p>If any earl, baron, or other person that holds lands directly of the Crown, for military service, shall die, and at his death his heir shall be of full age and owe a \'relief\', the heir shall have his inheritance on payment of the ancient scale of \'relief\'. That is to say, the heir or heirs of an earl shall pay £100 for the entire earl\'s barony, the heir or heirs of a knight 100s. at most for the entire knight\'s \'fee\', and any man that owes less shall pay less, in accordance with the ancient usage of \'fees\'.</p><p>But if the heir of such a person is under age and a ward, when he comes of age he shall have his inheritance without \'relief\' or fine.</p><p>The guardian of the land of an heir who is under age shall take from it only reasonable revenues, customary dues, and feudal services. He shall do this without destruction or damage to men or property. If we have given the guardianship of the land to a sheriff, or to any person answerable to us for the revenues, and he commits destruction or damage, we will exact compensation from him, and the land shall be entrusted to two worthy and prudent men of the same \'fee\', who shall be answerable to us for the revenues, or to the person to whom we have assigned them. If we have given or sold to anyone the guardianship of such land, and he causes destruction or damage, he shall lose the guardianship of it, and it shall be handed over to two worthy and prudent men of the same \'fee\', who shall be similarly answerable to us.</p><p>For so long as a guardian has guardianship of such land, he shall maintain the houses, parks, fish preserves, ponds, mills, and everything else pertaining to it, from the revenues of the land itself. When the heir comes of age, he shall restore the whole land to him, stocked with plough teams and such implements of husbandry as the season demands and the revenues from the land can reasonably bear.</p><p>Heirs may be given in marriage, but not to someone of lower social standing. Before a marriage takes place, it shall be made known to the heir\'s next-of-kin.</p>',
+				    is_article_list = false,
+				    is_entity_list = false,
+				    content = false,
+				    trigger_tag = 'h3',
+				    has_chevron = true,
+				    extra_attr = '',
+				    logo_title = false
+				  )
+				}}
+				{{ b_showhide.b_showhide(
+				    extra_class= '',
+				    is_opened = false,
+				    title = 'If you are a widow',
+				    title_extra_class = '',
+				    icon_name = false,
+				    secondary_info = false,
+				    has_content = true,
+				    content_msg = '<p>At her husband\'s death, a widow may have her marriage portion and inheritance at once and without trouble. She shall pay nothing for her dower, marriage portion, or any inheritance that she and her husband held jointly on the day of his death. She may remain in her husband\'s house for forty days after his death, and within this period her dower shall be assigned to her.</p><p>No widow shall be compelled to marry, so long as she wishes to remain without a husband. But she must give security that she will not marry without royal consent, if she holds her lands of the Crown, or without the consent of whatever other lord she may hold them of.</p>',
+				    is_article_list = false,
+				    is_entity_list = false,
+				    content = false,
+				    trigger_tag = 'h3',
+				    has_chevron = true,
+				    extra_attr = '',
+				    logo_title = false
+				  )
+				}}
+			</section>
+			<!-- {Accordion end} -->
+		</div>
+
+	
+		<div class="grid__row">
+			<!-- {Box out block starts - Head's up style}} -->
+			<section class="grid__col grid__col--full">
+				<aside class="c-box-out c-box-out--tip">
+				    <svg class="h-icon h-icon--x-large c-box-out__icon">
+				        <use xlink:href="../img/icons/svg-sprite.svg#tip-icon"></use>
+				    </svg>
+				    <h2 class="c-box-out__title">
+				    	Londoners
+				    </h2>
+				    <div class="c-box-out__content">
+				        <p>
+				        	The city of London shall enjoy all its ancient liberties and free customs, both by land and by water. We also will and grant that all other cities, boroughs, towns, and ports shall enjoy all their liberties and free customs.
+				        </p>
+				    </div>
+				</aside>
+			</section>
+			<!-- {Box out block end - Head's up style}} -->
+		</div>
+
+	
+
+		<div class="grid__row">
+			<!-- {Box out block starts - Alert style} -->
+			<section class="grid__col grid__col--full">
+				<aside class="c-box-out c-box-out--alert">
+				    <svg class="h-icon h-icon--x-large c-box-out__icon">
+				        <use xlink:href="../img/icons/svg-sprite.svg#alert-info-icon"></use>
+				    </svg>
+				    <h2 class="c-box-out__title">
+				    	Earls and barons
+				    </h2>
+				    <div class="c-box-out__content">
+				        <p>
+				        	No constable or other royal official shall take corn or other movable goods from any man without immediate payment, unless the seller voluntarily offers postponement of this.
+				        </p>
+				    </div>
+				</aside>
+			</section>
+			<!-- {Box out block end - Alert style} -->
+		</div>
+
+	
+		<div class="grid__row">
+			<!-- {Box out block starts - Alert style} -->
+			<section class="grid__col grid__col--full">
+				<aside class="c-box-out c-box-out--warning">
+				    <svg class="h-icon h-icon--x-large c-box-out__icon">
+				        <use xlink:href="../img/icons/svg-sprite.svg#alert-icon"></use>
+				    </svg>
+				    <h2 class="c-box-out__title">
+				    	No seizure of movable goods
+				    </h2>
+				    <div class="c-box-out__content">
+				        <p>
+				        	No constable or other royal official shall take corn or other movable goods from any man without immediate payment, unless the seller voluntarily offers postponement of this.
+				        </p>
+				    </div>
+				</aside>
+			</section>
+			<!-- {Box out block end - Alert style} -->
+		</div>
+
+	
+		<div class="grid__row">
+			<!-- {Box out block starts - Alert style} -->
+			<section class="grid__col grid__col--full">
+				<aside class="c-box-out c-box-out--alert">
+				    <svg class="h-icon h-icon--x-large c-box-out__icon">
+				        <use xlink:href="../img/icons/svg-sprite.svg#alert-info-icon"></use>
+				    </svg>
+				    <h2 class="c-box-out__title">
+				    	Fish-weirs
+				    </h2>
+				    <div class="c-box-out__content">
+				        <p>
+				        	All fish-weirs shall be removed from the Thames, the Medway, and throughout the whole of England, except on the sea coast.
+				        </p>
+				    </div>
+				</aside>
+			</section>
+			<!-- {Box out block end - Alert style} -->
+		</div>
+
+		<div class="grid__row">
+			<section class="grid__col grid__col--full">
+			
+
+				<div class="b-cta ">
+				    <a class="b-button b-cta__button b-button--small b-button--with-icon" href="/page">
+				        Detain merchant
+				        <svg class="h-icon h-icon--button b-button__icon" aria-hidden="true">
+				            <use xlink:href="../img/icons/svg-sprite.svg#lock-icon"></use>
+				        </svg>
+				    </a>
+				    <p class="b-cta__button-help-text b-cta__button-help-text--small">Log in required.</p>
+				</div>
+			</section>
+		</div>
+
+
+		<div class="grid__row">
+			<!-- {Box out block starts - Alert style} -->
+			<section class="grid__col grid__col--full">
+				<aside class="c-box-out c-box-out--tip">
+				    <svg class="h-icon h-icon--x-large c-box-out__icon">
+				        <use xlink:href="../img/icons/svg-sprite.svg#tip-icon"></use>
+				    </svg>
+				    <h2 class="c-box-out__title">
+					    Husband exception
+					</h2>
+				    <div class="c-box-out__content">
+				        <p>
+				        	No one shall be arrested or imprisoned on the appeal of a woman for the death of any person except her husband.
+				        </p>
+				    </div>
+				</aside>
+			</section>
+			<!-- {Box out block end - Alert style} -->
+		</div>
+
+		<div class="grid__row">
+			<!-- {Accordion start} -->
+			<section class="grid__col grid__col--full">
+				{% import "blocks/b-show-hide/b-show-hide.html" as b_showhide %}
+				{{ b_showhide.b_showhide(
+				    extra_class= '',
+				    is_opened = false,
+				    title = 'If you are a Welshman',
+				    title_extra_class = '',
+				    icon_name = false,
+				    secondary_info = false,
+				    has_content = true,
+				    content_msg = '<p>(56) If we have deprived or dispossessed any Welshmen of land, liberties, or anything else in England or in Wales, without the lawful judgment of their equals, these are at once to be returned to them. A dispute on this point shall be determined in the Marches by the judgment of equals. English law shall apply to holdings of land in England, Welsh law to those in Wales, and the law of the Marches to those in the Marches. The Welsh shall treat us and ours in the same way.</p>',
+				    is_article_list = false,
+				    is_entity_list = false,
+				    content = false,
+				    trigger_tag = 'h3',
+				    has_chevron = true,
+				    extra_attr = '',
+				    logo_title = false
+				  )
+				}}
+				{{ b_showhide.b_showhide(
+				    extra_class= '',
+				    is_opened = false,
+				    title = 'If you are the Alexander king of Scotland, his sister or his hostage',
+				    title_extra_class = '',
+				    icon_name = false,
+				    secondary_info = false,
+				    has_content = true,
+				    content_msg = '<p>(60) All these customs and liberties that we have granted shall be observed in our kingdom in so far as concerns our own relations with our subjects. Let all men of our kingdom, whether clergy or laymen, observe them similarly in their relations with their own men.</p>',
+				    is_article_list = false,
+				    is_entity_list = false,
+				    content = false,
+				    trigger_tag = 'h3',
+				    has_chevron = true,
+				    extra_attr = '',
+				    logo_title = false
+				  )
+				}}
+			</section>
+			<!-- {Accordion end} -->
+		</div>
+
+		<div class="grid__row">
+			<section class="grid__col grid__col--full">
+				<h2>
+					Download other editions:
+				</h2>
+				<!-- {Document start} -->
+				<div class="c-document-list">
+				    <ul class="c-document-list__list">
+				        <li class="c-document-list__item">
+				            <a href="/file.pdf" class="c-document-list__link">
+				                <svg class="h-icon h-icon--x-large h-icon--red c-document-list__icon ">
+				                    <use xlink:href="../img/icons/svg-sprite.svg#pdf-icon"></use>
+				                </svg>
+				                <div class="c-document-list__file-content">
+				                    <h3 class="c-document-list__file-title">Magna Carta 1215AD</h3>
+				                    <p class="c-document-list__file-desc">Magna Carta first edition in latin.</p>
+				                </div>
+				                <span class="c-document-list__tag">Constitution</span>
+					            <span class="c-document-list__tag">Rights</span>
+					        	<span class="c-document-list__tag">Charter</span>
+				                <span class="c-document-list__file-size">PDF, 123kb</span>
+				            </a>
+				        </li>
+				        <li class="c-document-list__item">
+				            <a href="/file.pdf" class="c-document-list__link">
+				                <svg class="h-icon h-icon--x-large h-icon--red c-document-list__icon ">
+				                    <use xlink:href="../img/icons/svg-sprite.svg#pdf-icon"></use>
+				                </svg>
+				                <div class="c-document-list__file-content">
+				                    <h3 class="c-document-list__file-title">Magna Carta 1225AD</h3>
+				                    <p class="c-document-list__file-desc">Issued of the king's own "spontaneous and free will" and confirmed them with the royal seal.</p>
+				                </div>
+								<span class="c-document-list__tag">Constitution</span>
+					            <span class="c-document-list__tag">Rights</span>
+					        	<span class="c-document-list__tag">Charter</span>
+					        	<span class="c-document-list__file-size">PDF, 123kb</span>
+				            </a>
+				        </li>
+				    </ul>
+				</div>
+				<!-- {Document end} -->
+			</section>
+		</div>
+
+		<div class="grid__row">
+			<!-- {Contact box start} -->
+			<section class="grid__col grid__col--full">
+			{% import "blocks/b-icon-box/b-icon-box.html" as biconbox %}
+			{{ biconbox.iconbox(
+			    content_variation = '4',
+			    icon = 'phone-icon',
+			    extra_class = 'b-icon-box--contact-block',
+			    title = 'Want to know more?',
+			    content = '')
+			}}
+			</section>
+			<!-- {Contact box end} -->
+		</div>
+
+	</article>
+
+	<footer id="site-footer" class="c-mbie-footer ">
+			    <div class="l-outer-container">
+			        <div class="c-mbie-footer__nav-group">
+			            <div class="c-mbie-footer__nav-wrapper">
+			                <h2 id="c-mbie-footer__col1-label" class="c-mbie-footer__header">Sections</h2>
+			                <nav class="c-mbie-footer__nav" aria-labelledby="c-mbie-footer__col1-label">
+			                    <ul class="c-mbie-footer__nav__list">
+			                        <li class="c-mbie-footer__nav__item" data-enhance-external-links data-external-link-class="b-link-external b-link-external--white"><a class="c-mbie-footer__nav__link" href="#">Home</a></li>
+			                        <li class="c-mbie-footer__nav__item"><a class="c-mbie-footer__nav__link" href="#">Primary section 1</a></li>
+			                        <li class="c-mbie-footer__nav__item"><a class="c-mbie-footer__nav__link" href="#">Primary section 2</a></li>
+			                        <li class="c-mbie-footer__nav__item"><a class="c-mbie-footer__nav__link" href="#">Primary section 3</a></li>
+			                    </ul>
+			                </nav>
+			            </div>
+			            <div class="c-mbie-footer__nav-wrapper c-mbie-footer__nav-wrapper--spanning-two-columns">
+			                <h2 class="c-mbie-footer__header">More items</h2>
+			                <nav class="c-mbie-footer__nav" aria-labelledby="c-mbie-footer__col1-label">
+			                    <ul class="c-mbie-footer__nav__list">
+			                        <li class="c-mbie-footer__nav__item"><a class="c-mbie-footer__nav__link" href="#">Navigation item 1</a></li>
+			                        <li class="c-mbie-footer__nav__item"><a class="c-mbie-footer__nav__link" href="#">Navigation item 2</a></li>
+			                        <li class="c-mbie-footer__nav__item"><a class="c-mbie-footer__nav__link" href="#">Navigation item 3</a></li>
+			                        <li class="c-mbie-footer__nav__item"><a class="c-mbie-footer__nav__link" href="#">Navigation item 1</a></li>
+			                    </ul>
+			                </nav>
+			            </div>
+			            <div class="c-mbie-footer__nav-wrapper">
+			                <h2 id="c-mbie-footer__col3-label" class="c-mbie-footer__header">About us</h2>
+			                <nav class="c-mbie-footer__nav" aria-labelledby="c-mbie-footer__col3-label">
+			                    <ul class="c-mbie-footer__nav__list">
+			                        <li class="c-mbie-footer__nav__item">
+			                            <ul class="c-mbie-footer__nav__social-list">
+			                                <li class="c-mbie-footer__nav__social-item">
+			                                    <a href="https://www.facebook.com/" class="c-mbie-footer__nav__social-link" target="_blank">
+			                                        <span class="h-visuallyhidden">Facebook, opens in a new window</span>
+			                                        <img src="../img/icons/facebook--white.svg" alt="Facebook" class="h-icon h-icon--large c-mbie-footer__nav__social-link__social-icon"/>
+			                                    </a>
+			                                </li>
+			                                <li class="c-mbie-footer__nav__social-item">
+			                                    <a href="https://twitter.com/" class="c-mbie-footer__nav__social-link" target="_blank">
+			                                        <span class="h-visuallyhidden">Twitter, opens in a new window</span>
+			                                        <img src="../img/icons/twitter--white.svg" alt="Twitter" class="h-icon h-icon--large c-mbie-footer__nav__social-link__social-icon"/>
+			                                    </a>
+			                                </li>
+			                                <li class="c-mbie-footer__nav__social-item">
+			                                    <a href="https://www.linkedin.com" class="c-mbie-footer__nav__social-link" target="_blank">
+			                                        <span class="h-visuallyhidden">LinkedIn, opens in a new window</span>
+			                                        <img src="../img/icons/linkedin--white.svg" alt="Linkedin" class="h-icon h-icon--large c-mbie-footer__nav__social-link__social-icon"/>
+			                                    </a>
+			                                </li>
+			                                <li class="c-mbie-footer__nav__social-item">
+			                                    <a href="https://www.youtube.com/" class="c-mbie-footer__nav__social-link" target="_blank">
+			                                        <span class="h-visuallyhidden">YouTube, opens in a new window</span>
+			                                        <img src="../img/icons/youtube--white.svg" alt="Youtube" class="h-icon h-icon--large c-mbie-footer__nav__social-link__social-icon"/>
+			                                    </a>
+			                                </li>
+			                            </ul>
+			                        </li>
+			                        <li class="c-mbie-footer__nav__item"><a class="c-mbie-footer__nav__link" href="#">Contact us</a></li>
+			                        <li class="c-mbie-footer__nav__item"><a class="c-mbie-footer__nav__link" href="#">About</a></li>
+			                        <li class="c-mbie-footer__nav__item"><a class="c-mbie-footer__nav__link" href="#">Subscribe</a></li>
+			                    </ul>
+			                </nav>
+			            </div>
+			        </div>
+			        <div class="c-mbie-footer__nav-group">
+			            <ul class="c-mbie-footer__logo-list">
+			                <li class="c-mbie-footer__logo-list__list-item">
+			                    <a href="#" class="c-mbie-footer__logo-list__link">
+			                        <img src="../img/logos/280x52.png" alt="Logo" class="c-mbie-footer__logo-list__link__logo c-mbie-footer__logo-list__link__logo--mbie">
+			                        <img src="../img/logos/280x52.png" alt="Logo" class="c-mbie-footer__logo-list__link__logo c-mbie-footer__logo-list__link__logo--alt c-mbie-footer__logo-list__link__logo--mbie--alt">
+			                    </a>
+			                    <img class="h-print" src="../img/logos/mbie-logo-print.png" width="251" height="47" alt="Logo" >
+			                </li>
+			                <li class="c-mbie-footer__logo-list__list-item">
+			                    <a href="https://www.govt.nz/" title="newzealand.govt.nz - connecting you to New Zealand central and local government services." class="c-mbie-footer__logo-list__link">
+			                        <img src="../img/logos/nz-govt-logo--white.svg" alt="Ministry of Business, Innovation and Employment logo" class="c-mbie-footer__logo-list__link__logo c-mbie-footer__logo-list__link__logo--nzgovt">
+			                        <img src="../img/logos/nz-govt-logo--black.svg" alt="Ministry of Business, Innovation and Employment logo" class="c-mbie-footer__logo-list__link__logo c-mbie-footer__logo-list__link__logo--alt c-mbie-footer__logo-list__link__logo--nzgovt--alt">
+			                    </a>
+			                </li>
+			            </ul>
+			        </div>
+			        <div class="c-mbie-footer__nav-group">
+			            <h2 id="c-mbie-footer__global-nav-title" class="h-visuallyhidden">Global menu</h2>
+			            <nav class="c-mbie-footer__global-nav" aria-labelledby="c-mbie-footer__global-nav-title">
+			                <ul class="c-mbie-footer__global-nav__list">
+			                    <li class="c-mbie-footer__global-nav__item"><a class="c-mbie-footer__global-nav__link" href="#">Terms of use</a></li>
+			                    <li class="c-mbie-footer__global-nav__item"><a class="c-mbie-footer__global-nav__link" href="#">Copyright</a></li>
+			                    <li class="c-mbie-footer__global-nav__item"><a class="c-mbie-footer__global-nav__link" href="#">Privacy statement </a></li>
+			                    <li class="c-mbie-footer__global-nav__item c-mbie-footer__global-nav__copyright">&copy; Name of Agency</li>
+			                </ul>
+			            </nav>
+			        </div>
+			        <div class="c-mbie-footer__page-url h-print">
+			            <p>https://http://www.mbie.govt.nz</p>
+			        </div>
+			        <div class="c-mbie-footer__content-disclaimer h-print">
+			            <p><strong>Please note that this content will change over time and may be out-of-date.</strong></p>
+			        </div>
+			    </div>
+			</footer>
+
+	<script src="../js/custom.js"></script>
+	</body>
+</html>

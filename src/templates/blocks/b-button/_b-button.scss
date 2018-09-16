@@ -1,0 +1,279 @@
+// ############################################
+// b-button
+// ############################################
+
+
+// ================================================
+// Block Styles
+// ================================================
+
+.b-button,
+%b-button {
+
+    // ------------------------------------------------
+    // Block Level Styles
+    // ------------------------------------------------
+
+    @extend %h-font-gustan-medium;
+    @extend %h-section-margin;
+
+    display: inline-block;
+    width: 100%;
+    padding: rem($g-bu * 2) rem($g-bu * 3);
+    border: 1px solid $g-color-primary2;
+    margin-right: 0;
+    margin-left: 0;
+    background-image: none;
+    background-color: $g-color-primary2;
+    font-size: ms(2);
+    line-height: rem($g-bu * 2.5);
+    color: $g-color-white01;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    transition: background-color linear $g-anim-hover, color linear $g-anim-hover, padding linear $g-anim-hover;
+
+    .l-row--centered & {
+        &:last-of-type {
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
+
+    &__extra-content {
+        @extend %h-font-gustan-book;
+
+        display: block;
+        width: 100%;
+        font-size: ms(-1);
+        color: $g-color-red01;
+    }
+
+    &:not(&--disabled) {
+        cursor: pointer;
+    }
+
+    // ------------------------------------------------
+    // Pseudo States
+    // ------------------------------------------------
+
+    &:not(&--disabled):hover {
+        // background-color: $g-color-primary1;
+        // color: $g-color-white01;
+
+        .b-button__extra-content {
+            color: $g-color-white01;
+        }
+    }
+
+    // ------------------------------------------------
+    // Modifier Styles
+    // ------------------------------------------------
+
+    &--small {
+        padding: rem($g-bu * 1.5) rem($g-bu * 2.5);
+        font-size: ms(-1);
+        line-height: rem($g-bu * 2);
+    }
+
+    &--large {
+        padding: rem($g-bu * 2.5) rem($g-bu * 3);
+        font-size: ms(3);
+        line-height: rem($g-bu * 3);
+    }
+
+    &--secondary {
+        border: 1px solid $g-color-primary2;
+        background-color: $g-color-white01;
+        color: $g-color-primary2;
+
+        &:not(.#{m-nest()}--disabled):hover {
+            border-color: $g-color-primary2;
+            background-color: $g-color-primary2;
+            color: $g-color-white01;
+        }
+    }
+
+    &--tertiary {
+        border: 1px solid $g-color-white01;
+        background-color: transparent;
+        color: $g-color-white01;
+
+        &:not(.#{m-nest()}--disabled):hover {
+            background-color: $g-color-primary1;
+            color: $g-color-white01;
+        }
+    }
+
+    &--wide {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    &--tight {
+        margin: 0;
+    }
+
+    &--scale-type {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 100%;
+        padding-right: rem($g-bu * 5);
+        text-align: left;
+
+        .b-button__icon {
+            position: absolute;
+            top: 0;
+            right: rem($g-bu * 3);
+            bottom: 0;
+            margin: auto;
+        }
+    }
+
+    &--section-margin-bottom-only {
+        @extend %h-section-margin-bottom-only;
+    }
+
+    &--disabled {
+        //opacity: .8;
+        //filter: grayscale(100%);
+        cursor: text;
+    }
+
+    &--loader {
+        position: relative;
+        padding: rem($g-bu + $g-hbu) rem($g-bu * 4 + $g-hbu) !important; // To overide silverstripe form styles
+        font-size: ms(1);
+        line-height: rem($g-bu * 2 + $g-hbu);
+        text-align: center;
+
+        &::after {
+            position: absolute;
+            top: 0;
+            right: rem($g-bu * 2);
+            bottom: 0;
+            display: inline-block;
+            box-sizing: border-box;
+            content: '';
+            vertical-align: middle;
+            width: rem($g-bu * 3);
+            height: rem($g-bu * 3);
+            border: 2px solid $g-color-white01;
+            border-top-color: $g-color-blue16;
+            border-radius: 50%;
+            margin: auto;
+            opacity: 0;
+            animation: ajax-spinner .6s linear infinite;
+            transition: opacity linear $g-anim-hover;
+        }
+    }
+
+    &--loading {
+        padding: rem($g-bu + $g-hbu) rem($g-bu * 7) rem($g-bu + $g-hbu) rem($g-bu * 3) !important;
+
+        &::after {
+            opacity: 1;
+        }
+    }
+
+    &.b-cta__button {
+        &:hover {
+            background-color: $dia-color-blue-hover;
+            color: $g-color-white01;
+        }
+    }
+
+    &--with-icon {
+        position: relative;
+        padding-right: rem($g-bu * 6.4);
+
+        .b-button__icon {
+            position: absolute;
+            top: 0;
+            right: rem($g-bu * 2.4);
+            bottom: 0;
+            display: inline-block;
+            height: 100%;
+        }
+
+        &.b-button--small {
+            padding-right: rem($g-bu * 5.2);
+
+            .b-button__icon {
+                right: rem($g-bu * 2);
+            }
+        }
+
+        &.b-button--large {
+            padding-right: rem($g-bu * 7.6);
+
+            .b-button__icon {
+                right: rem($g-bu * 3);
+            }
+        }
+    }
+
+    // --------------------------------------------
+    // Media Queries
+    // --------------------------------------------
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-tiny-and-up) {
+        width: auto;
+        margin-right: rem($g-bu * 2);
+
+        // ------------------------------------------------
+        // Modifier Styles
+        // ------------------------------------------------
+
+        &--wide {
+            width: 100%;
+        }
+
+        &--fix-font {
+            font-size: ms(0);
+        }
+    }
+
+    @include media($g-bp-medium-and-up) {
+
+        // ------------------------------------------------
+        // Modifier Styles
+        // ------------------------------------------------
+
+        &--scale-type {
+            font-size: ms(2);
+            line-height: rem($g-bu * 3);
+        }
+
+        &--fix-font {
+            font-size: ms(0);
+        }
+    }
+
+    @include media($g-bp-large-and-up) {
+
+        // ------------------------------------------------
+        // Modifier Styles
+        // ------------------------------------------------
+
+        &--scale-type {
+            font-size: ms(3);
+            line-height: rem($g-bu * 3);
+        }
+
+        &--fix-font {
+            font-size: ms(0);
+        }
+    }
+}
+
+@keyframes ajax-spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}

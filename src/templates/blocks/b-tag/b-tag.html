@@ -1,0 +1,17 @@
+{% macro btag(extra_class = '', modifier = false, is_link = false, taghref = '/page', content = '') %}
+
+	{% if is_link %}
+		<a class="b-tag b-tag--link {% if modifier %}b-tag--{{modifier}}{% endif %} {% if extra_class %}{{extra_class}}{% endif %}" href="{{taghref}}">
+	{% else %}
+		<span class="b-tag {% if modifier %}b-tag--{{modifier}}{% endif %} {% if extra_class %}{{extra_class}}{% endif %}">
+	{% endif %}
+
+		{{content}}
+
+	{% if is_link %}
+		</a>
+	{% else %}
+		</span>
+	{% endif %}
+
+{% endmacro %}

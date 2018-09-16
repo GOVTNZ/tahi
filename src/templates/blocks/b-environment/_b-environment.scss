@@ -1,0 +1,124 @@
+// ############################################
+// b-environment
+// ############################################
+
+
+// ================================================
+// Block Styles
+// ================================================
+
+.b-environment-indicator-wrapper {
+    position: relative;
+    display: block;
+    margin: -1rem -.5rem 3rem;
+
+    .b-environment-indicator-link-list {
+        @extend %h-font-gustan-book;
+
+        padding: 2rem 0 0;
+        margin: 0 0 1rem;
+        background-color: $g-color-blue12;
+
+        &__item {
+            display: block;
+            padding: 0;
+            margin: 0;
+            font-size: 0;
+            line-height: 0;
+            color: $g-color-white01;
+        }
+
+        &__link {
+            display: inline-block;
+            padding: rem($g-bu * 1.1) rem($g-bu * 4);
+            margin: 0;
+            font-size: ms(0);
+            line-height: 1;
+            color: $g-color-white01;
+            text-decoration: underline;
+
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
+        }
+
+        &__link-icon {
+            margin: 0 0 0 .5rem;
+        }
+    }
+
+    .environment-indicator {
+        @extend %h-font-gustan-medium;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        display: block;
+        padding: rem($g-bu * 1.1) rem($g-bu * 2);
+        margin: 0;
+        background-color: $g-color-red01;
+        font-size: ms(0);
+        line-height: 1;
+        color: $g-color-white01;
+        text-align: center;
+        text-transform: uppercase;
+
+        p {
+            padding: 0;
+            margin: 0;
+        }
+
+        &--eat {
+            background-color: $g-color-red4;
+            color: $g-color-white01;
+        }
+
+        &--but {
+            background-color: $g-color-orange02;
+            color: $g-color-white01;
+        }
+    }
+    // --------------------------------------------
+    // Media Queries
+    // --------------------------------------------
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-small-and-up) {
+        // scss-lint:enable DeclarationOrder
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        margin: 0;
+        text-align: center;
+
+        .b-environment-indicator-link-list {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+
+            &__item {
+                display: inline-block;
+                margin: 0;
+            }
+
+            &__link {
+                display: inline-block;
+                padding: rem($g-bu * 1.1) rem($g-bu * 2);
+            }
+        }
+
+        .environment-indicator {
+            position: relative;
+            top: 0;
+            right: 0;
+            left: auto;
+            display: inline-block;
+            margin: 0 0 0 -5px;
+            text-align: left;
+        }
+    }
+}

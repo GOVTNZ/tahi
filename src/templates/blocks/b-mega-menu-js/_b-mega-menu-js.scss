@@ -1,0 +1,412 @@
+// ############################################
+// Mega menu
+// ############################################
+
+// There are 2 versions of the mega nav.
+// The 'default' and the '--action-focus' version which is used for manage and maintain.
+
+// Possibly need to look at splitting the status bar and steps into seperate blocks at some point.
+
+.b-mega-menu-js {
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    background-color: $g-color-blue12;
+    color: $g-color-white01;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity linear .2s;
+
+    // --------------------------------------------
+    // Animation modifiers added by JS
+    // used to fade in and out
+    // --------------------------------------------
+
+    &--in {
+        z-index: 1;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &--out {
+        z-index: 1;
+        opacity: 0;
+    }
+
+
+    // --------------------------------------------
+    // Element styling
+    // --------------------------------------------
+
+    a,
+    a:link,
+    a:visited,
+    a:active {
+        color: $g-color-white01;
+
+        &:hover {
+            color: $g-color-white01;
+            text-decoration: none;
+        }
+    }
+
+    &__inner {
+        @extend %l-outer-container;
+
+        padding-top: rem($g-bu * 4);
+        padding-bottom: rem($g-bu * 5);
+    }
+
+    &__status-bar,
+    &__intro {
+        @extend %h-font-gustan-book;
+
+        flex-wrap: nowrap;
+        padding-bottom: rem($g-bu * 1 - 2);
+        border-bottom: solid 2px;
+
+        * {
+            margin: 0;
+        }
+    }
+
+    &__status-bar {
+        @include grid-row('flex-start');
+
+        border-color: $g-color-red3;
+        margin-bottom: rem($g-bu * 2);
+
+        &__text {
+            flex: 1;
+            margin-right: rem($g-bu * 3);
+            margin-left: rem($g-bu);
+
+            // Required for Companies app integration
+
+            a {
+                &:visited,
+                &:link {
+                    color: $g-color-white01;
+                }
+            }
+        }
+
+        &__img {
+            width: rem(26);
+            height: rem($g-bu * 2.5);
+            margin-left: auto;
+        }
+
+        &__icon {
+            margin-top: rem(3);
+            color: $g-color-red3;
+        }
+    }
+
+    &__intro {
+        max-width: rem($g-bu * 104);
+        border-color: $g-color-blue13;
+        margin-right: auto;
+        margin-bottom: rem($g-bu * 3);
+        margin-left: auto;
+    }
+
+    &__steps {
+        padding: 0;
+        margin: 0 auto;
+        list-style: none;
+
+        &--col2 {
+            max-width: rem($g-bu * 104);
+        }
+    }
+
+    &__step-pair {
+        padding: rem($g-bu * 1.5) rem($g-bu * 1.5) rem($g-bu * 2);
+        margin: 0 0 rem($g-bu * 1.5);
+        background-color: $g-color-blue14;
+        list-style: none;
+
+        &::before {
+            display: none;
+        }
+    }
+
+    &__btn {
+        padding-top: rem($g-bu * 1.5);
+        padding-bottom: rem($g-bu * 1.5);
+        margin: rem($g-bu * 2) 0 0;
+    }
+
+    &__cta {
+        margin: 0;
+
+        // Required for Companies app integration
+
+        a,
+        a:link,
+        a:visited,
+        a:active {
+            color: $g-color-white01;
+        }
+    }
+
+    &__step-title {
+        @include grid-row('flex-start');
+
+        flex-wrap: nowrap;
+    }
+
+    &__step-number {
+        margin-right: rem($g-bu * 2);
+        font-size: ms(2);
+    }
+
+    &__block-cta {
+        @extend %h-font-gustan-medium;
+
+        padding-top: rem($g-bu * 3);
+        border-top: solid 2px $g-color-blue13;
+        margin-top: rem($g-bu * 4);
+        text-align: center;
+    }
+
+    &__block-cta-link {
+        font-weight: 700;
+
+        // Required for Companies app integration
+
+        &:link,
+        &:visited,
+        &:active {
+            color: $g-color-white01;
+        }
+    }
+
+    &__block-cta-subtext {
+        display: block;
+        font-size: ms(-1);
+        line-height: rem($g-bu * 2);
+        font-weight: 300;
+    }
+
+    // --------------------------------------------
+    // Modifiers
+    // --------------------------------------------
+
+    &--action-focus {
+        #{m-nest()}__inner {
+            max-width: inherit;
+        }
+
+        #{m-nest()}__btn {
+            margin: 0 0 rem($g-bu * 2);
+        }
+
+        #{m-nest()}__cta {
+            text-align: center;
+        }
+
+        #{m-nest()}__intro {
+            display: flex;
+            justify-content: space-between;
+            max-width: none;
+        }
+
+        #{m-nest()}__intro-link {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            // Required for Companies app integration
+
+            &:hover,
+            &:link,
+            &:visited,
+            &:active {
+                color: $g-color-white01;
+            }
+        }
+
+        #{m-nest()}__intro-icon {
+            vertical-align: -.1em;
+        }
+    }
+
+    // --------------------------------------------
+    // Media Queries
+    // --------------------------------------------
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-tiny-and-up) {
+        // scss-lint:disable DeclarationOrder
+
+        &__step-pair {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        &__btn {
+            min-width: rem($g-bu * 32);
+        }
+    }
+
+    @include media($g-bp-small-and-up) {
+        &--action-focus {
+            #{m-nest()}__steps {
+                @include grid-row();
+            }
+
+            #{m-nest()}__step-pair {
+                @include span-column(1 / 2, rem($g-bu * 3));
+
+                margin-bottom: rem($g-bu * 3);
+            }
+
+            #{m-nest()}__btn {
+                width: 100%;
+            }
+
+            #{m-nest()}__intro {
+                justify-content: flex-start;
+            }
+
+            #{m-nest()}__intro-link {
+                margin-right: rem($g-bu * 10);
+            }
+
+            #{m-nest()}__block-cta {
+                margin-top: rem($g-bu);
+            }
+        }
+    }
+
+    @include media($g-bp-large-and-up) {
+        &__status-bar__text {
+            font-weight: 200;
+        }
+
+        &__status-bar {
+            border-width: 3px;
+            margin-bottom: rem($g-bu * 5);
+
+            &__img {
+                width: rem(31);
+                height: rem($g-bu * 3);
+            }
+        }
+
+        &__status-bar,
+        &__intro {
+            padding-bottom: rem($g-bu * 2 - 2);
+            font-size: ms(2);
+            line-height: rem($g-bu * 3);
+        }
+
+        &__step-title {
+            padding-right: rem($g-bu * 5);
+        }
+
+        &__step-number {
+            font-size: ms(4);
+            line-height: rem($g-bu * 3.5);
+        }
+
+        &__step-pair {
+            flex-direction: row;
+            padding-bottom: rem($g-bu * 1.5);
+        }
+
+        &__btn {
+            margin: 0 0 0 auto;
+
+            // Required for Companies app integration
+
+            &:not(.b-button--fix-font) {
+                font-size: ms(1);
+            }
+        }
+
+        &__block-cta-link {
+            font-size: ms(1);
+            line-height: rem($g-bu * 3 + $g-hbu);
+        }
+
+        &--action-focus {
+            #{m-nest()}__steps {
+                &--col3 {
+                    .b-mega-menu-js__step-pair {
+                        @include span-column(1 / 3, rem($g-bu * 5));
+
+                        margin-bottom: rem($g-bu * 2);
+                    }
+                }
+            }
+
+            #{m-nest()}__step-pair {
+                flex-direction: column;
+                padding-bottom: rem($g-bu * 3);
+            }
+
+            #{m-nest()}__btn {
+                padding-top: rem($g-bu * 2);
+                padding-bottom: rem($g-bu * 2);
+            }
+
+            #{m-nest()}__cta {
+                font-size: ms(0);
+            }
+
+            #{m-nest()}__intro {
+                margin-bottom: rem($g-bu * 5);
+            }
+
+            #{m-nest()}__intro-link {
+                font-size: ms(1);
+            }
+
+            #{m-nest()}__intro-icon {
+                vertical-align: -.3em;
+                margin-right: rem($g-bu * .5);
+            }
+
+            #{m-nest()}__block-cta {
+                margin-top: rem($g-bu * 2);
+            }
+        }
+    }
+}
+
+// ============================================
+// Below elements are used for the animations
+// and are added by JS
+// ============================================
+
+// This provides a solid background outside beoyong the confines
+// of the mega nav outer container
+
+.b-mega-menu-js-filler {
+    position: absolute;
+    width: 100%;
+    margin-top: -2px;
+    background-color: $g-color-blue12;
+    visibility: hidden;
+}
+
+// this wraps the content apart from the header so it can be transferred
+
+.b-mega-menu-js-shifter {
+    position: relative;
+    z-index: 10;
+    background-color: $g-color-white01;
+    transition: transform cubic-bezier(.45, 1, .6, 1) .3s;
+
+    &--out {
+        transition: transform cubic-bezier(.45, 1, .6, 1) .15s;
+    }
+}

@@ -1,0 +1,51 @@
+{% import "blocks/b-button/b-button.html" as button %}
+
+{% macro news_tile(
+    gradient_class = '',
+    color_class = '',
+    has_three_columns = false,
+    headline = 'Default Headline',
+    register = 'Companies Office',
+    button_text = 'Read article',
+    has_icon_button = false,
+    button_theme = ''
+) %}
+    <div class="b-news-tile {{gradient_class}} {% if has_three_columns %} b-news-tile--three-columns{% endif %}">
+        <div class="b-news-tile__inner">
+            <div class="b-news-tile__block">
+                <h3 class="b-news-tile__headline"><a class="b-news-tile__headline-link" href="/page">{{headline}}</a></h3>
+                <p class="b-news-tile__teaser">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae iste nostrum eius perspiciatis sequi cupiditate architecto, eligendi optio pariatur. At aliquid, saepe magni porro ea architecto veritatis perspiciatis aspernatur eaque.</p>
+
+            {% if has_three_columns %}
+                </div>
+                <div class="b-news-tile__block">
+            {% endif %}
+
+                {% if has_icon_button %}
+                    {{ button.button(
+                        content = button_text,
+                        is_anchor = true,
+                        has_icon = true,
+                        icon_file = 'ex-link-icon',
+                        extra_class = 'b-news-tile__link b-button--secondary b-button--small',
+                        theme_class = button_theme)
+                    }}
+                {% else %}
+                    {{ button.button(
+                        content = button_text,
+                        is_anchor = true,
+                        icon_file = 'chevron-icon-right',
+                        extra_class = 'b-news-tile__link b-button--secondary b-button--small')
+                    }}
+                {% endif %}
+
+            </div>
+            <div class="b-news-tile__block">
+                <span class="h-visuallyhidden">Primary Register: </span>
+                <span class="b-news-tile__register {{color_class}}">{{register}}</span>
+                <span class="h-visuallyhidden">Published: </span>
+                <time class="b-news-tile__date" datetime="2017-04-18">18 April 2017</time>
+            </div>
+        </div>
+    </div>
+{% endmacro %}

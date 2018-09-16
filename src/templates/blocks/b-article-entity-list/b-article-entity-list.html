@@ -1,0 +1,152 @@
+{% import "blocks/b-article-entity/b-article-entity.html" as entity %}
+
+{% macro entity_list(extra_class = '', header = false, is_placeholder = false) %}
+    <div class="b-article-entity-list {{extra_class}}">
+        {% if header %}
+            <h2 class="b-article-entity-list__header">{{header}}</h2>
+        {% endif %}
+
+        <ul class="b-article-entity-list__inner">
+            <li  class="b-article-entity-list__item">
+                {% if is_placeholder %}
+                    {{ entity.entity(is_placeholder = true) }}
+                {% else %}
+                    {{ entity.entity(is_placeholder = false, has_link = true, has_date = true, has_deregdate = false, has_reregdate = false, has_dissdate = false) }}
+                {% endif %}
+            </li>
+            <li  class="b-article-entity-list__item">
+                {% if is_placeholder %}
+                    {{ entity.entity(is_placeholder = true) }}
+                {% else %}
+                    {{ entity.entity(is_placeholder = false, has_link = true, has_date = true, has_deregdate = false, has_reregdate = false, has_dissdate = false) }}
+                {% endif %}
+            </li>
+            <li  class="b-article-entity-list__item">
+                {% if is_placeholder %}
+                    {{ entity.entity(is_placeholder = true) }}
+                {% else %}
+                    {{ entity.entity(is_placeholder = false, has_link = true, has_date = true, has_deregdate = false, has_reregdate = false, has_dissdate = false) }}
+                {% endif %}
+            </li>
+            <li  class="b-article-entity-list__item">
+                {% if is_placeholder %}
+                    {{ entity.entity(is_placeholder = true) }}
+                {% else %}
+                    {{ entity.entity(is_placeholder = false, has_link = true, has_date = true, has_deregdate = false, has_reregdate = false, has_dissdate = false) }}
+                {% endif %}
+            </li>
+            <li  class="b-article-entity-list__item">
+                {% if is_placeholder %}
+                    {{ entity.entity(is_placeholder = true) }}
+                {% else %}
+                    {{ entity.entity(is_placeholder = false, has_link = true, has_date = true, has_deregdate = false, has_reregdate = false, has_dissdate = false) }}
+                {% endif %}
+            </li>
+            <li  class="b-article-entity-list__item">
+                {% if is_placeholder %}
+                    {{ entity.entity(is_placeholder = true) }}
+                {% else %}
+                    {{ entity.entity(is_placeholder = false, has_link = true, has_date = true, has_deregdate = false, has_reregdate = false, has_dissdate = false) }}
+                {% endif %}
+            </li>
+            <li  class="b-article-entity-list__item">
+                {% if is_placeholder %}
+                    {{ entity.entity(is_placeholder = true) }}
+                {% else %}
+                    {{ entity.entity(is_placeholder = false, has_link = true, has_date = true, has_deregdate = false, has_reregdate = false, has_dissdate = false) }}
+                {% endif %}
+            </li>
+            <li  class="b-article-entity-list__item">
+                {% if is_placeholder %}
+                    {{ entity.entity(is_placeholder = true) }}
+                {% else %}
+                    {{ entity.entity(is_placeholder = false, has_link = true, has_date = true, has_deregdate = false, has_reregdate = false, has_dissdate = false) }}
+                {% endif %}
+            </li>
+            <li  class="b-article-entity-list__item">
+                {% if is_placeholder %}
+                    {{ entity.entity(is_placeholder = true) }}
+                {% else %}
+                    {{ entity.entity(is_placeholder = false, has_link = true, has_date = true, has_deregdate = false, has_reregdate = false, has_dissdate = false) }}
+                {% endif %}
+            </li>
+            <li  class="b-article-entity-list__item">
+                {% if is_placeholder %}
+                    {{ entity.entity(is_placeholder = true) }}
+                {% else %}
+                    {{ entity.entity(is_placeholder = false, has_link = true, has_date = true, has_deregdate = false, has_reregdate = false, has_dissdate = false) }}
+                {% endif %}
+            </li>
+            <li  class="b-article-entity-list__item">
+                {% if is_placeholder %}
+                    {{ entity.entity(is_placeholder = true) }}
+                {% else %}
+                    {{ entity.entity(is_placeholder = false, has_link = true, has_date = true, has_deregdate = false, has_reregdate = false, has_dissdate = false) }}
+                {% endif %}
+            </li>
+            <li  class="b-article-entity-list__item">
+                {% if is_placeholder %}
+                    {{ entity.entity(is_placeholder = true) }}
+                {% else %}
+                    {{ entity.entity(is_placeholder = false, has_link = true, has_date = true, has_deregdate = false, has_reregdate = false, has_dissdate = false) }}
+                {% endif %}
+            </li>
+            <li  class="b-article-entity-list__item">
+                {% if is_placeholder %}
+                    {{ entity.entity(is_placeholder = true) }}
+                {% else %}
+                    {{ entity.entity(is_placeholder = false, has_link = true, has_date = true, has_deregdate = false, has_reregdate = false, has_dissdate = false) }}
+                {% endif %}
+            </li>
+            <li  class="b-article-entity-list__item">
+                {% if is_placeholder %}
+                    {{ entity.entity(is_placeholder = true) }}
+                {% else %}
+                    {{ entity.entity(is_placeholder = false, entity_number = 'FSP1234567', has_link = false, has_date = false, has_deregdate = true, has_reregdate = true, has_dissdate = false) }}
+                {% endif %}
+            </li>
+            <li  class="b-article-entity-list__item">
+                {% if is_placeholder %}
+                    {{ entity.entity(is_placeholder = true) }}
+                {% else %}
+                    {{ entity.entity(is_placeholder = false, entity_number = 'FSP1234567', has_link = false, ext_link = true, has_date = false, has_deregdate = true, has_reregdate = true, has_dissdate = false) }}
+                {% endif %}
+            </li>
+            <li  class="b-article-entity-list__item">
+                {% if is_placeholder %}
+                    {{ entity.entity(is_placeholder = true) }}
+                {% else %}
+                    {{ entity.entity(is_placeholder = false, entity_number = 'FSP1234567', has_link = false, has_date = false, has_deregdate = false, has_reregdate = false, has_dissdate = true) }}
+                {% endif %}
+            </li>
+            <li  class="b-article-entity-list__item">
+                {% if is_placeholder %}
+                    {{ entity.entity(is_placeholder = true) }}
+                {% else %}
+                    {{ entity.entity(is_placeholder = false, entity_number = 'FSP1234567', has_link = true, ext_link = true, has_date = false, has_deregdate = false, has_reregdate = false, has_dissdate = true) }}
+                {% endif %}
+            </li>
+            <li  class="b-article-entity-list__item">
+                {% if is_placeholder %}
+                    {{ entity.entity(is_placeholder = true) }}
+                {% else %}
+                    {{ entity.entity(is_placeholder = false, entity_number = 'FSP1234567', has_link = false, has_date = false, has_deregdate = true, has_reregdate = true, has_dissdate = false) }}
+                {% endif %}
+            </li>
+            <li  class="b-article-entity-list__item">
+                {% if is_placeholder %}
+                    {{ entity.entity(is_placeholder = true) }}
+                {% else %}
+                    {{ entity.entity(is_placeholder = false, entity_number = 'FSP1234567', has_link = true, has_date = false, has_deregdate = true, has_reregdate = true, has_dissdate = false) }}
+                {% endif %}
+            </li>
+            <li  class="b-article-entity-list__item">
+                {% if is_placeholder %}
+                    {{ entity.entity(is_placeholder = true) }}
+                {% else %}
+                    {{ entity.entity(is_placeholder = false, entity_number = 'FSP1234567', has_link = true, has_date = false, has_deregdate = true, has_reregdate = true, has_dissdate = false) }}
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+{% endmacro %}

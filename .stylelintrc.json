@@ -1,0 +1,299 @@
+{
+    "extends": "stylelint-config-standard",
+    "ignoreFiles": [
+        "node_modules/**/*",
+        "dev_build/**/*",
+        "dist_build/**/*"
+    ],
+    "plugins": [
+        "stylelint-scss",
+        "stylelint-order"
+    ],
+    "rules": {
+        "indentation": 4,
+        "no-missing-end-of-source-newline": true,
+        "max-line-length": 200,
+        "max-empty-lines": 3,
+        "function-calc-no-unspaced-operator": true,
+        "no-eol-whitespace": true,
+        "no-descending-specificity": null,
+        "rule-empty-line-before": [
+            "always",
+            {
+                "except": "first-nested"
+            }
+        ],
+
+        "string-quotes": "single",
+        "order/order": [
+            [
+                {
+                    "type": "at-rule",
+                    "hasBlock": false
+                },
+                "custom-properties",
+                "declarations"
+            ],
+            {
+                "unspecified": "ignore",
+                "disableFix": true
+            }
+        ],
+        "order/properties-order": [
+            "position",
+            "top",
+            "right",
+            "bottom",
+            "left",
+            "z-index",
+            "display",
+            "box-sizing",
+            "content",
+            "align-content",
+            "align-items",
+            "align-self",
+            "flex",
+            "flex-basis",
+            "flex-direction",
+            "flex-flow",
+            "flex-grow",
+            "flex-shrink",
+            "flex-wrap",
+            "justify-content",
+            "order",
+            "float",
+            "clear",
+            "vertical-align",
+            "width",
+            "height",
+            "max-width",
+            "max-height",
+            "min-width",
+            "min-height",
+            "overflow",
+            "overflow-x",
+            "overflow-y",
+            "padding",
+            "padding-top",
+            "padding-right",
+            "padding-bottom",
+            "padding-left",
+            "border",
+            "border-collapse",
+            "border-top",
+            "border-right",
+            "border-bottom",
+            "border-left",
+            "border-color",
+            "border-image",
+            "border-top-color",
+            "border-right-color",
+            "border-bottom-color",
+            "border-left-color",
+            "border-spacing",
+            "border-style",
+            "border-top-style",
+            "border-right-style",
+            "border-bottom-style",
+            "border-left-style",
+            "border-width",
+            "border-top-width",
+            "border-right-width",
+            "border-bottom-width",
+            "border-left-width",
+            "border-radius",
+            "border-top-right-radius",
+            "border-bottom-right-radius",
+            "border-bottom-left-radius",
+            "border-top-left-radius",
+            "border-radius-topright",
+            "border-radius-bottomright",
+            "border-radius-bottomleft",
+            "border-radius-topleft",
+            "outline",
+            "outline-style",
+            "outline-offset",
+            "margin",
+            "margin-top",
+            "margin-right",
+            "margin-bottom",
+            "margin-left",
+            "margin-collapse",
+            "margin-top-collapse",
+            "margin-right-collapse",
+            "margin-bottom-collapse",
+            "margin-left-collapse",
+            "background",
+            "background-attachment",
+            "background-image",
+            "background-repeat",
+            "background-position",
+            "background-size",
+            "background-color",
+            "background-clip",
+            "clip",
+            "font",
+            "font-family",
+            "font-size",
+            "line-height",
+            "font-weight",
+            "font-style",
+            "color",
+            "font-smoothing",
+            "font-variant-numeric",
+            "osx-font-smoothing",
+            "text-align",
+            "text-decoration",
+            "text-indent",
+            "text-overflow",
+            "text-rendering",
+            "text-size-adjust",
+            "text-shadow",
+            "text-transform",
+            "word-spacing",
+            "word-break",
+            "word-wrap",
+            "letter-spacing",
+            "white-space",
+            "direction",
+            "speak",
+            "list-style",
+            "list-style-type",
+            "list-style-position",
+            "list-style-image",
+            "visibility",
+            "opacity",
+            "transform",
+            "box-shadow",
+            "filter",
+            "animation",
+            "animation-delay",
+            "animation-duration",
+            "animation-iteration-count",
+            "animation-name",
+            "animation-play-state",
+            "animation-timing-function",
+            "animation-fill-mode",
+            "transition",
+            "transition-delay",
+            "transition-duration",
+            "transition-property",
+            "transition-timing-function",
+            "pointer-events",
+            "cursor",
+            "user-select",
+            "hyphens",
+            "src",
+            "quotes",
+            "size",
+            "zoom",
+            "box-align",
+            "box-flex",
+            "box-orient",
+            "box-pack",
+            "table-layout",
+            "backface-visibility",
+            "resize",
+            "appearance",
+            "interpolation-mode",
+            "marks",
+            "page",
+            "set-link-source",
+            "unicode-bidi"
+        ],
+        "declaration-colon-newline-after": null,
+        "declaration-property-unit-whitelist": {
+            "font-size": [
+                "em",
+                "rem",
+                "px"
+            ]
+        },
+        "at-rule-no-unknown": [
+            true,
+            {
+                "ignoreAtRules": [
+                    "include",
+                    "extend",
+                    "each",
+                    "mixin",
+                    "for",
+                    "return",
+                    "function",
+                    "if",
+                    "else",
+                    "content"
+                ]
+            }
+        ],
+        "at-rule-no-vendor-prefix": true,
+        "media-feature-name-no-vendor-prefix": true,
+        "selector-no-vendor-prefix": true,
+        "value-no-vendor-prefix": true,
+        "max-nesting-depth": 6,
+        "selector-max-compound-selectors": 4,
+        "property-no-unknown": [
+            true,
+            {
+                "ignoreProperties": [
+                    "contain"
+                ]
+            }
+        ],
+        "selector-max-id": 0,
+        "selector-max-type": [
+            4,
+            {
+                "ignoreTypes": [
+                    "/fieldset/"
+                ]
+            }
+        ],
+        "selector-max-universal": 1,
+        "custom-media-pattern": "^mdc-.+",
+        "custom-property-pattern": "^mdc-.+",
+        "selector-id-pattern": "^mdc-.+",
+        "function-url-no-scheme-relative": true,
+        "comment-word-blacklist": [
+            [
+                "/^TODO:/",
+                "/^FIXME:/"
+            ],
+            {
+                "severity": "warning"
+            }
+        ],
+        "number-leading-zero": "never",
+        "at-rule-empty-line-before": [
+            "always",
+            {
+                "except": [
+                    "blockless-after-blockless",
+                    "first-nested"
+                ],
+                "ignore": [
+                    "after-comment"
+                ],
+                "ignoreAtRules": [
+                    "else"
+                ]
+            }
+        ],
+        "block-closing-brace-newline-after": [
+            "always",
+            {
+                "ignoreAtRules": [
+                    "if",
+                    "else"
+                ]
+            }
+        ],
+        "scss/selector-no-redundant-nesting-selector": true,
+        "scss/at-import-no-partial-leading-underscore": null,
+        "scss/at-else-closing-brace-newline-after": "always-last-in-chain",
+        "scss/at-else-closing-brace-space-after": "always-intermediate",
+        "scss/at-else-empty-line-before": "never",
+        "scss/at-if-closing-brace-newline-after": "always-last-in-chain",
+        "scss/at-if-closing-brace-space-after": "always-intermediate"
+    }
+}

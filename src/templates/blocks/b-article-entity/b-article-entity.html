@@ -1,0 +1,37 @@
+{% macro entity(is_placeholder = false, entity_number = '1234567', has_link = true, ext_link = 'false', has_date = true, has_deregdate = false, has_reregdate = false, has_dissdate = false) %}
+    <div class="b-article-entity">
+        {% if is_placeholder %}
+            <div class="ajax-placeholder ajax-placeholder--wide ajax-placeholder--title ajax-placeholder--split"></div>
+            <div class="ajax-placeholder"></div>
+            <div class="ajax-placeholder"></div>
+            <div class="ajax-placeholder ajax-placeholder--cta ajax-placeholder--slim"></div>
+        {% else %}
+            <h4 class="b-article-entity__title">Assembly Specialists Limited <span class="b-article-entity__number">{{entity_number}}</span></h4>
+            <p class="b-article-entity__name">Bruce <span class="b-article-entity__surname">Bayliss</span></p>
+            <address class="b-article-entity__address">12 Taihape Way, ​​​​​​​Taihape, 1234</address>
+            <p class="b-article-entity__details">Placeholder text for the details content</p>
+            {% if has_date %} 
+                <time class="b-article-entity__date" datetime="2017-02-12">12 February 2017</time>
+            {% endif %}
+            {% if has_deregdate %} 
+                <p class="b-article-entity__deregdate"><strong class="b-article-entity__label">Deregistration date:</strong><time class="b-article-entity__date" datetime="2017-02-12">12 February 2017</time></p>
+            {% endif %}
+            {% if has_reregdate %} 
+                <p class="b-article-entity__deregdate"><strong class="b-article-entity__label">Reregistration date:</strong><time class="b-article-entity__date" datetime="2017-02-12">12 February 2017</time></p>
+            {% endif %}
+            {% if has_dissdate %} 
+                <p class="b-article-entity__deregdate"><strong class="b-article-entity__label">Dissolution date:</strong><time class="b-article-entity__date" datetime="2017-02-12">12 February 2017</time></p>
+            {% endif %}
+
+            {% if has_link %} 
+                <a href="/page" class="b-article-entity__link">View company record
+                    {% if ext_link %}
+                        <svg class="h-icon h-icon--small b-cta__icon b-cta__icon--ex-link-icon">
+                            <use xlink:href="../img/icons/svg-sprite.svg#ex-link-icon"></use>
+                        </svg>
+                    {% endif %}
+                </a>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endmacro %}

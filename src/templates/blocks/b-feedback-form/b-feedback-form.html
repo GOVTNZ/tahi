@@ -1,0 +1,51 @@
+    {% set title %}
+        Was this useful?
+    {% endset %}
+    <div class="b-feedback-form">
+        <form class="b-feedback-form__form" data-js-feedback-form="true" dismiss-expiry-time="100" id="222">
+
+            <h3 class="b-feedback-form__title">{{title}}</h3>
+
+            <fieldset class="b-feedback-form__fieldset b-feedback-form__fieldset--radios" data-js-feedback-form-step01="true">
+                <legend class="h-visuallyhidden">Please give us some feedback on "{{title}}"</legend>
+
+                <div class="b-feedback-form__input-radio-wrapper">
+                    <input class="b-feedback-form__input-radio" id="yes" type="radio" name="feedback-form-input-radio" value="yes" data-js-feedback-form-input-radio="true"><label for="yes" class="b-feedback-form__input-radio-label">Yes</label>
+                    <input class="b-feedback-form__input-radio" id="no" type="radio" name="feedback-form-input-radio" value="no" data-js-feedback-form-input-radio="true"><label for="no" class="b-feedback-form__input-radio-label">No</label>
+                </div>
+                <p><i>We'd like to hear from you to improve the quality we provide.</i></p>
+                <p>For formal complaints please use our <a href="/page">complaints form</a>.</p>
+
+            </fieldset>
+
+            <fieldset class="b-feedback-form__fieldset b-feedback-form__fieldset--inputs" data-js-feedback-form-step02="true">
+                <legend class="h-visuallyhidden">Provide more information, please</legend>
+
+                <div class="b-feedback-form__text-area-wrapper">
+                    <label class="b-feedback-form__text-area-label" id="feedback_form_textarea_01_label" for="feedback_form_textarea_01">Thank you. Can you help us improve by adding some detail?</label>
+                    <textarea name="feedback-form-textarea" class="textarea requiredField b-feedback-form__text-area" id="feedback_form_textarea_01" aria-describedby="feedback_form_textarea_01_label" placeholder="Suggestions for improvement"></textarea>
+                </div>
+
+                <div class="b-feedback-form__input-text-wrapper requiredField">
+                    <label class="b-feedback-form__input-text-label" for="feedback_form_input_email" id="feedback_form_input_email_label">If you'd like us to reply directly, please provide your email address</label>
+                    <input type="email" name="feedback_form_input_email" class="text requiredField b-feedback-form__input-text" id="feedback_form_input_email" aria-describedby="feedback_form_input_email_label" placeholder="Email address">
+                </div>
+
+                <div class="b-feedback-form__submit-wrapper requiredField">
+                    <label class="b-feedback-form__submit-label h-visuallyhidden" id="feedback_form_submit_label" for="feedback_form_submit">Submit your feedback</label>
+                    <input class="b-button b-button--large b-button--loader b-feedback-form__submit" type="submit" name="" value="Send your feedback" id="feedback_form_submit" aria-describedby="feedback_form_submit_label" data-js-feedback-form-submit="true"/>
+                </div>
+
+            </fieldset>
+
+            <fieldset class="b-feedback-form__fieldset b-feedback-form__fieldset--confirmation" data-js-feedback-form-step03="true">
+                <legend class="h-visuallyhidden">Confirmation</legend>
+                <!-- the following content should be ajaxed in ?-->
+                <svg class="h-icon h-icon--xx-large b-feedback-form__success-icon" aria-hidden="true">
+                    <use xlink:href="../img/icons/svg-sprite.svg#success-icon"></use>
+                </svg>
+                <p>Thank you for your feedback</p>
+            </fieldset>
+
+        </form>
+    </div>

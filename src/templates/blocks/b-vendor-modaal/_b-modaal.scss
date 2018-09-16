@@ -1,0 +1,278 @@
+/* stylelint-disable */
+//
+//    Modaal - accessible modals - v0.3.1
+//    by Humaan, for all humans.
+//    http://humaan.com
+//
+
+// Modaal Variables
+// --------------------------------------------------------
+
+$modaal-overlay-color: #033247;
+
+$modaal-radius: 0; //5px
+$modaal-main-bg: $g-color-primary1;
+$modaal-main-text: #fff;
+$modaal-max-width: 1000px;
+$modaal-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+$modaal-padding: 0;
+$modaal-hover-color: rgba(0,0,0, .7);
+
+$modaal-light: #fff;
+$modaal-primary: #555;
+$modaal-grey: #afb7bc;
+
+
+// Modaal Mixins
+// --------------------------------------------------------
+@mixin modaal-transition($type, $speed: .2s, $ease: ease-in-out) {
+    transition: $type #{$speed} #{$ease};
+}
+
+@mixin modaal-hidetext() {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden;
+    padding:0 !important;
+    border:0 !important;
+    clip: rect(1px 1px 1px 1px); // IE6, IE7
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+
+// Modaal Structure
+// --------------------------------------------------------
+
+.modaal-noscroll {
+    position: static;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    animation: fix .2s linear;
+}
+
+@keyframes fix {
+    0% {
+        position: static;
+    }
+
+    99% {
+        position: static;
+    }
+
+    100% {
+        position: fixed;
+    }
+}
+
+.modaal-accessible-hide {
+    @include modaal-hidetext;
+}
+
+.modaal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    animation: slideDown .2s linear;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translate(0, -100%);
+    }
+
+    100% {
+        transform: translate(0, 0%);
+    }
+}
+
+.modaal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    opacity: 1;
+    transition: opacity .2s;
+    transition-delay: .1s;
+    -webkit-overflow-scrolling: touch;
+
+    & * {
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-backface-visibility: hidden;
+    }
+
+    &--search {
+        z-index: 10001;
+    }
+
+    .modaal-close {
+        -webkit-appearance: none;
+    }
+
+    &.modaal-start_none {
+        opacity: 1;
+        transition: opacity 0s;
+    }
+
+    &.modaal-start_fade {
+        opacity: 0;
+    }
+
+    & *[tabindex='0'] {
+        outline: none !important;
+    }
+
+    // is fullscreen
+
+    &.modaal-fullscreen {
+        overflow: hidden;
+    }
+}
+
+.modaal-outer-wrapper {
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 100%;
+
+    .modaal-fullscreen & {
+        display: block;
+    }
+}
+
+.modaal-inner-wrapper {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    // when is fullscreen
+
+    .modaal-fullscreen & {
+        display: block;
+        vertical-align: top;
+        padding: 0;
+    }
+}
+
+.modaal-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: auto;
+    background-color: $modaal-main-bg;
+    color: $modaal-main-text;
+    text-align: left;
+    cursor: auto;
+
+    // when is fullscreen
+
+    .modaal-fullscreen & {
+        height: 100%;
+        max-width: none;
+        overflow: auto;
+    }
+}
+
+// Close button
+
+.modaal-close {
+    @extend %h-font-gustan-medium;
+
+    position: fixed;
+    top: rem($g-bu * 1);
+    right: rem($g-bu * 2);
+    z-index: 1000;
+    display: block;
+    height: auto;
+    padding: .5rem .7rem;
+    border: 1px solid $g-color-primary4;
+    background-image: none;
+    background-color: transparent;
+    font-size: ms(-1);
+    line-height: 1;
+    color: $g-color-white01;
+    text-decoration: none;
+    text-transform: none;
+    text-transform: none;
+    opacity: 1;
+    cursor: pointer;
+
+    // Required by companies app
+
+    span {
+        display: inline;
+        padding: 0;
+        background-image: none;
+        line-height: 1;
+    }
+
+    &::after{
+        display: inline-block;
+        content: '';
+        vertical-align: middle;
+        width: rem($g-bu + $g-hbu);
+        height: rem($g-bu + $g-hbu);
+        margin-bottom: rem(1);
+        margin-left: rem($g-bu * 1.2);
+        background-image: url($g-image-path + 'icons/close-icon--white.svg');
+        background-repeat: no-repeat;
+        background-size: rem($g-bu + $g-hbu);
+        color: $g-color-primary2;
+    }
+
+    &:hover {
+        background: $g-color-white01;
+        color: $g-color-primary1;
+        text-decoration: none;
+
+        &::after{
+            background-image: url($g-image-path + 'icons/close-icon-blue.svg');
+        }
+    }
+
+    // Required for Companies app integration
+
+    &:visited,
+    &:link {
+        color: $g-color-white01;
+    }
+
+    @include media($g-bp-tiny-and-up) {
+        top: 1.15rem;
+        padding: .6rem 1rem;
+        font-size: ms(0);
+
+    }
+
+    @include media($g-bp-medium-and-up) {
+        top: 1.55rem;
+        right: rem($g-bu * 4);
+        padding: .6rem .8rem;
+    }
+
+    @include media($g-bp-large-and-up) {
+        font-size: ms(0);
+    }
+
+    @include media($g-bp-wide-and-up) {
+        right: calc(50% - 600px);
+    }
+
+}

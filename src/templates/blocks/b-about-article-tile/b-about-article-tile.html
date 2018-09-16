@@ -1,0 +1,22 @@
+{% macro b_aboutarticletile(heading = 'h3', heading_modifier = false, title ='Default title', heading_linked = false, content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget', link_text = 'Read more') %}
+
+	<div class="b-about-article-tile">
+		<{{heading}} class="b-about-article-tile__title {% if heading_modifier %}b-about-article-tile__title--{{heading_modifier}}{% endif %}">
+			{% if heading_linked %}
+				<a href="/page" class="b-about-article-tile__link">{{title}}
+					<svg class="h-icon h-icon--small h-icon--chevron-icon-right" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../img/icons/svg-sprite.svg#chevron-icon-right"></use>
+					</svg>
+				</a>
+			{% else %}
+			{{title}}
+
+			{% endif %}
+		</{{heading}}>
+		<div class="b-about-article-tile__content">
+			<p>{{content}}</p>
+			<p class="b-about-article-tile__readmore-link"><a href="/page">{{link_text}}{% if link_text == 'Read more' %}<span class="h-visuallyhidden"> about {{title}}</span>{% endif %}</a></p>
+		</div>
+	</div>
+
+{% endmacro %}

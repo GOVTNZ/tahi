@@ -1,0 +1,9 @@
+{% macro intro(is_header = false, text = 'This in an example of intro copy which is set in Gustan Light 25.63px with a line-height of 36px. This could run over more than one line.') %}
+
+    {% if is_header %}
+        <h2 class="b-article-intro">{{text}}</h2>
+    {% else %}
+        <p class="b-article-intro">{{text}}</p>
+    {% endif %}
+
+{% endmacro %}

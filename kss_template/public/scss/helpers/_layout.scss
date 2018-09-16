@@ -1,0 +1,91 @@
+// Define all helpers related to layout in this stylesheet
+
+.h-block {
+    display: block !important;
+}
+
+.h-hide {
+    display: none !important;
+}
+
+.sticky {
+    top: 0;
+    transition: top 2s;
+}
+
+.stuck {
+    position: static;
+}
+
+//
+// Hide only visually, but have it available for screen readers:
+// http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+// Defined as mixin because often used at different media levels
+//
+
+@mixin h-visuallyhidden() {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    border: 0;
+}
+
+@mixin h-visuallyshown() {
+    position: inherit;
+    width: inherit;
+    height: inherit;
+    padding: inherit;
+    margin: inherit;
+    overflow: inherit;
+    clip: auto;
+    border: inherit;
+}
+
+.h-visuallyhidden,
+%h-visuallyhidden {
+    @include h-visuallyhidden();
+}
+
+.h-visuallyshown,
+%h-visuallyshown {
+    @include h-visuallyshown();
+}
+
+.h-visuallyhidden.h-focusable:active,
+.h-visuallyhidden.h-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+}
+
+
+// Hide visually and from screen readers, but maintain layout
+
+.h-invisible {
+    visibility: hidden;
+}
+
+// Clearfix
+
+// .h-clearfix::before,
+// .h-clearfix::after {
+//     display: table;
+//     content: '';
+// }
+
+// .h-clearfix::after {
+//     clear: both;
+// }
+@media screen and (min-width: 769px) {
+
+    .stuck {
+        position: fixed;
+    }
+}

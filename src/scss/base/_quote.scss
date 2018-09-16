@@ -1,0 +1,59 @@
+
+// ############################################
+// Base Quote Styles (blockquote and inline quote)
+// ############################################
+
+blockquote {
+    @extend %h-font-firasans;
+
+    position: relative;
+    display: block;
+    padding: 0 0 0 rem($g-bu * 6);
+    border-left: 0;
+    margin: rem($g-bu * 4) 0 rem($g-bu * 3);
+    font-size: ms(3);
+    line-height: rem($g-bu * 3.5);
+    color: $g-color-charcoal;
+
+    .c-block-quote__icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        content: '';
+        margin: 0;
+        color: $dia-color-grey;
+    }
+
+    p {
+        margin: 0 0 rem($g-bu * 1);
+    }
+
+    cite {
+        @extend %h-font-gustan-light;
+        // @extend %h-font-firasans;
+        display: block;
+        font-size: 16px;
+        font-style: normal;
+
+        strong {
+            @extend %h-font-firasans-500;
+        }
+    }
+
+
+    // ------------------------------------------------
+    // Media Queries
+    // ------------------------------------------------
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-small-and-up) {
+        padding: 0 0 0 rem($g-bu * 8);
+        font-size: ms(6);
+        line-height: rem($g-bu * 5);
+    }
+}
+
+q {
+    quotes: '"' ''' ''' '"';
+}

@@ -1,0 +1,397 @@
+/* stylelint-disable */
+
+template,
+.unsupported {
+    display: none;
+}
+
+.dropzone-holder {
+    position: relative;
+    clear: both;
+    min-height: 150px;
+    padding: 1em;
+    border: 1px solid #999;
+    -webkit-border-radius: 12px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    background: #fff;
+}
+
+.dropzone-holder.uploadable {
+    border: 1px dashed #999;
+}
+
+.dropzone-holder * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.dropzone-holder::after {
+    content: '.';
+    clear: both;
+    visibility: hidden;
+}
+
+.dropzone.dz-clickable {
+    cursor: pointer;
+}
+
+.fileattachment a {
+    border: 0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.fileattachment ul img {
+    border: 0;
+    background: none;
+}
+
+.fileattachment ul.file-attachment-field-previews {
+    clear: both;
+    padding: 0;
+    margin: 0;
+}
+
+.fileattachment ul.file-attachment-field-previews li {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid $g-color-grey14;
+    font-size: ms(-1);
+    line-height: bu(2.5);
+    text-align: left;
+    list-style: none;
+    list-style: none;
+    // --------------------------------------------
+    // Media Queries
+    // --------------------------------------------
+
+    @include media($g-bp-medium-and-up) {
+        text-align: center;
+    }
+}
+
+.fileattachment ul.file-attachment-field-previews.list li {
+    height: auto !important;
+    margin-bottom: 12px;
+}
+
+.fileattachment ul.file-attachment-field-previews li span {
+    display: block;
+    vertical-align: middle;
+    padding: 0;
+    // --------------------------------------------
+    // Media Queries
+    // --------------------------------------------
+
+    @include media($g-bp-medium-and-up) {
+        display: table-cell;
+    }
+}
+
+.fileattachment ul.file-attachment-field-previews li img {
+    border: 0;
+    background: none;
+}
+
+.fileattachment ul.file-attachment-field-previews li .check {
+    display: none;
+}
+
+.fileattachment ul.file-attachment-field-previews li.success .check {
+    display: inline;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 0;
+    background: none;
+}
+
+.fileattachment ul.file-attachment-field-previews li.success .check-holder__check-icon {
+    display: inline-block;
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.fileattachment ul.file-attachment-field-previews .file-icon {
+    height: 100%;
+    padding-left: 1rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 66%;
+    line-height: 0;
+}
+
+.fileattachment ul.file-attachment-field-previews .file-icon img {
+    width: auto;
+    height: auto;
+    border: 0;
+}
+
+.fileattachment ul.file-attachment-field-previews.list li.success .check-holder {
+    padding: 0 0 5px 1rem;
+
+    @include media($g-bp-medium-and-up) {
+        padding-left: 5px;
+    }
+}
+
+.fileattachment ul.file-attachment-field-previews a:hover {
+    border: 0;
+}
+
+.fileattachment ul.file-attachment-field-previews li .attachment-filename {
+    display: block;
+    font-weight: 700;
+}
+
+.fileattachment ul.file-attachment-field-previews li .attachment-filesize {
+    display: block;
+    color: #999;
+    text-transform: uppercase;
+}
+
+// file meta
+
+.fileattachment ul.file-attachment-field-previews .file-meta {
+    max-width: 250px;
+    padding: 0 1rem;
+    text-align: left;
+}
+
+.fileattachment ul.file-attachment-field-previews li .file-size {
+    border-top: 0; // font-size: 11px;
+    color: #999;
+}
+
+// file progress
+
+.fileattachment ul.file-attachment-field-previews .file-progress-wrap {
+    display: inline-block;
+    width: 100px;
+    height: 12px;
+    padding: 0;
+    border: 1px solid #999;
+    border-radius: 12px;
+}
+
+.fileattachment ul.file-attachment-field-previews .file-progress {
+    display: inline-block;
+    vertical-align: top;
+    height: 10px;
+    padding: 0;
+    border-radius: 12px;
+    background: #ddd;
+}
+
+.fileattachment ul.file-attachment-field-previews li .file-progress-holder {
+    padding: 0 1rem;
+}
+
+// remove/delete UI
+
+.fileattachment ul.file-attachment-field-previews .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    border: 1px solid #e7eaec;
+    margin: -1px 0 -2px 0;
+    background: rgba(237, 237, 237, .8);
+}
+
+.fileattachment ul.file-attachment-field-previews .detached .detach-overlay {
+    display: block;
+}
+
+.fileattachment ul.file-attachment-field-previews .deleted .delete-overlay {
+    display: block;
+}
+
+.fileattachment ul.file-attachment-field-previews .removed .dropzone-actions {
+    display: none;
+}
+
+.fileattachment ul.file-attachment-field-previews .removed .dropzone-actions .dropzone-action__close-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.fileattachment ul.file-attachment-field-previews .overlay > span {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    max-height: 150px;
+    padding: .5rem 1rem;
+    background: white;
+    text-align: left;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.fileattachment ul.file-attachment-field-previews .overlay > span h5 {
+    margin: 0;
+}
+
+.fileattachment ul.file-attachment-field-previews .overlay > span small {
+    display: block;
+    margin: 3px 0;
+}
+
+.fileattachment ul.file-attachment-field-previews .delete-overlay > span h5 {
+    color: $g-color-red01;
+}
+
+.fileattachment ul.file-attachment-field-previews .detach-overlay > span h5 {
+    color: #1a344b;
+}
+
+.fileattachment ul.file-attachment-field-previews .overlay > span .revert {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: block;
+    background-color: transparent;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.fileattachment ul.file-attachment-field-previews .error-overlay > span .revert {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: transparent;
+}
+
+.fileattachment ul.file-attachment-field-previews.list .overlay > span .revert {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: transparent;
+}
+
+.fileattachment ul.file-attachment-field-previews .dropzone-actions {
+    position: relative;
+    padding: 1rem;
+    cursor: pointer;
+    minwidth: 50px;
+}
+
+.fileattachment ul.file-attachment-field-previews .dropzone-action img {
+    vertical-align: -3px;
+}
+
+.fileattachment ul.file-attachment-field-previews .dual-perm .dropzone-action > span {
+    display: inline;
+}
+
+.fileattachment ul.file-attachment-field-previews li .dropzone-action > span {
+    display: none;
+}
+
+.fileattachment ul.file-attachment-field-previews .dropzone-action.detach {
+    top: 5px;
+}
+
+.fileattachment ul.file-attachment-field-previews .dropzone-action.delete {
+    top: 24px;
+    color: $g-color-red01;
+}
+
+.fileattachment ul.file-attachment-field-previews .dual-perm .dropzone-action img {
+    width: 12px;
+}
+
+// error state
+
+.fileattachment ul.file-attachment-field-previews .error-overlay span {
+    background: $g-color-red01;
+}
+
+.fileattachment ul.file-attachment-field-previews .error-overlay .error-message-heading {
+    display: inline-block;
+    color: #fff;
+}
+
+.fileattachment ul.file-attachment-field-previews .error-overlay .error-message-heading h5 {
+    display: inline-block;
+    color: #fff;
+}
+
+.fileattachment ul.file-attachment-field-previews .error-overlay .error-message-heading img {
+    display: inline-block;
+    vertical-align: -2px;
+    margin: 0;
+    color: #fff;
+}
+
+.fileattachment ul.file-attachment-field-previews .error-overlay span h5 {
+    color: #fff;
+}
+
+.fileattachment ul.file-attachment-field-previews .error-overlay span small {
+    color: #fff;
+}
+
+.fileattachment ul.file-attachment-field-previews .error-overlay .error-overlay__alert-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    color: #fff;
+}
+
+/** CMS only **/
+
+.fileattachment .backend ul.file-attachment-field-previews li .file-name {
+    max-width: 450px;
+}
+
+/** core dropzone styles **/
+
+.dropzone.dz-clickable .dz-message,
+.dropzone.dz-clickable .dz-message span {
+    cursor: pointer;
+}
+
+.dropzone.dz-clickable * {
+    cursor: default;
+}
+
+.dropzone-holder .dz-message {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+}
+
+.dropzone.dz-drag-hover {
+    border-color: rgba(0, 0, 0, .15);
+    background: rgba(0, 0, 0, .04);
+}
+
+.dropzone.dz-started .dz-message {
+    display: none;
+}
+
+button.process {
+    float: none;
+    clear: both;
+    margin-top: 24px;
+}
+
+/* mixins */
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pad {
+    padding: 10px;
+}
+
+// scss-lint:enable all

@@ -1,0 +1,159 @@
+// Document box
+//
+// A Document box provides visual presentation for different document types. They are used to help direct a user's attention to document listings and formats quickly during user scan. 
+//
+// Styleguide: 6
+
+.c-document-list {
+    @extend %h-section-margin;
+
+    margin-right: 0;
+    margin-left: 0;
+
+    &__list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__item {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__link {
+        position: relative;
+        display: block;
+        padding: rem($g-bu * 2) 0 rem($g-bu * 2.5) rem($g-bu * 6);
+        margin: 0;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+            #{e-nest()}__file-title {
+                color: $g-color-primary1;
+                text-decoration: underline;
+            }
+
+            #{e-nest()}__file-desc,
+            #{e-nest()}__tag,
+            #{e-nest()}__file-size {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: rem($g-bu * 2);
+        left: 0;
+    }
+
+    &__file-title {
+        @extend %h-font-firasans;
+
+        margin: 0 0 rem($g-bu * .5);
+        font-size: ms(1);
+        line-height: rem($g-bu * 2.5);
+        color: $g-color-primary2;
+        text-decoration: none;
+    }
+
+    &__file-desc {
+        margin-bottom: rem($g-bu * 1);
+        font-size: ms(0);
+        line-height: rem($g-bu * 3);
+        color: $g-color-charcoal-light;
+    }
+
+    &__tag {
+        @extend %h-font-gustan-medium;
+
+        display: inline-block;
+        padding: 0 rem($g-bu * 1);
+        border: 1px solid $g-color-grey03;
+        border-radius: rem($g-bu * 1);
+        margin: 0 rem($g-bu * .5) 0 0;
+        background-color: $g-color-grey03;
+        font-size: ms(-3);
+        line-height: rem($g-bu * 2.5);
+        color: $g-color-grey02;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    &__file-size {
+        @extend %h-font-gustan-medium;
+
+        display: inline-block;
+        padding: 0 rem($g-bu * 1);
+        border: 1px solid $g-color-grey03;
+        border-radius: rem($g-bu * 1);
+        font-size: ms(-3);
+        line-height: rem($g-bu * 2.5);
+        color: $g-color-grey02;
+        text-decoration: none;
+    }
+
+    //: ================================================
+    //: Media Queries
+    //: ================================================
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-small-and-up) {
+        &__list {
+            @include grid-row('flex-start');
+        }
+
+        &__item {
+            @include span-column(1 / 2, 40px);
+
+            margin-bottom: 0;
+        }
+
+        &__link {
+            padding: rem($g-bu * 2) rem($g-bu * 5) rem($g-bu * 2.5) rem($g-bu * 8);
+        }
+
+        &__icon {
+            width: rem($g-bu * 4);
+            height: rem($g-bu * 4);
+        }
+
+
+        //: --------------------------------------------
+        //: modifier
+        //: --------------------------------------------
+
+        &--large {
+            #{m-nest()}__item {
+                @include span-column(1 / 2, 40px);
+
+                margin-bottom: 0;
+            }
+        }
+    }
+    //: --------------------------------------------
+    //: Media Queries
+    //: --------------------------------------------
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-large-and-up) {
+        &__list {
+            @include grid-row('flex-start');
+        }
+
+
+        //: --------------------------------------------
+        //: modifier
+        //: --------------------------------------------
+
+        &--large {
+            #{m-nest()}__item {
+                @include span-column(1 / 3, 40px);
+
+                margin-bottom: 0;
+            }
+        }
+    }
+}

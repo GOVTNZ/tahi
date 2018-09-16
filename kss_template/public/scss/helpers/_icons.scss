@@ -1,0 +1,17 @@
+// Used for inline icons that need to match the X height of an associated font
+
+.h-icon {
+    position: relative;
+    display: inline-flex;
+    align-self: center;
+    width: 1em;
+    height: 1em;
+    // Approx width of a space
+    margin-right: .37em;
+
+    img {
+        width: 1em;
+        // Try to match x height
+        height: calc(1em - .25em);
+    }
+}

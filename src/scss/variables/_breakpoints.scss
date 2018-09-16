@@ -1,0 +1,42 @@
+// ############################################
+// Breakpoints and Widths
+// ############################################
+
+
+// ============================================
+// Widths
+// ============================================
+
+$g-width-tiny: $g-bu * 64; // 512
+$g-width-small: $g-bu * 78; // 624
+$g-width-medium: $g-bu * 96; // 768
+$g-width-large: $g-bu * 120; // 960
+$g-width-wide: $g-bu * 158; // 1264
+$g-width-mega: $g-bu * 175; // 1400
+$g-width-ultra: $g-bu * 210; // 1680
+$g-width-hyper: $g-bu * 260; // 2080
+
+
+// ============================================
+// Media Query Argument Definitions
+// ============================================
+
+// Below a width.
+$g-bp-below-tiny: new-breakpoint(max, rem($g-width-tiny - 1));
+$g-bp-below-small: new-breakpoint(max, rem($g-width-small - 1));
+$g-bp-below-medium: new-breakpoint(max, rem($g-width-medium - 1));
+
+// Contained between widths.
+$g-bp-between-tiny-and-small: new-breakpoint(min, rem($g-width-tiny), rem($g-width-small - 1));
+$g-bp-between-small-and-medium: new-breakpoint(min, rem($g-width-small), rem($g-width-medium - 1));
+$g-bp-between-medium-and-large: new-breakpoint(min, rem($g-width-medium), rem($g-width-large - 1));
+
+// From a width and upwards.
+$g-bp-tiny-and-up: new-breakpoint(min, rem($g-width-tiny));
+$g-bp-small-and-up: new-breakpoint(min, rem($g-width-small));
+$g-bp-medium-and-up: new-breakpoint(min, rem($g-width-medium));
+$g-bp-large-and-up: new-breakpoint(min, rem($g-width-large));
+$g-bp-wide-and-up: new-breakpoint(min, rem($g-width-wide));
+$g-bp-mega-and-up: new-breakpoint(min, rem($g-width-mega));
+$g-bp-ultra-and-up: new-breakpoint(min, rem($g-width-ultra));
+$g-bp-hyper-and-up: new-breakpoint(min, rem($g-width-hyper));

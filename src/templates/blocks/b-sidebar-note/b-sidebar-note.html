@@ -1,0 +1,46 @@
+{% macro sidebar_note(
+    extra_class = '',
+    title = false,
+    content = false,
+    href = '/page',
+    link_text = false,
+    is_anchor_to_note = false,
+    copyright_img = false,
+    aria_label = false
+) %}
+    <aside {% if not is_anchor_to_note %}id="article-sidebar"{% endif %} class="b-sidebar-note {% if is_anchor_to_note %}b-sidebar-note--anchor{% endif %} {{extra_class}}" {% if aria_label %}aria-labelledby="{{aria_label}}"{% endif %}>
+        {% if is_anchor_to_note %}
+            <svg class="h-icon h-icon--x-large b-sidebar-note__alert-icon" aria-hidden="true">
+                <use xlink:href="../img/icons/svg-sprite.svg#alert-icon"></use>
+            </svg>
+        {% endif %}
+        {% if title %}
+            <h2 {% if aria_label %}id="{{aria_label}}"{% endif %} class="b-sidebar-note__title">{{title}}</h2>
+        {% else %}
+            <h2 {% if aria_label %}id="{{aria_label}}"{% endif %} class="b-sidebar-note__title h-visuallyhidden">Related note</h2>
+        {% endif %}
+        {% if copyright_img %}
+            <picture class="b-sidebar-note__cc-image">
+                <source srcset="../img/test/cc.png 1x, ../img/test/ccx2.png 2x">
+                <img src="../img/test/cc.png" alt="A placeholder figure image."/>
+            </picture>
+        {% endif %}
+        {% if content %}
+            <div class="b-sidebar-note__content">
+                {{content}}
+            </div>
+        {% endif %}
+        {% if link_text %}
+            <a href="{{href}}" class="b-sidebar-note__link">
+                {{link_text}}
+                {% if is_anchor_to_note %}
+                    <svg class="h-icon h-icon--small b-sidebar-note__arrow-down-icon" aria-hidden="true">
+                        <use xlink:href="../img/icons/svg-sprite.svg#arrow-icon-down"></use>
+                    </svg>
+                {% endif %}
+            </a>
+        {% endif %}
+
+
+    </aside>
+{% endmacro %}

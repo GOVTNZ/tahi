@@ -1,0 +1,60 @@
+{% macro articletilelist(extra_class = 'medium', has_description = false, linktext = 'Default link text', has_topic = false) %}
+
+    <ul class="b-article-tile-list {% if extra_class != 'medium' %}b-article-tile-list--{{extra_class}}{% endif %}">
+        <li class="b-article-tile-list__item">
+            <a class="b-article-tile-list__link" href="/page">
+                <svg class="h-icon h-icon--x-small b-article-tile-list__list-icon" aria-hidden="true">
+                    <use xlink:href="../img/icons/svg-sprite.svg#chevron-icon-right"></use>
+                </svg>
+                <span class="b-article-tile-list__link-text">{{linktext}}</span>
+                {% if has_topic %}
+                    <span class="b-article-tile-list__topic">
+                        <svg class="h-icon b-article-tile-list__topic-icon" aria-hidden="true">
+                            <use xlink:href="../img/icons/svg-sprite.svg#topic-icon-getting-started"></use>
+                        </svg>From Registering a company
+                    </span>
+                {% endif %}
+                {% if has_description %}
+                    <span class="b-article-tile-list__description">Vivamus ac tristique diam. Quisque id elit condimentum, efficitur ex eget, congue arcu.</span>
+                {% endif %}
+            </a>
+        </li>
+        <li class="b-article-tile-list__item">
+            <a class="b-article-tile-list__link" href="/page">
+                <svg class="h-icon h-icon--x-small b-article-tile-list__list-icon" aria-hidden="true">
+                    <use xlink:href="../img/icons/svg-sprite.svg#chevron-icon-right"></use>
+                </svg>
+                <span class="b-article-tile-list__link-text">{{linktext}}</span>
+                {% if has_topic %}
+                    <span class="b-article-tile-list__topic">
+                        <svg class="h-icon b-article-tile-list__topic-icon" aria-hidden="true">
+                            <use xlink:href="../img/icons/svg-sprite.svg#topic-icon-registering"></use>
+                        </svg>From Registering a company
+                    </span>
+                {% endif %}
+                {% if has_description %}
+                    <span class="b-article-tile-list__description">Vivamus ac tristique diam. Quisque id elit condimentum, efficitur ex eget, congue arcu.</span>
+                {% endif %}
+            </a>
+        </li>
+        <li class="b-article-tile-list__item">
+            <a class="b-article-tile-list__link" href="/page">
+                <svg class="h-icon h-icon--x-small b-article-tile-list__list-icon" aria-hidden="true">
+                    <use xlink:href="../img/icons/svg-sprite.svg#chevron-icon-right"></use>
+                </svg>
+                <span class="b-article-tile-list__link-text">{{linktext}}</span>
+                {% if has_topic %}
+                    <span class="b-article-tile-list__topic">
+                        <svg class="h-icon b-article-tile-list__topic-icon" aria-hidden="true">
+                            <use xlink:href="../img/icons/svg-sprite.svg#topic-icon-shares"></use>
+                        </svg>From Registering a company
+                    </span>
+                {% endif %}
+                {% if has_description %}
+                    <span class="b-article-tile-list__description">Vivamus ac tristique diam. Quisque id elit condimentum, efficitur ex eget, congue arcu.</span>
+                {% endif %}
+            </a>
+        </li>
+    </ul>
+
+{% endmacro %}

@@ -1,0 +1,33 @@
+//: Grid
+//
+//: Site default Grid.
+//
+//: Markup: grid.html
+//
+//: pattern: true
+//
+//: Styleguide: 11.2
+
+.grid-pattern {
+    .row {
+        @include grid-row();
+    }
+
+    [class*='grid-'] {
+        padding: 10px;
+        background: #eee;
+        color: #222;
+    }
+
+    .grid-1of2 {
+        @include span-column(1 / 2);
+    }
+
+    .grid-1of3 {
+        @include span-column(1 / 3);
+    }
+
+    .grid-1of4 {
+        @include span-column(1 / 4);
+    }
+}

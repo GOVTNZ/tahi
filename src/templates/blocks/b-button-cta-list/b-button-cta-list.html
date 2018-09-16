@@ -1,0 +1,21 @@
+{% import "blocks/b-button/b-button.html" as button %}
+
+<ul class="b-button-cta-list">
+    <li class="b-button-cta-list__item">
+        {{ button.button(
+            is_anchor = true,
+            content = 'Find out how to start a company',
+            icon_file = 'chevron-icon-right',
+            extra_class = 'b-button--secondary b-button--scale-type'
+        ) }}
+    </li>
+    <li class="b-button-cta-list__item">
+        {{ button.button(
+            is_anchor = true,
+            content = 'Manage your company registration',
+            icon_file = 'lock-icon',
+            extra_class = 'b-button--secondary b-button--scale-type',
+            extra_content = 'Login Required'
+        ) }}
+    </li>
+</ul>

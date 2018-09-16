@@ -1,0 +1,31 @@
+// -----------------------------------
+// Breakpoints
+// -----------------------------------
+
+// Widths
+
+$g-width-tiny: $g-bu * 64; // 512
+$g-width-small: $g-bu * 78; // 624
+$g-width-medium: $g-bu * 98; // 784
+$g-width-large: $g-bu * 120; // 960
+$g-width-wide: $g-bu * 150; // 1200
+$g-width-mega: $g-bu * 225; // 1800
+$g-width-ultra: $g-bu * 350; // 2800
+
+
+// Breakpoint media definitions
+
+// contained
+$bp-small-and-below: new-breakpoint(max, rem($g-width-small));
+$bp-small-only: new-breakpoint(max, rem($g-width-medium));
+$bp-small-and-medium-only: new-breakpoint(min, rem($g-width-small), rem($g-width-large));
+$bp-large-and-above: new-breakpoint(min, rem($g-width-large + 1));
+
+// progressive
+$bp-tiny: new-breakpoint(min, rem($g-width-tiny + 1));
+$bp-small: new-breakpoint(min, rem($g-width-small + 1));
+$bp-medium: new-breakpoint(min, rem($g-width-medium + 1));
+$bp-large: new-breakpoint(min, rem($g-width-large + 1));
+$bp-wide: new-breakpoint(min, rem($g-width-wide + 1));
+$bp-mega: new-breakpoint(min, rem($g-width-mega + 1));
+$bp-ultra: new-breakpoint(min, rem($g-width-ultra + 1));

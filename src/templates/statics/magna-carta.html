@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Example page | Tahi - Pattern Library for NZ Government</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="../css/main.css">
+	</head>
+	<body class="js-enabled">
+	<!-- {Urgent notification start} -->
+		{% import "blocks/b-icon-box/b-icon-box.html" as biconbox %}
+		{{ biconbox.iconbox(
+		    icon = 'alert-icon',
+		    modifier = 'urgent',
+		    at_top = true,
+		    title = 'Example content for the Tahi Pattern Library',
+		    content_variation = '3',
+		    content_msg = 'This page demonstrates the use the components developed for the proof-of-concept NZ Government Pattern Library.<br /><a href="../styleguide/">Return to <em>Tahi — Pattern Library for NZ Government</em></a>',
+		    is_dismissible = false,
+		    unique_id ='1113')
+		}}
+	<!-- {Urgent notification end} -->
+
+	<article class="grid">
+		<div class="grid__row">
+			<!-- {Breadcrumb start} -->
+			<section class="grid__col grid__col--full">
+				<div class="c-breadcrumbs {{extra_class}}">
+				    <nav class="c-breadcrumbs__inner" {% if has_arialabel %}aria-label="You are here:"{% endif %} style="padding: 0;">
+				        <ul class="c-breadcrumbs__list">
+				            <li class="c-breadcrumbs__item c-breadcrumbs__item--home">
+				                <a href="#" class="c-breadcrumbs__link" aria-label="Home">
+				                    <span class="h-visuallyhidden">Home</span>
+				                    <svg class="h-icon h-icon--large c-breadcrumbs__icon" viewBox="0 0 48 48" id="home-icon" xmlns="http://www.w3.org/2000/svg">
+				                      <title>_</title>
+				                      <path d="M24.06 1L1 25.35h5.41V47h13.53V33.47h8.12V47h13.53V25.35H47z"/>
+				                    </svg>
+				                </a>
+				            </li>
+				            <li class="c-breadcrumbs__item"> <span aria-hidden="true">&#8250;</span> <a class="c-breadcrumbs__link" href="#">English Court</a></li>
+				            <li class="c-breadcrumbs__item"> <span aria-hidden="true">&#8250;</span> <a class="c-breadcrumbs__link" href="#">Charters</a></li>
+				            <li class="c-breadcrumbs__item"> <span aria-hidden="true">&#8250;</span> <span class="h-visuallyhidden">Current: </span><span class="c-breadcrumbs__text">Magna Carta 1215AD</span></li>
+				        </ul>
+				    </nav>
+				</div>
+			</section>
+			<!-- {Breadcrumb end} -->
+		</div>
+
+		<div class="grid__row no-margin">
+			<div class="grid__col">
+				<h1>Magna Carta 1215AD</h1>
+			</div>
+		</div>
+
+		<div class="grid__row">
+			<section class="grid__col grid__col--two-thirds">
+				<p>
+					The text of Magna Carta of 1215 bears many traces of haste, and is the product of much bargaining. Most of its clauses deal with specific, and often long-standing, grievances rather than with general principles of law. Some of the grievances are clear; others can be understood only in the context of the feudal society in which they arose. The precise meaning of a few clauses is still uncertain.
+				</p>
+				<p>
+					This translation is from G.R.C. Davis, Magna Carta (London: British Museum, 1963), pp. 23–33.
+				</p>
+			</section>
+			<section class="grid__col grid__col--one-third">
+				<aside class="c-sharing-and-output-panel" aria-labelledby="c-sharing-and-output-panel__title">
+				    <h2 id="c-sharing-and-output-panel__title" class="c-sharing-and-output-panel__title">Share</h2>
+				    <ul class="c-sharing-and-output-panel__social-list">
+				        <li class="c-sharing-and-output-panel__social-item">
+				            <a href="https://www.facebook.com/" class="c-sharing-and-output-panel__social-link" target="_blank">
+				                <span class="h-visuallyhidden">Facebook, opens in a new window</span>
+				                <svg class="h-icon h-icon--x-large c-sharing-and-output-panel__social-icon">
+				                    <use xlink:href="../img/icons/svg-sprite.svg#facebook"></use>
+				                </svg>
+				            </a>
+				        </li>
+				        <li class="c-sharing-and-output-panel__social-item">
+				            <a href="https://twitter.com/" class="c-sharing-and-output-panel__social-link" target="_blank">
+				                <span class="h-visuallyhidden">Twitter, opens in a new window</span>
+				                <svg class="h-icon h-icon--x-large c-sharing-and-output-panel__social-icon">
+				                    <use xlink:href="../img/icons/svg-sprite.svg#twitter"></use>
+				                </svg>
+				            </a>
+				        </li>
+				        <li class="c-sharing-and-output-panel__social-item">
+				            <a href="https://www.linkedin.com/" class="c-sharing-and-output-panel__social-link" target="_blank">
+				                <span class="h-visuallyhidden">LinkedIn, opens in a new window</span>
+				                <svg class="h-icon h-icon--x-large c-sharing-and-output-panel__social-icon">
+				                    <use xlink:href="../img/icons/svg-sprite.svg#linkedin"></use>
+				                </svg>
+				            </a>
+				        </li>
+					</ul>
+				    <ul class="c-sharing-and-output-panel__tool-list">
+				        <li class="c-sharing-and-output-panel__tool-item">
+				            <a href="javascript:if(window.print)window.print()" class="c-sharing-and-output-panel__tool-link">
+				                <svg class="h-icon h-icon--large c-print__icon c-sharing-and-output-panel__tool-icon">
+				                    <use xlink:href="../img/icons/svg-sprite.svg#print-icon"></use>
+				                </svg>
+				                Print this page
+				            </a>
+				        </li>
+				        <li class="c-sharing-and-output-panel__tool-item">
+				            <a href="#" class="c-sharing-and-output-panel__tool-link">
+				                <svg class="h-icon h-icon--large c-sharing-and-output-panel__tool-icon">
+				                    <use xlink:href="../img/icons/svg-sprite.svg#email-icon"></use>
+				                </svg>
+				                Email this page
+				            </a>
+				        </li>
+				    </ul>
+				</aside>
+			</section>
+		</div>
+
+		<div class="grid__row">
+			<!-- {Section specific notifications starts} -->
+			<section class="grid__col grid__col--full">
+				{% import "blocks/b-icon-box/b-icon-box.html" as biconbox %}
+				{{ biconbox.iconbox(
+				    content_variation = '3',
+				    icon = 'bell-icon',
+				    extra_class = '',
+				    title = 'Clauses omitted for the sake of clarity',
+				    is_dismissible = true,
+				    content_msg = 'Clauses that were omitted in 1225AD by King Henry III have been removed from this edition.<br><a href="#">View an unabridged full version</a>.
+		',
+				    unique_id = '1111')
+				}}
+			</section>
+			<!-- {Section specific notifications ends} -->
+		</div>
+
+		<div class="grid__row">
+			<section class="grid__col grid__col--full">
+			<h2>
+				Full-text translation
+			</h2>
+			<p>
+				JOHN, by the grace of God King of England, Lord of Ireland, Duke of Normandy and Aquitaine, and Count of Anjou, to his archbishops, bishops, abbots, earls, barons, justices, foresters, sheriffs, stewards, servants, and to all his officials and loyal subjects, Greeting.
+			</p>
+			<p>
+				KNOW THAT BEFORE GOD, for the health of our soul and those of our ancestors and heirs, to the honour of God, the exaltation of the holy Church, and the better ordering of our kingdom, at the advice of our reverend fathers Stephen, archbishop of Canterbury, primate of all England, and cardinal of the holy Roman Church, Henry archbishop of Dublin, William bishop of London, Peter bishop of Winchester, Jocelin bishop of Bath and Glastonbury, Hugh bishop of Lincoln, Walter bishop of Worcester, William bishop of Coventry, Benedict bishop of Rochester, Master Pandulf subdeacon and member of the papal household, Brother Aymeric master of the knighthood of the Temple in England, William Marshal earl of Pembroke, William earl of Salisbury, William earl of Warren, William earl of Arundel, Alan of Galloway constable of Scotland, Warin fitz Gerald, Peter fitz Herbert, Hubert de Burgh seneschal of Poitou, Hugh de Neville, Matthew fitz Herbert, Thomas Basset, Alan Basset, Philip Daubeny, Robert de Roppeley, John Marshal, John fitz Hugh, and other loyal subjects:
+			</p>
+			<h2>
+				Granted to God
+			</h2>
+			<p>
+				(1) FIRST, THAT WE HAVE GRANTED TO GOD, and by this present charter have confirmed for us and our heirs in perpetuity, that the English Church shall be free, and shall have its rights undiminished, and its liberties unimpaired. That we wish this so to be observed, appears from the fact that of our own free will, before the outbreak of the present dispute between us and our barons, we granted and confirmed by charter the freedom of the Church's elections - a right reckoned to be of the greatest necessity and importance to it - and caused this to be confirmed by Pope Innocent III. This freedom we shall observe ourselves, and desire to be observed in good faith by our heirs in perpetuity.
+			</p>
+		</section>
+		</div>
+
+		<div class="grid__row">
+			<!-- {Call to action block start} -->
+			<section class="grid__col grid__col--full">
+				<div class="b-cta">
+				    <a class="b-button b-cta__button b-button b-button--with-icon" href="#">
+				        Observe the rights of the Church
+				    </a>
+				    <p class="b-cta__button-help-text b-cta__button-help-text">
+				    	Ecclesiastical rank required for Church elections
+				    </p>
+				</div>
+			</section>
+			<!-- {Call to action block end} -->
+		</div>
+
+		<div class="grid__row">
+			<section class="grid__col grid__col--full">
+				<h2>
+					Granted to free men of our Kingdom
+				</h2>
+				<p>
+					TO ALL FREE MEN OF OUR KINGDOM we have also granted, for us and our heirs for ever, all the liberties written out below, to have and to keep for them and their heirs, of us and our heirs:
+				</p>
+			</section>
+		</div>
+
+		<div class="grid__row">
+			<!-- {Accordion start} -->
+			<section class="grid__col grid__col--full">
+				{% import "blocks/b-show-hide/b-show-hide.html" as b_showhide %}
+				{{ b_showhide.b_showhide(
+				    extra_class= '',
+				    is_opened = false,
+				    title = 'If you are an earl, baron or other person that holds lands directly of the Crown, or their heir',
+				    title_extra_class = '',
+				    icon_name = false,
+				    secondary_info = false,
+				    has_content = true,
+				    content_msg = '<p>If any earl, baron, or other person that holds lands directly of the Crown, for military service, shall die, and at his death his heir shall be of full age and owe a \'relief\', the heir shall have his inheritance on payment of the ancient scale of \'relief\'. That is to say, the heir or heirs of an earl shall pay £100 for the entire earl\'s barony, the heir or heirs of a knight 100s. at most for the entire knight\'s \'fee\', and any man that owes less shall pay less, in accordance with the ancient usage of \'fees\'.</p><p>But if the heir of such a person is under age and a ward, when he comes of age he shall have his inheritance without \'relief\' or fine.</p><p>The guardian of the land of an heir who is under age shall take from it only reasonable revenues, customary dues, and feudal services. He shall do this without destruction or damage to men or property. If we have given the guardianship of the land to a sheriff, or to any person answerable to us for the revenues, and he commits destruction or damage, we will exact compensation from him, and the land shall be entrusted to two worthy and prudent men of the same \'fee\', who shall be answerable to us for the revenues, or to the person to whom we have assigned them. If we have given or sold to anyone the guardianship of such land, and he causes destruction or damage, he shall lose the guardianship of it, and it shall be handed over to two worthy and prudent men of the same \'fee\', who shall be similarly answerable to us.</p><p>For so long as a guardian has guardianship of such land, he shall maintain the houses, parks, fish preserves, ponds, mills, and everything else pertaining to it, from the revenues of the land itself. When the heir comes of age, he shall restore the whole land to him, stocked with plough teams and such implements of husbandry as the season demands and the revenues from the land can reasonably bear.</p><p>Heirs may be given in marriage, but not to someone of lower social standing. Before a marriage takes place, it shall be made known to the heir\'s next-of-kin.</p>',
+				    is_article_list = false,
+				    is_entity_list = false,
+				    content = false,
+				    trigger_tag = 'h3',
+				    has_chevron = true,
+				    extra_attr = '',
+				    logo_title = false
+				  )
+				}}
+				{{ b_showhide.b_showhide(
+				    extra_class= '',
+				    is_opened = false,
+				    title = 'If you are a widow',
+				    title_extra_class = '',
+				    icon_name = false,
+				    secondary_info = false,
+				    has_content = true,
+				    content_msg = '<p>At her husband\'s death, a widow may have her marriage portion and inheritance at once and without trouble. She shall pay nothing for her dower, marriage portion, or any inheritance that she and her husband held jointly on the day of his death. She may remain in her husband\'s house for forty days after his death, and within this period her dower shall be assigned to her.</p><p>No widow shall be compelled to marry, so long as she wishes to remain without a husband. But she must give security that she will not marry without royal consent, if she holds her lands of the Crown, or without the consent of whatever other lord she may hold them of.</p>',
+				    is_article_list = false,
+				    is_entity_list = false,
+				    content = false,
+				    trigger_tag = 'h3',
+				    has_chevron = true,
+				    extra_attr = '',
+				    logo_title = false
+				  )
+				}}
+			</section>
+			<!-- {Accordion end} -->
+		</div>
+
+		<div class="grid__row">
+				<section class="grid__col grid__col--full">
+					<h3>
+						Debts
+					</h3>
+					<p>
+						Neither we nor our officials will seize any land or rent in payment of a debt, so long as the debtor has movable goods sufficient to discharge the debt. A debtor's sureties shall not be distrained upon so long as the debtor himself can discharge his debt. If, for lack of means, the debtor is unable to discharge his debt, his sureties shall be answerable for it. If they so desire, they may have the debtor's lands and rents until they have received satisfaction for the debt that they paid for him, unless the debtor can show that he has settled his obligations to them.
+					</p>
+					<h4>
+						Scutage or aid
+					</h4>
+					<p>
+						No 'scutage' or 'aid' may be levied in our kingdom without its general consent, unless it is for the ransom of our person, to make our eldest son a knight, and (once) to marry our eldest daughter. For these purposes only a reasonable 'aid' may be levied. 'Aids' from the city of London are to be treated similarly.
+					</p>
+				</section>
+		</div>
+
+		<div class="grid__row">
+			<!-- {Box out block starts - Head's up style}} -->
+			<section class="grid__col grid__col--full">
+				<aside class="c-box-out c-box-out--tip">
+				    <svg class="h-icon h-icon--x-large c-box-out__icon">
+				        <use xlink:href="../img/icons/svg-sprite.svg#tip-icon"></use>
+				    </svg>
+				    <h2 class="c-box-out__title">
+				    	Londoners
+				    </h2>
+				    <div class="c-box-out__content">
+				        <p>
+				        	The city of London shall enjoy all its ancient liberties and free customs, both by land and by water. We also will and grant that all other cities, boroughs, towns, and ports shall enjoy all their liberties and free customs.
+				        </p>
+				    </div>
+				</aside>
+			</section>
+			<!-- {Box out block end - Head's up style}} -->
+		</div>
+
+		<div class="grid__row">
+			<section class="grid__col grid__col--full">
+				<h4>
+					Fees and fines
+				</h4>
+				<p>
+					No man shall be forced to perform more service for a knight's 'fee', or other free holding of land, than is due from it.
+				</p>
+				<p>
+					Ordinary lawsuits shall not follow the royal court around, but shall be held in a fixed place.
+				</p>
+				<p>
+					Inquests of novel disseisin, mort d'ancestor, and darrein presentment shall be taken only in their proper county court. We ourselves, or in our absence abroad our chief justice, will send two justices to each county four times a year, and these justices, with four knights of the county elected by the county itself, shall hold the assizes in the county court, on the day and in the place where the court meets.
+				</p>
+				<p>
+					If any assizes cannot be taken on the day of the county court, as many knights and freeholders shall afterwards remain behind, of those who have attended the court, as will suffice for the administration of justice, having regard to the volume of business to be done.
+				</p>
+				<p>
+					For a trivial offence, a free man shall be fined only in proportion to the degree of his offence, and for a serious offence correspondingly, but not so heavily as to deprive him of his livelihood. In the same way, a merchant shall be spared his merchandise, and a villein the implements of his husbandry, if they fall upon the mercy of a royal court. None of these fines shall be imposed except by the assessment on oath of reputable men of the neighbourhood.
+				</p>
+			</section>
+		</div>
+
+		<div class="grid__row">
+			<!-- {Box out block starts - Alert style} -->
+			<section class="grid__col grid__col--full">
+				<aside class="c-box-out c-box-out--alert">
+				    <svg class="h-icon h-icon--x-large c-box-out__icon">
+				        <use xlink:href="../img/icons/svg-sprite.svg#alert-info-icon"></use>
+				    </svg>
+				    <h2 class="c-box-out__title">
+				    	Earls and barons
+				    </h2>
+				    <div class="c-box-out__content">
+				        <p>
+				        	No constable or other royal official shall take corn or other movable goods from any man without immediate payment, unless the seller voluntarily offers postponement of this.
+				        </p>
+				    </div>
+				</aside>
+			</section>
+			<!-- {Box out block end - Alert style} -->
+		</div>
+
+		<div class="grid__row">
+			<section class="grid__col grid__col--full">
+				<p>
+					A fine imposed upon the lay property of a clerk in holy orders shall be assessed upon the same principles, without reference to the value of his ecclesiastical benefice.
+				</p>
+				<p>
+					No town or person shall be forced to build bridges over rivers except those with an ancient obligation to do so.
+				</p>
+				<p>
+					No sheriff, constable, coroners, or other royal officials are to hold lawsuits that should be held by the royal justices.
+				</p>
+				<p>
+					If at the death of a man who holds a lay 'fee' of the Crown, a sheriff or royal official produces royal letters patent of summons for a debt due to the Crown, it shall be lawful for them to seize and list movable goods found in the lay 'fee' of the dead man to the value of the debt, as assessed by worthy men. Nothing shall be removed until the whole debt is paid, when the residue shall be given over to the executors to carry out the dead man’s will. If no debt is due to the Crown, all the movable goods shall be regarded as the property of the dead man, except the reasonable shares of his wife and children.
+				</p>
+			</section>
+		</div>
+
+		<div class="grid__row">
+			<!-- {Box out block starts - Alert style} -->
+			<section class="grid__col grid__col--full">
+				<aside class="c-box-out c-box-out--warning">
+				    <svg class="h-icon h-icon--x-large c-box-out__icon">
+				        <use xlink:href="../img/icons/svg-sprite.svg#alert-icon"></use>
+				    </svg>
+				    <h2 class="c-box-out__title">
+				    	No seizure of movable goods
+				    </h2>
+				    <div class="c-box-out__content">
+				        <p>
+				        	No constable or other royal official shall take corn or other movable goods from any man without immediate payment, unless the seller voluntarily offers postponement of this.
+				        </p>
+				    </div>
+				</aside>
+			</section>
+			<!-- {Box out block end - Alert style} -->
+		</div>
+
+		<div class="grid__row">
+			<section class="grid__col grid__col--full">
+				<p>
+					No constable may compel a knight to pay money for castle-guard if the knight is willing to undertake the guard in person, or with reasonable excuse to supply some other fit man to do it. A knight taken or sent on military service shall be excused from castle-guard for the period of this service.
+				</p>
+				<p>
+					No sheriff, royal official, or other person shall take horses or carts for transport from any free man, without his consent.
+				</p>
+				<p>
+					Neither we nor any royal official will take wood for our castle, or for any other purpose, without the consent of the owner.
+				</p>
+				<p>
+					We will not keep the lands of people convicted of felony in our hand for longer than a year and a day, after which they shall be returned to the lords of the 'fees' concerned.
+				</p>
+			</section>
+		</div>
+
+		<div class="grid__row">
+			<!-- {Box out block starts - Alert style} -->
+			<section class="grid__col grid__col--full">
+				<aside class="c-box-out c-box-out--alert">
+				    <svg class="h-icon h-icon--x-large c-box-out__icon">
+				        <use xlink:href="../img/icons/svg-sprite.svg#alert-info-icon"></use>
+				    </svg>
+				    <h2 class="c-box-out__title">
+				    	Fish-weirs
+				    </h2>
+				    <div class="c-box-out__content">
+				        <p>
+				        	All fish-weirs shall be removed from the Thames, the Medway, and throughout the whole of England, except on the sea coast.
+				        </p>
+				    </div>
+				</aside>
+			</section>
+			<!-- {Box out block end - Alert style} -->
+		</div>
+
+		<div class="grid__row">
+			<section class="grid__col grid__col--full">
+				<h4>
+					Weights and measures
+				</h4>
+				<p>
+					There shall be standard measures of wine, ale, and corn (the London quarter), throughout the kingdom. There shall also be a standard width of dyed cloth, russet, and haberject, namely two ells within the selvedges. Weights are to be standardised similarly.
+				</p>
+				<h4>
+					Writs and trials
+				</h4>
+				<p>
+					The writ called precipe shall not in future be issued to anyone in respect of any holding of land, if a free man could thereby be deprived of the right of trial in his own lord's court.
+				</p>
+				<p>
+					In future nothing shall be paid or accepted for the issue of a writ of inquisition of life or limbs. It shall be given gratis, and not refused.
+				</p>
+				<p>
+					If a man holds land of the Crown by 'fee-farm', 'socage', or 'burgage', and also holds land of someone else for knight's service, we will not have guardianship of his heir, nor of the land that belongs to the other person's 'fee', by virtue of the 'fee-farm', 'socage', or 'burgage', unless the 'fee-farm' owes knight's service. We will not have the guardianship of a man's heir, or of land that he holds of someone else, by reason of any small property that he may hold of the Crown for a service of knives, arrows, or the like.
+				</p>
+				<p>
+					In future no official shall place a man on trial upon his own unsupported statement, without producing credible witnesses to the truth of it.
+				</p>
+				<p>
+					No free man shall be seized or imprisoned, or stripped of his rights or possessions, or outlawed or exiled, or deprived of his standing in any way, nor will we proceed with force against him, or send others to do so, except by the lawful judgment of his equals or by the law of the land.
+				</p>
+				<p>
+					To no one will we sell, to no one deny or delay right or justice.
+				</p>
+				<h4>
+					Merchants
+				</h4>
+				<p>
+					All merchants may enter or leave England unharmed and without fear, and may stay or travel within it, by land or water, for purposes of trade, free from all illegal exactions, in accordance with ancient and lawful customs. This, however, does not apply in time of war to merchants from a country that is at war with us. Any such merchants found in our country at the outbreak of war shall be detained without injury to their persons or property, until we or our chief justice have discovered how our own merchants are being treated in the country at war with us. If our own merchants are safe they shall be safe too.
+				</p>
+				<div class="b-cta ">
+				    <a class="b-button b-cta__button b-button--small b-button--with-icon" href="/page">
+				        Detain merchant
+				        <svg class="h-icon h-icon--button b-button__icon" aria-hidden="true">
+				            <use xlink:href="../img/icons/svg-sprite.svg#lock-icon"></use>
+				        </svg>
+				    </a>
+				    <p class="b-cta__button-help-text b-cta__button-help-text--small">Log in required.</p>
+				</div>
+			</section>
+		</div>
+
+		<div class="grid__row">
+			<section class="grid__col grid__col--full">
+				<h4>
+					Escheats, forests and abbeys
+				</h4>
+				<p>
+					If a man holds lands of any 'escheat' such as the 'honour' of Wallingford, Nottingham, Boulogne, Lancaster, or of other 'escheats' in our hand that are baronies, at his death his heir shall give us only the 'relief' and service that he would have made to the baron, had the barony been in the baron's hand. We will hold the 'escheat' in the same manner as the baron held it.
+				</p>
+				<p>
+					People who live outside the forest need not in future appear before the royal justices of the forest in answer to general summonses, unless they are actually involved in proceedings or are sureties for someone who has been seized for a forest offence.
+				</p>
+				<p>
+					All barons who have founded abbeys, and have charters of English kings or ancient tenure as evidence of this, may have guardianship of them when there is no abbot, as is their due.
+				</p>
+				<p>
+					All forests that have been created in our reign shall at once be disafforested. River-banks that have been enclosed in our reign shall be treated similarly.
+				</p>
+			</section>
+		</div>
+
+		<div class="grid__row">
+			<!-- {Box out block starts - Alert style} -->
+			<section class="grid__col grid__col--full">
+				<aside class="c-box-out c-box-out--tip">
+				    <svg class="h-icon h-icon--x-large c-box-out__icon">
+				        <use xlink:href="../img/icons/svg-sprite.svg#tip-icon"></use>
+				    </svg>
+				    <h2 class="c-box-out__title">
+					    Husband exception
+					</h2>
+				    <div class="c-box-out__content">
+				        <p>
+				        	No one shall be arrested or imprisoned on the appeal of a woman for the death of any person except her husband.
+				        </p>
+				    </div>
+				</aside>
+			</section>
+			<!-- {Box out block end - Alert style} -->
+		</div>
+
+		<div class="grid__row">
+			<!-- {Accordion start} -->
+			<section class="grid__col grid__col--full">
+				{% import "blocks/b-show-hide/b-show-hide.html" as b_showhide %}
+				{{ b_showhide.b_showhide(
+				    extra_class= '',
+				    is_opened = false,
+				    title = 'If you are a Welshman',
+				    title_extra_class = '',
+				    icon_name = false,
+				    secondary_info = false,
+				    has_content = true,
+				    content_msg = '<p>(56) If we have deprived or dispossessed any Welshmen of land, liberties, or anything else in England or in Wales, without the lawful judgment of their equals, these are at once to be returned to them. A dispute on this point shall be determined in the Marches by the judgment of equals. English law shall apply to holdings of land in England, Welsh law to those in Wales, and the law of the Marches to those in the Marches. The Welsh shall treat us and ours in the same way.</p>',
+				    is_article_list = false,
+				    is_entity_list = false,
+				    content = false,
+				    trigger_tag = 'h3',
+				    has_chevron = true,
+				    extra_attr = '',
+				    logo_title = false
+				  )
+				}}
+				{{ b_showhide.b_showhide(
+				    extra_class= '',
+				    is_opened = false,
+				    title = 'If you are the Alexander king of Scotland, his sister or his hostage',
+				    title_extra_class = '',
+				    icon_name = false,
+				    secondary_info = false,
+				    has_content = true,
+				    content_msg = '<p>(60) All these customs and liberties that we have granted shall be observed in our kingdom in so far as concerns our own relations with our subjects. Let all men of our kingdom, whether clergy or laymen, observe them similarly in their relations with their own men.</p>',
+				    is_article_list = false,
+				    is_entity_list = false,
+				    content = false,
+				    trigger_tag = 'h3',
+				    has_chevron = true,
+				    extra_attr = '',
+				    logo_title = false
+				  )
+				}}
+			</section>
+			<!-- {Accordion end} -->
+		</div>
+
+		<div class="grid__row">
+			<section class="grid__col grid__col--full">
+				<h2>
+					Download other editions:
+				</h2>
+				<!-- {Document start} -->
+				<div class="c-document-list">
+				    <ul class="c-document-list__list">
+				        <li class="c-document-list__item">
+				            <a href="/file.pdf" class="c-document-list__link">
+				                <svg class="h-icon h-icon--x-large h-icon--red c-document-list__icon ">
+				                    <use xlink:href="../img/icons/svg-sprite.svg#pdf-icon"></use>
+				                </svg>
+				                <div class="c-document-list__file-content">
+				                    <h3 class="c-document-list__file-title">Magna Carta 1215AD</h3>
+				                    <p class="c-document-list__file-desc">Magna Carta first edition in latin.</p>
+				                </div>
+				                <span class="c-document-list__tag">Constitution</span>
+					            <span class="c-document-list__tag">Rights</span>
+					        	<span class="c-document-list__tag">Charter</span>
+				                <span class="c-document-list__file-size">PDF, 123kb</span>
+				            </a>
+				        </li>
+				        <li class="c-document-list__item">
+				            <a href="/file.pdf" class="c-document-list__link">
+				                <svg class="h-icon h-icon--x-large h-icon--red c-document-list__icon ">
+				                    <use xlink:href="../img/icons/svg-sprite.svg#pdf-icon"></use>
+				                </svg>
+				                <div class="c-document-list__file-content">
+				                    <h3 class="c-document-list__file-title">Magna Carta 1225AD</h3>
+				                    <p class="c-document-list__file-desc">Issued of the king's own "spontaneous and free will" and confirmed them with the royal seal.</p>
+				                </div>
+								<span class="c-document-list__tag">Constitution</span>
+					            <span class="c-document-list__tag">Rights</span>
+					        	<span class="c-document-list__tag">Charter</span>
+					        	<span class="c-document-list__file-size">PDF, 123kb</span>
+				            </a>
+				        </li>
+				    </ul>
+				</div>
+				<!-- {Document end} -->
+			</section>
+		</div>
+
+		<div class="grid__row">
+			<!-- {Contact box start} -->
+			<section class="grid__col grid__col--full">
+			{% import "blocks/b-icon-box/b-icon-box.html" as biconbox %}
+			{{ biconbox.iconbox(
+			    content_variation = '4',
+			    icon = 'phone-icon',
+			    extra_class = 'b-icon-box--contact-block',
+			    title = 'Want to know more?',
+			    content = '')
+			}}
+			</section>
+			<!-- {Contact box end} -->
+		</div>
+
+	</article>
+
+	<footer id="site-footer" class="c-mbie-footer ">
+			    <div class="l-outer-container">
+			        <div class="c-mbie-footer__nav-group">
+			            <div class="c-mbie-footer__nav-wrapper">
+			                <h2 id="c-mbie-footer__col1-label" class="c-mbie-footer__header">Sections</h2>
+			                <nav class="c-mbie-footer__nav" aria-labelledby="c-mbie-footer__col1-label">
+			                    <ul class="c-mbie-footer__nav__list">
+			                        <li class="c-mbie-footer__nav__item" data-enhance-external-links data-external-link-class="b-link-external b-link-external--white"><a class="c-mbie-footer__nav__link" href="#">Home</a></li>
+			                        <li class="c-mbie-footer__nav__item"><a class="c-mbie-footer__nav__link" href="#">Primary section 1</a></li>
+			                        <li class="c-mbie-footer__nav__item"><a class="c-mbie-footer__nav__link" href="#">Primary section 2</a></li>
+			                        <li class="c-mbie-footer__nav__item"><a class="c-mbie-footer__nav__link" href="#">Primary section 3</a></li>
+			                    </ul>
+			                </nav>
+			            </div>
+			            <div class="c-mbie-footer__nav-wrapper c-mbie-footer__nav-wrapper--spanning-two-columns">
+			                <h2 class="c-mbie-footer__header">More items</h2>
+			                <nav class="c-mbie-footer__nav" aria-labelledby="c-mbie-footer__col1-label">
+			                    <ul class="c-mbie-footer__nav__list">
+			                        <li class="c-mbie-footer__nav__item"><a class="c-mbie-footer__nav__link" href="#">Navigation item 1</a></li>
+			                        <li class="c-mbie-footer__nav__item"><a class="c-mbie-footer__nav__link" href="#">Navigation item 2</a></li>
+			                        <li class="c-mbie-footer__nav__item"><a class="c-mbie-footer__nav__link" href="#">Navigation item 3</a></li>
+			                        <li class="c-mbie-footer__nav__item"><a class="c-mbie-footer__nav__link" href="#">Navigation item 1</a></li>
+			                    </ul>
+			                </nav>
+			            </div>
+			            <div class="c-mbie-footer__nav-wrapper">
+			                <h2 id="c-mbie-footer__col3-label" class="c-mbie-footer__header">About us</h2>
+			                <nav class="c-mbie-footer__nav" aria-labelledby="c-mbie-footer__col3-label">
+			                    <ul class="c-mbie-footer__nav__list">
+			                        <li class="c-mbie-footer__nav__item">
+			                            <ul class="c-mbie-footer__nav__social-list">
+			                                <li class="c-mbie-footer__nav__social-item">
+			                                    <a href="https://www.facebook.com/" class="c-mbie-footer__nav__social-link" target="_blank">
+			                                        <span class="h-visuallyhidden">Facebook, opens in a new window</span>
+			                                        <img src="../img/icons/facebook--white.svg" alt="Facebook" class="h-icon h-icon--large c-mbie-footer__nav__social-link__social-icon"/>
+			                                    </a>
+			                                </li>
+			                                <li class="c-mbie-footer__nav__social-item">
+			                                    <a href="https://twitter.com/" class="c-mbie-footer__nav__social-link" target="_blank">
+			                                        <span class="h-visuallyhidden">Twitter, opens in a new window</span>
+			                                        <img src="../img/icons/twitter--white.svg" alt="Twitter" class="h-icon h-icon--large c-mbie-footer__nav__social-link__social-icon"/>
+			                                    </a>
+			                                </li>
+			                                <li class="c-mbie-footer__nav__social-item">
+			                                    <a href="https://www.linkedin.com" class="c-mbie-footer__nav__social-link" target="_blank">
+			                                        <span class="h-visuallyhidden">LinkedIn, opens in a new window</span>
+			                                        <img src="../img/icons/linkedin--white.svg" alt="Linkedin" class="h-icon h-icon--large c-mbie-footer__nav__social-link__social-icon"/>
+			                                    </a>
+			                                </li>
+			                                <li class="c-mbie-footer__nav__social-item">
+			                                    <a href="https://www.youtube.com/" class="c-mbie-footer__nav__social-link" target="_blank">
+			                                        <span class="h-visuallyhidden">YouTube, opens in a new window</span>
+			                                        <img src="../img/icons/youtube--white.svg" alt="Youtube" class="h-icon h-icon--large c-mbie-footer__nav__social-link__social-icon"/>
+			                                    </a>
+			                                </li>
+			                            </ul>
+			                        </li>
+			                        <li class="c-mbie-footer__nav__item"><a class="c-mbie-footer__nav__link" href="#">Contact us</a></li>
+			                        <li class="c-mbie-footer__nav__item"><a class="c-mbie-footer__nav__link" href="#">About</a></li>
+			                        <li class="c-mbie-footer__nav__item"><a class="c-mbie-footer__nav__link" href="#">Subscribe</a></li>
+			                    </ul>
+			                </nav>
+			            </div>
+			        </div>
+			        <div class="c-mbie-footer__nav-group">
+			            <ul class="c-mbie-footer__logo-list">
+			                <li class="c-mbie-footer__logo-list__list-item">
+			                    <a href="#" class="c-mbie-footer__logo-list__link">
+			                        <img src="../img/logos/280x52.png" alt="Logo" class="c-mbie-footer__logo-list__link__logo c-mbie-footer__logo-list__link__logo--mbie">
+			                        <img src="../img/logos/280x52.png" alt="Logo" class="c-mbie-footer__logo-list__link__logo c-mbie-footer__logo-list__link__logo--alt c-mbie-footer__logo-list__link__logo--mbie--alt">
+			                    </a>
+			                    <img class="h-print" src="../img/logos/mbie-logo-print.png" width="251" height="47" alt="Logo" >
+			                </li>
+			                <li class="c-mbie-footer__logo-list__list-item">
+			                    <a href="https://www.govt.nz/" title="newzealand.govt.nz - connecting you to New Zealand central and local government services." class="c-mbie-footer__logo-list__link">
+			                        <img src="../img/logos/nz-govt-logo--white.svg" alt="Ministry of Business, Innovation and Employment logo" class="c-mbie-footer__logo-list__link__logo c-mbie-footer__logo-list__link__logo--nzgovt">
+			                        <img src="../img/logos/nz-govt-logo--black.svg" alt="Ministry of Business, Innovation and Employment logo" class="c-mbie-footer__logo-list__link__logo c-mbie-footer__logo-list__link__logo--alt c-mbie-footer__logo-list__link__logo--nzgovt--alt">
+			                    </a>
+			                </li>
+			            </ul>
+			        </div>
+			        <div class="c-mbie-footer__nav-group">
+			            <h2 id="c-mbie-footer__global-nav-title" class="h-visuallyhidden">Global menu</h2>
+			            <nav class="c-mbie-footer__global-nav" aria-labelledby="c-mbie-footer__global-nav-title">
+			                <ul class="c-mbie-footer__global-nav__list">
+			                    <li class="c-mbie-footer__global-nav__item"><a class="c-mbie-footer__global-nav__link" href="#">Terms of use</a></li>
+			                    <li class="c-mbie-footer__global-nav__item"><a class="c-mbie-footer__global-nav__link" href="#">Copyright</a></li>
+			                    <li class="c-mbie-footer__global-nav__item"><a class="c-mbie-footer__global-nav__link" href="#">Privacy statement </a></li>
+			                    <li class="c-mbie-footer__global-nav__item c-mbie-footer__global-nav__copyright">&copy; Name of Agency</li>
+			                </ul>
+			            </nav>
+			        </div>
+			        <div class="c-mbie-footer__page-url h-print">
+			            <p>https://http://www.mbie.govt.nz</p>
+			        </div>
+			        <div class="c-mbie-footer__content-disclaimer h-print">
+			            <p><strong>Please note that this content will change over time and may be out-of-date.</strong></p>
+			        </div>
+			    </div>
+			</footer>
+
+	<script src="../js/custom.js"></script>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<div class="b-video-js">
+    <div class="b-video-js__inner">
+        <!-- Youtube - note the autoplay param in the URL  -->
+        <iframe class="b-video-js__iframe" src="" frameborder="0" allowtransparency="true" allowfullscreen data-src="https://www.youtube.com/embed/m8e-FF8MsqU?autoplay=1& modestbranding=1&rel=0&hl=sv"></iframe>
+
+        <!-- Vimeo - note the autoplay param in the URL -->
+        <!-- <iframe class="b-video-js__iframe" src="" frameborder="0" allowtransparency="true" allowfullscreen data-src="https://player.vimeo.com/video/169186621?autoplay=1&color=08a9e1"></iframe> -->
+
+        <button class="b-video-js__trigger">
+            <!-- Note the below images should all be 16:9 ratio, so match the sizes of these files -->
+            <picture class="b-video-js__poster">
+                <source srcset="../img/test/video-poster-910x512.jpg 1x, ../img/test/video-poster-1800x1013.jpg 2x" media="(min-width: 784px)">
+                <source srcset="../img/test/video-poster-740x416.jpg 1x, ../img/test/video-poster-1480x833.jpg 2x" media="(min-width: 624px)">
+                <source srcset="../img/test/video-poster-612x344.jpg 1x, ../img/test/video-poster-1224x689.jpg 2x" media="(min-width: 512px)">
+                <source srcset="../img/test/video-poster-500x281.jpg 1x, ../img/test/video-poster-1000x563.jpg 2x">
+                <img src="../img/test/video-poster-910x512.jpg" alt="Poster frame for the video"/>
+            </picture>
+            <svg class="h-icon b-video-js__icon">
+                <use xlink:href="../img/icons/svg-sprite.svg#play-icon"></use>
+            </svg>
+            Play video
+        </button>
+    </div>
+    {% include "blocks/b-caption/b-caption.html" %}
+    {% import "blocks/b-show-hide/b-show-hide.html" as b_showhide %}
+    {{ b_showhide.b_showhide(title = 'View Transcript', extra_class = 'b-show-hide-js-expandmore--transcript') }}
+</div>

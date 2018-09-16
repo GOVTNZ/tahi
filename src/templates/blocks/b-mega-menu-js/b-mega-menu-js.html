@@ -1,0 +1,248 @@
+{% import "blocks/b-cta/b-cta.html" as calltoaction %}
+{% import "blocks/b-button/b-button.html" as button %}
+
+{% macro mega_menu(menu_id = false) %}
+    <div class="b-mega-menu-js" {% if menu_id %}id="{{menu_id}}"{% endif %} aria-hidden="true" aria-label="submenu">
+        <div class="b-mega-menu-js__inner">
+            <h2 class="h-visuallyhidden">Registering a company</h2>
+            <div class="b-mega-menu-js__status-bar" data-secure="false">
+                <svg class="h-icon h-icon--medium b-mega-menu-js__status-bar__icon" aria-hidden="true">
+                    <use xlink:href="../img/icons/svg-sprite.svg#lock-icon"></use>
+                </svg>
+                <div class="b-mega-menu-js__status-bar__text">
+                    <p>You will be asked to <a href="http://somewhere.co.nz">log in</a> to use these tools</p>
+                </div>
+                <img class="b-mega-menu-js__status-bar__img" src="../img/logos/realme-logo-white.png" alt="RealMe logo">
+            </div>
+            <div class="b-mega-menu-js__intro">
+                <p>There are three steps to incorporating your company.</p>
+            </div>
+
+            <ol class="b-mega-menu-js__steps">
+                <li class="b-mega-menu-js__step-pair">
+                    <div class="b-mega-menu-js__step-title">
+                        <span class="b-mega-menu-js__step-number"><span class="h-visuallyhidden">Step: </span>1</span>
+
+                        {{ calltoaction.calltoaction(
+                            cta_icon_file = 'topic-icon-reserving',
+                            cta_text = 'Checking if your company name is taken',
+                            cta_icon_after = true,
+                            extra_class = 'b-cta--medium b-cta--icon-after b-mega-menu-js__cta'
+                        ) }}
+
+                    </div>
+
+                    {{ button.button(
+                        content = 'Search for a name now',
+                        extra_class = 'b-button--tight b-button--fix-font b-mega-menu-js__btn',
+                        icon_file = 'chevron-icon-right',
+                        small_icon = true,
+                        extra_attrs = 'data-secure="true" style="display: none"'
+                    ) }}
+                    {{ button.button(
+                        content = 'Search for a name now',
+                        extra_class = 'b-button--tight b-button--fix-font b-mega-menu-js__btn',
+                        icon_file = 'lock-icon',
+                        small_icon = true,
+                        extra_attrs = 'data-secure="false"'
+                    ) }}
+                </li>
+                <li class="b-mega-menu-js__step-pair">
+                    <div class="b-mega-menu-js__step-title">
+                        <span class="b-mega-menu-js__step-number"><span class="h-visuallyhidden">Step: </span>2</span>
+
+                        {{ calltoaction.calltoaction(
+                            cta_icon_file = 'topic-icon-reserving',
+                            cta_text = 'Reserving your name',
+                            cta_icon_after = true,
+                            extra_class = 'b-cta--medium b-cta--icon-after b-mega-menu-js__cta'
+                        ) }}
+                    </div>
+
+                    {{ button.button(
+                        content = 'Reserve a name now',
+                        extra_class = 'b-button--tight b-button--fix-font b-mega-menu-js__btn',
+                        icon_file = 'chevron-icon-right',
+                        small_icon = true,
+                        extra_attrs = 'data-secure="true" style="display: none"'
+                    ) }}
+                    {{ button.button(
+                        content = 'Reserve a name now',
+                        extra_class = 'b-button--tight b-button--fix-font b-mega-menu-js__btn',
+                        icon_file = 'lock-icon',
+                        small_icon = true,
+                        extra_attrs = 'data-secure="false"'
+                    ) }}
+                </li>
+                <li class="b-mega-menu-js__step-pair">
+                    <div class="b-mega-menu-js__step-title">
+                        <span class="b-mega-menu-js__step-number"><span class="h-visuallyhidden">Step: </span>3</span>
+
+                        {{ calltoaction.calltoaction(
+                            cta_icon_file = 'topic-icon-registering',
+                            cta_text = 'Registering your company',
+                            cta_icon_after = true,
+                            extra_class = 'b-cta--medium b-cta--icon-after b-mega-menu-js__cta'
+                        ) }}
+                    </div>
+
+                    {{ button.button(
+                        content = 'Incorporate now',
+                        extra_class = 'b-button--tight b-button--fix-font b-mega-menu-js__btn',
+                        icon_file = 'chevron-icon-right',
+                        small_icon = true,
+                        extra_attrs = 'data-secure="true" style="display: none"'
+                    ) }}
+                    {{ button.button(
+                        content = 'Incorporate now',
+                        extra_class = 'b-button--tight b-button--fix-font b-mega-menu-js__btn',
+                        icon_file = 'lock-icon',
+                        small_icon = true,
+                        extra_attrs = 'data-secure="false"'
+                    ) }}
+                </li>
+            </ol>
+
+            <div class="b-mega-menu-js__block-cta">
+                <a href="/page" class="b-mega-menu-js__block-cta-link">
+                    All help guides
+                    <svg class="h-icon h-icon--small" aria-hidden="true">
+                        <use xlink:href="../img/icons/svg-sprite.svg#chevron-icon-right"></use>
+                    </svg>
+                </a>
+                <span class="b-mega-menu-js__block-cta-subtext">More advice and support</span>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro mega_menu2(menu_id = false) %}
+    <div class="b-mega-menu-js b-mega-menu-js--action-focus" {% if menu_id %}id="{{menu_id}}"{% endif %} aria-hidden="true" aria-label="submenu">
+        <div class="b-mega-menu-js__inner">
+            <h2 class="b-mega-menu-js__title h-visuallyhidden">Manage and Maintain</h2>
+
+            <div class="b-mega-menu-js__status-bar" data-secure="false">
+                <svg class="h-icon h-icon--medium b-mega-menu-js__status-bar__icon" aria-hidden="true">
+                    <use xlink:href="../img/icons/svg-sprite.svg#lock-icon" data-secure="false"></use>
+                </svg>
+                <div class="b-mega-menu-js__status-bar__text">
+                    <p>You will be asked to <a href="http://somewhere.co.nz">log in</a> to use these tools</p>
+                </div>
+                <img class="b-mega-menu-js__status-bar__img" src="../img/logos/realme-logo-white.png" alt="RealMe logo">
+            </div>
+
+            <div class="b-mega-menu-js__intro" data-secure="true" style="display: none">
+                <a href="/page" class="b-mega-menu-js__intro-link">
+                    <svg class="h-icon h-icon--large b-mega-menu-js__intro-icon" aria-hidden="true">
+                        <use xlink:href="../img/icons/svg-sprite.svg#dashboard-icon"></use>
+                    </svg>
+                    Dashboard
+                </a>
+                <a href="/page" class="b-mega-menu-js__intro-link">
+                    <svg class="h-icon h-icon--large b-mega-menu-js__intro-icon" aria-hidden="true">
+                        <use xlink:href="../img/icons/svg-sprite.svg#topic-icon-settings"></use>
+                    </svg>
+                    Account Settings
+                </a>
+            </div>
+
+            <ul class="b-mega-menu-js__steps b-mega-menu-js__steps--col2">
+            <!-- Use the below to arrange in 3 column grid. This is required when more than 4 items in the list -->
+            <!-- <ul class="b-mega-menu-js__steps b-mega-menu-js__steps--col3"> -->
+                <li class="b-mega-menu-js__step-pair">
+                    {{ button.button(
+                        content = 'File an annual return',
+                        extra_class = 'b-button--tight b-mega-menu-js__btn',
+                        icon_file = 'lock-icon',
+                        small_icon = true,
+                        extra_attrs = 'data-secure="false"'
+                    ) }}
+                    {{ button.button(
+                        content = 'File an annual return',
+                        extra_class = 'b-button--tight b-mega-menu-js__btn',
+                        icon_file = 'chevron-icon-right',
+                        small_icon = true,
+                        extra_attrs = 'data-secure="true" style="display: none"'
+                    ) }}
+                    {{ calltoaction.calltoaction(
+                        cta_icon_file = 'topic-icon-filing',
+                        cta_text = 'Guide to filing a return',
+                        extra_class = 'b-cta--small b-mega-menu-js__cta'
+                    ) }}
+                </li>
+                <li class="b-mega-menu-js__step-pair">
+                    {{ button.button(
+                        content = 'Change directors',
+                        extra_class = 'b-button--tight b-mega-menu-js__btn',
+                        icon_file = 'lock-icon',
+                        small_icon = true,
+                        extra_attrs = 'data-secure="false"'
+                    ) }}
+                    {{ button.button(
+                        content = 'Change directors',
+                        extra_class = 'b-button--tight b-mega-menu-js__btn',
+                        icon_file = 'chevron-icon-right',
+                        small_icon = true,
+                        extra_attrs = 'data-secure="true" style="display: none"'
+                    ) }}
+                    {{ calltoaction.calltoaction(
+                        cta_icon_file = 'topic-icon-directors',
+                        cta_text = 'Guide to changing directors',
+                        extra_class = 'b-cta--small b-mega-menu-js__cta'
+                    ) }}
+                </li>
+                <li class="b-mega-menu-js__step-pair">
+                    {{ button.button(
+                        content = 'Rename company',
+                        extra_class = 'b-button--tight b-mega-menu-js__btn',
+                        icon_file = 'lock-icon',
+                        small_icon = true,
+                        extra_attrs = 'data-secure="false"'
+                    ) }}
+                    {{ button.button(
+                        content = 'Rename company',
+                        extra_class = 'b-button--tight b-mega-menu-js__btn',
+                        icon_file = 'chevron-icon-right',
+                        small_icon = true,
+                        extra_attrs = 'data-secure="true" style="display: none"'
+                    ) }}
+                    {{ calltoaction.calltoaction(
+                        cta_icon_file = 'topic-icon-details',
+                        cta_text = 'Guide to renaming a company',
+                        extra_class = 'b-cta--small b-mega-menu-js__cta'
+                    ) }}
+                </li>
+                <li class="b-mega-menu-js__step-pair">
+                    {{ button.button(
+                        content = 'Update company details',
+                        extra_class = 'b-button--tight b-mega-menu-js__btn',
+                        icon_file = 'lock-icon',
+                        small_icon = true,
+                        extra_attrs = 'data-secure="false"'
+                    ) }}
+                    {{ button.button(
+                        content = 'Update company details',
+                        extra_class = 'b-button--tight b-mega-menu-js__btn',
+                        icon_file = 'chevron-icon-right',
+                        small_icon = true,
+                        extra_attrs = 'data-secure="true" style="display: none"'
+                    ) }}
+                    {{ calltoaction.calltoaction(
+                        cta_icon_file = 'topic-icon-details',
+                        cta_text = 'Guide to updating company details',
+                        extra_class = 'b-cta--small b-mega-menu-js__cta'
+                    ) }}
+                </li>
+            </ul>
+
+            <div class="b-mega-menu-js__block-cta">
+                <a href="/page" class="b-mega-menu-js__block-cta-link">
+                    All manage and maintain tasks
+                    <svg class="h-icon h-icon--small" aria-hidden="true">
+                        <use xlink:href="../img/icons/svg-sprite.svg#chevron-icon-right"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endmacro %}

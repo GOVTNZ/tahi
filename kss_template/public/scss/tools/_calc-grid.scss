@@ -1,0 +1,36 @@
+// Create a row - @include grid-row();
+// Create an item - @include span-column(1 / 4); optionally @include span-column(1 / 4, 40px);
+// Can also specify the justification if for eaxmple you want to center the column on a page. eg @include grid-row('center').
+
+$g-gutter: 90px !default; // This can be overidden in the general variables stylesheet
+
+@mixin grid-row($justify:'space-between') {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: #{$justify};
+}
+
+@mixin span-column($frac, $gutter:false, $cols:false) {
+    $current-gutter: $global-gutter;
+
+    @if($gutter) {
+        $current-gutter: $gutter;
+    }
+
+    width: 100%;
+    flex-grow: 1;
+    flex-basis: calc(100% * #{$frac} - #{$current-gutter} * (1 - #{$frac}));
+    max-width: calc(100% * #{$frac} - #{$current-gutter} * (1 - #{$frac}));
+    margin-bottom: $global-gutter;
+}
+
+
+// TODO create these if required - possibly can be done using order
+// @mixin push() {
+
+// }
+
+// @mixin pull() {
+
+// }

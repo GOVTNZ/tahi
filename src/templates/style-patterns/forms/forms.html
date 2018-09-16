@@ -1,0 +1,498 @@
+<h1>Form Elements</h1>
+<p>The Fieldset:</p>
+<fieldset>
+    <legend>Legend</legend>
+    <p>The Form:</p>
+    <form>
+        <p>
+            <label for="text_field">Text Field:</label>
+            <br />
+            <input type="text" id="text_field" />
+        </p>
+        <p>
+            <label for="text_field_disabled">Disabled Text Field:</label>
+            <br />
+            <input type="text" id="text_field_disabled" disabled value="I'm disabled" />
+        </p>
+        <p>
+            <label for="text_field_readonly">Readonly Text Field:</label>
+            <br />
+            <input type="text" id="text_field_readonly" readonly value="I'm readonly" />
+        </p>
+        <p>
+            <label for="text_area01">Text Area:</label>
+            <br />
+            <textarea id="text_area01"></textarea>
+        </p>
+        <p>
+            <label for="text_area_disabled">Disabled Text Area:</label>
+            <br />
+            <textarea id="text_area_disabled" disabled>I'm disabled</textarea>
+        </p>
+        <p>
+            <label for="text_area02">Readonly Text Area:</label>
+            <br />
+            <textarea id="text_area02" readonly>I'm readonly</textarea>
+        </p>
+        <p>
+            <label for="select_element">Select Element:</label>
+            <br />
+            <select id="select_element">
+                <optgroup label="Option Group 1">
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                </optgroup>
+                <optgroup label="Option Group 2">
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3" disabled>Disabled Option</option>
+                </optgroup>
+            </select>
+        </p>
+        <p>
+            <label for="select_element_disabled">Disabled Select Element:</label>
+            <br/>
+            <select id="select_element_disabled" disabled>
+                <option value="1">Unselectable Option</option>
+                <option value="2">This option should not even be seen</option>
+            </select>
+        </p>
+        <p>Radio Buttons:</p>
+        <ul class="no-list">
+            <li>
+                <input type="radio" class="radio" id="radio_button_1" name="radio_button" value="radio_1" /> 
+                <label for="radio_button_1">
+                    <span class="label-text">Radio 1</span>
+                </label>
+            </li>
+            <li>
+                <input type="radio" class="radio" id="radio_button_2" name="radio_button" value="radio_2" /> 
+                <label for="radio_button_2">
+                    <span class="label-text">Radio 2</span>
+                </label>
+            </li>
+            <li>
+                <input type="radio" class="radio" id="radio_button_3" name="radio_button" value="radio_3" /> 
+                <label for="radio_button_3">
+                    <span class="label-text">Radio 3</span>
+                </label>
+            </li>
+            <li>
+                <input type="radio" disabled="disabled" class="radio" id="radio_button_4" name="radio_button" value="radio_4" /> 
+                <label for="radio_button_4">
+                    <span class="label-text">Radio 4</span>
+                </label>
+            </li>
+        </ul>
+        <p>Checkboxes:</p>
+        <ul class="no-list">
+            <li>
+                <input type="checkbox" class="checkbox" id="checkbox_button_1" name="checkbox_button" value="checkbox_1" /> 
+                <label for="checkbox_button_1">
+                    <span class="label-text">checkbox 1</span>
+                </label>
+            </li>
+            <li>
+                <input type="checkbox" class="checkbox" id="checkbox_button_2" name="checkbox_button" value="checkbox_2" /> 
+                <label for="checkbox_button_2">
+                    <span class="label-text">checkbox 2</span>
+                </label>
+            </li>
+            <li>
+                <input type="checkbox" class="checkbox" id="checkbox_button_3" name="checkbox_button" value="checkbox_3" /> 
+                <label for="checkbox_button_3">
+                    <span class="label-text">checkbox 3</span>
+                </label>
+            </li>
+            <li>
+                <input type="checkbox" disabled="disabled" class="checkbox" id="checkbox_button_4" name="checkbox_button" value="checkbox_4" /> 
+                <label for="checkbox_button_4">
+                    <span class="label-text">checkbox 4</span>
+                </label>
+            </li>
+        </ul>
+            
+        <p>
+            <label for="password">Password:</label>
+            <br />
+            <input type="password" class="password" id="password" />
+        </p>
+        <p>
+            <label for="file">File Input:</label>
+            <br />
+            <input type="file" class="file" id="file" />
+        </p>
+
+        {% include "blocks/b-dropzone-fileattachement/b-dropzone-fileattachement.html" %}
+
+        <h3>HTML5-specific Form Elements</h3>
+        <p>
+            <label for="email">Email:</label>
+            <br />
+            <input type="email" id="email" />
+        </p>
+        <p>
+            <label for="url">URL:</label>
+            <br />
+            <input type="url" id="url" />
+        </p>
+        <p>
+            <label for="tel">Telephone:</label>
+            <br />
+            <input type="tel" id="tel" />
+        </p>
+        <p>
+            <label for="number">Number:</label>
+            <br />
+            <input type="number" id="number" min="0" max="10" step="1" value="5" />
+        </p>
+        <p>
+            <label for="search">Search:</label>
+            <br />
+            <input type="search" id="search" />
+        </p>
+        <p>
+            <label for="date">Date:</label>
+            <br />
+            <input type="date" id="date" />
+        </p>
+        <p>
+            <label for="time">Time:</label>
+            <br />
+            <input type="time" id="time" />
+        </p>
+        <p>
+            <label for="color">Color:</label>
+            <br />
+            <input type="color" id="color" />
+        </p>
+        <p>
+            <label for="datalist">Datalist:</label>
+            <br />
+            <input list="browsers" name="browser" type="datalist" id="datalist" />
+            <datalist id="browsers">
+                <option value="Internet Explorer" />
+                <option value="Firefox" />
+                <option value="Chrome" />
+                <option value="Opera" />
+                <option value="Safari" />
+            </datalist>
+        </p>
+        <p>
+            <label for="range">Range:</label>
+            <br />
+            <input type="range" id="range" name="points" min="1" max="10" />
+        </p>
+        <p>
+            <label for="output">Output:</label>
+            <br />
+            <output name="result" id="output">42</output>
+        </p>
+        <p>
+            <label for="progress">Progress:</label>
+            <br />
+            <progress id="progress" value="65" max="100"></progress>
+        </p>
+        <p>
+            <label for="meter">Meter:</label>
+            <br />
+            <meter id="meter" min="200" max="500" value="350">350 degrees</meter>
+        </p>
+        <p>
+            <button class="button">Button Element</button>
+            <input class="button" type="reset" value="Clear" />
+            <input class="button" type="submit" value="Submit" />
+        </p>
+    </form>
+</fieldset>
+
+<h2>SilverStripe specific form elements</h2>
+<form id="UserForm_Form" action="/new-user-defined-form/Form" method="post" enctype="multipart/form-data" class="userform" data-toperrors="data-toperrors" novalidate="novalidate">
+
+    <fieldset class="error-container" aria-hidden="false" style="">
+        <div>
+            <h4>Please correct the following errors and try again:</h4>
+            <ul class="error-list"><li id="UserForm_Form_EditableTextField_306af-top-error"><a href="/statics/form-elements.html#EditableTextField_306af">[custom message saying] This field is required</a></li><li id="UserForm_Form_EditableTextField_c977d_o1-top-error"><a href="/statics/form-elements.html#EditableTextField_c977d">This field is required.</a></li></ul>
+        </div>
+    </fieldset>
+
+    <p id="UserForm_Form_error" class="message " aria-hidden="true" style="display: none;"></p>
+
+    <fieldset>
+
+        <fieldset id="EditableFormStep_99981" class="form-step field CompositeField userformsstep viewed" data-title="First Page" aria-hidden="false">
+
+            <fieldset class="error-container" aria-hidden="true" style="display: none;">
+                <div>
+                    <h4>Please correct the following errors and try again:</h4>
+                    <ul class="error-list"></ul>
+                </div>
+            </fieldset>
+
+            <div id="EditableTextField_7e43d" class="field text">
+                <label class="left" for="UserForm_Form_EditableTextField_7e43d">text input label</label>
+                <div class="middleColumn">
+                    <input type="text" name="EditableTextField_7e43d" class="text" id="UserForm_Form_EditableTextField_7e43d">
+                </div>
+            </div>
+
+            <div id="EditableTextField_3ea93" class="field text">
+                <label class="left" for="UserForm_Form_EditableTextField_3ea93">text input on focus</label>
+                <div class="middleColumn">
+                    <input type="text" name="EditableTextField_3ea93" class="text" id="UserForm_Form_EditableTextField_3ea93" placeholder="Placeholder text" autocomplete="off">
+                </div>
+            </div>
+
+            <div id="EditableTextField_306af" class="field text requiredField">
+                <label class="left" for="UserForm_Form_EditableTextField_306af">text input with error message</label>
+                <div class="middleColumn">
+                    <input type="text" name="EditableTextField_306af" class="text requiredField error" id="UserForm_Form_EditableTextField_306af" required="required" aria-required="true" data-rule-required="true" data-msg-required="[custom message saying] This field is required" placeholder="Placeholder text" autocomplete="off" aria-describedby="UserForm_Form_EditableTextField_306af-top-error UserForm_Form_EditableTextField_306af-error"><span id="UserForm_Form_EditableTextField_306af-error" class="error message">[custom message saying] This field is required</span>
+                </div>
+            </div>
+
+            <div id="EditableTextField_ca9a1" class="field dropdown">
+                <label class="left" for="UserForm_Form_EditableTextField_ca9a1">Select field label</label>
+                <div class="middleColumn">
+                    <select name="EditableTextField_ca9a1" class="dropdown" id="UserForm_Form_EditableTextField_ca9a1">
+
+                        <option value="" selected="">Select one</option>
+
+                        <option value="o1">o1</option>
+
+                        <option value="o2">o2</option>
+
+                        <option value="o3">o3</option>
+
+                    </select>
+                </div>
+            </div>
+
+            <div id="EditableTextField_28d7b" class="field textarea requiredField">
+                <label class="left" for="UserForm_Form_EditableTextField_28d7b">Text area label</label>
+                <div class="middleColumn">
+                    <textarea name="EditableTextField_28d7b" class="textarea requiredField" id="UserForm_Form_EditableTextField_28d7b" required="required" aria-required="true" data-rule-required="true" data-msg-required="&amp;#039;Text area label&amp;#039; is required." placeholder="Placeholder text if you please" data-rule-maxlength="20" autocomplete="off" rows="4" cols="20" aria-describedby="EditableTextField_28d7b_right_title">default value</textarea>
+                </div>
+                <span id="EditableTextField_28d7b_right_title" class="right-title">This is what help text underneath a field would look like</span>
+            </div>
+
+            <fieldset class="CompositeField field CompositeField userformsgroup ">
+                <legend>Field group label</legend>
+                <div class="middleColumn">
+                    <div id="EditableTextField_83557" class="field text">
+                        <label class="left" for="UserForm_Form_EditableTextField_83557">Text input field</label>
+                        <div class="middleColumn">
+                            <input type="text" name="EditableTextField_83557" class="text" id="UserForm_Form_EditableTextField_83557">
+                        </div>
+                    </div>
+
+                    <div id="EditableTextField_f17d1" class="field dropdown">
+
+                        <label class="left" for="UserForm_Form_EditableTextField_f17d1">Select field label</label>
+                        <div class="middleColumn">
+                            <select name="EditableTextField_f17d1" class="dropdown" id="UserForm_Form_EditableTextField_f17d1">
+
+                                <option value="" selected="">Select one</option>
+
+                                <option value="1">Option number one</option>
+
+                                <option value="2">Option number two</option>
+
+                                <option value="3">Option number three</option>
+
+                                <option value="4">Option number four</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div id="EditableTextField_d2173" class="field checkbox">
+                <div class="middleColumn">
+                    <input type="checkbox" name="EditableTextField_d2173" value="1" class="checkbox" id="UserForm_Form_EditableTextField_d2173">
+                    <label class="left" for="UserForm_Form_EditableTextField_d2173">Single checkbox field</label>
+                </div>
+            </div>
+
+            <fieldset id="EditableTextField_c977d" class="field optionset checkboxset requiredField" aria-describedby="EditableTextField_c977d_right_title">
+                <legend class="left">Checkbox group</legend>
+
+                <div class="middleColumn">
+                    <ul id="UserForm_Form_EditableTextField_c977d" class="optionset checkboxset requiredField" aria-required="true" data-rule-required="true" data-msg-required="Custom error message would go here">
+                        <li class="odd valo1">
+                            <input id="UserForm_Form_EditableTextField_c977d_o1" class="checkbox error" name="EditableTextField_c977d[]" type="checkbox" value="o1" aria-required="true" aria-describedby="UserForm_Form_EditableTextField_c977d_o1-top-error EditableTextField_c977d\[\]-error">
+                            <label for="UserForm_Form_EditableTextField_c977d_o1">Option one</label>
+                        </li>
+                        <li class="even valo2">
+                            <input id="UserForm_Form_EditableTextField_c977d_o2" class="checkbox" name="EditableTextField_c977d[]" type="checkbox" value="o2" aria-required="true">
+                            <label for="UserForm_Form_EditableTextField_c977d_o2">Option two</label>
+                        </li>
+                        <li class="odd valo3">
+                            <input id="UserForm_Form_EditableTextField_c977d_o3" class="checkbox" name="EditableTextField_c977d[]" type="checkbox" value="o3" aria-required="true">
+                            <label for="UserForm_Form_EditableTextField_c977d_o3">Option three</label>
+                        </li>
+                        <li class="even valo4">
+                            <input id="UserForm_Form_EditableTextField_c977d_o4" class="checkbox" name="EditableTextField_c977d[]" type="checkbox" value="o4" aria-required="true">
+                            <label for="UserForm_Form_EditableTextField_c977d_o4">Option four</label>
+                        </li>
+                    </ul><span id="EditableTextField_c977d[]-error" class="error message">This field is required.</span>
+                </div>
+                <span id="EditableTextField_c977d_right_title" class="right-title">Under a field description for a list of checkboxes</span>
+            </fieldset>
+
+            <fieldset id="EditableTextField_fee16" class="field optionset checkboxset">
+                <legend class="left">Checkbox group with long items</legend>
+
+                <div class="middleColumn">
+                    <ul id="UserForm_Form_EditableTextField_fee16" class="optionset checkboxset">
+                        <li class="odd val1">
+                            <input id="UserForm_Form_EditableTextField_fee16_1" class="checkbox" name="EditableTextField_fee16[]" type="checkbox" value="1">
+                            <label for="UserForm_Form_EditableTextField_fee16_1">Longer option text item (did I mention longer text?) number 1</label>
+                        </li>
+                        <li class="even val2">
+                            <input id="UserForm_Form_EditableTextField_fee16_2" class="checkbox" name="EditableTextField_fee16[]" type="checkbox" value="2">
+                            <label for="UserForm_Form_EditableTextField_fee16_2">Longer option text item (did I mention longer text?) number 2</label>
+                        </li>
+                        <li class="odd val3">
+                            <input id="UserForm_Form_EditableTextField_fee16_3" class="checkbox" name="EditableTextField_fee16[]" type="checkbox" value="3">
+                            <label for="UserForm_Form_EditableTextField_fee16_3">Longer option text item (did I mention longer text?) number 3</label>
+                        </li>
+                        <li class="even val4">
+                            <input id="UserForm_Form_EditableTextField_fee16_4" class="checkbox" name="EditableTextField_fee16[]" type="checkbox" value="4">
+                            <label for="UserForm_Form_EditableTextField_fee16_4">Longer option text item (did I mention longer text?) number 4</label>
+                        </li>
+                        <li class="odd val5">
+                            <input id="UserForm_Form_EditableTextField_fee16_5" class="checkbox" name="EditableTextField_fee16[]" type="checkbox" value="5">
+                            <label for="UserForm_Form_EditableTextField_fee16_5">Longer option text item (did I mention longer text?) number 5</label>
+                        </li>
+                        <li class="even val6">
+                            <input id="UserForm_Form_EditableTextField_fee16_6" class="checkbox" name="EditableTextField_fee16[]" type="checkbox" value="6">
+                            <label for="UserForm_Form_EditableTextField_fee16_6">Longer option text item (did I mention longer text?) number Longer option text item (did I mention longer text?) number 6</label>
+                        </li>
+                        <li class="odd val7">
+                            <input id="UserForm_Form_EditableTextField_fee16_7" class="checkbox" name="EditableTextField_fee16[]" type="checkbox" value="7">
+                            <label for="UserForm_Form_EditableTextField_fee16_7">Longer option text item (did I mention longer text?) number 777777</label>
+                        </li>
+                    </ul>
+                </div>
+
+            </fieldset>
+
+            <fieldset id="EditableTextField_2edab" class="field optionset">
+                <legend class="left">Radio group</legend>
+
+                <div class="middleColumn">
+                    <ul class="optionset" id="UserForm_Form_EditableTextField_2edab">
+                        <li class="odd valo1">
+                            <input id="UserForm_Form_EditableTextField_2edab_o1" class="radio" name="EditableTextField_2edab" type="radio" value="o1">
+                            <label for="UserForm_Form_EditableTextField_2edab_o1">Option One</label>
+                        </li>
+                        <li class="even valo2">
+                            <input id="UserForm_Form_EditableTextField_2edab_o2" class="radio" name="EditableTextField_2edab" type="radio" value="o2">
+                            <label for="UserForm_Form_EditableTextField_2edab_o2">Option Two</label>
+                        </li>
+                        <li class="odd valo3">
+                            <input id="UserForm_Form_EditableTextField_2edab_o3" class="radio" name="EditableTextField_2edab" type="radio" value="o3">
+                            <label for="UserForm_Form_EditableTextField_2edab_o3">Option Three</label>
+                        </li>
+                        <li class="even valo4">
+                            <input id="UserForm_Form_EditableTextField_2edab_o4" class="radio" name="EditableTextField_2edab" type="radio" value="o4">
+                            <label for="UserForm_Form_EditableTextField_2edab_o4">Option Four</label>
+                        </li>
+                    </ul>
+                </div>
+
+            </fieldset>
+
+            <div id="EditableTextField_cf572" class="field file">
+                <label class="left" for="UserForm_Form_EditableTextField_cf572">Upload your file</label>
+                <div class="middleColumn">
+                    <input type="hidden" name="MAX_FILE_SIZE" value="67108864">
+                    <input type="file" name="EditableTextField_cf572" class="file" id="UserForm_Form_EditableTextField_cf572">
+                </div>
+            </div>
+
+            <div id="EditableTextField_eeff9" class="field file">
+                <label class="left" for="UserForm_Form_EditableTextField_eeff9">Upload field with a hint text</label>
+                <div class="middleColumn">
+                    <input type="hidden" name="MAX_FILE_SIZE" value="52428800">
+                    <input type="file" name="EditableTextField_eeff9" class="file" id="UserForm_Form_EditableTextField_eeff9" aria-describedby="EditableTextField_eeff9_right_title">
+                </div>
+                <span id="EditableTextField_eeff9_right_title" class="right-title">Description belonging to the upload field</span>
+            </div>
+
+        </fieldset>
+
+        <fieldset id="EditableFormStep_da3b7" class="form-step field CompositeField userformsstep" data-title="Second page" aria-hidden="true" style="display: none;">
+            <fieldset class="error-container" aria-hidden="true" style="display: none;">
+                <div>
+                    <h4>Please correct the following errors and try again:</h4>
+                    <ul class="error-list"></ul>
+                </div>
+            </fieldset>
+
+            <div id="EditableTextField_7894c" class="field text">
+                <label class="left" for="UserForm_Form_EditableTextField_7894c">text 2</label>
+                <div class="middleColumn">
+                    <input type="text" name="EditableTextField_7894c" class="text" id="UserForm_Form_EditableTextField_7894c">
+                </div>
+            </div>
+
+        </fieldset>
+
+        <fieldset id="EditableFormStep_663b8" class="form-step field CompositeField userformsstep" data-title="Third page" aria-hidden="true" style="display: none;">
+            <fieldset class="error-container" aria-hidden="true" style="display: none;">
+                <div>
+                    <h4>Please correct the following errors and try again:</h4>
+                    <ul class="error-list"></ul>
+                </div>
+            </fieldset>
+
+            <div id="EditableTextField_505e6" class="field text">
+                <label class="left" for="UserForm_Form_EditableTextField_505e6">text 3</label>
+                <div class="middleColumn">
+                    <input type="text" name="EditableTextField_505e6" class="text" id="UserForm_Form_EditableTextField_505e6">
+                </div>
+            </div>
+
+        </fieldset>
+        <fieldset id="EditableFormStep_4a07b" class="form-step field CompositeField userformsstep nolabel" data-title="" aria-hidden="true" style="display: none;">
+            <fieldset class="error-container" aria-hidden="true" style="display: none;">
+                <div>
+                    <h4>Please correct the following errors and try again:</h4>
+                    <ul class="error-list"></ul>
+                </div>
+            </fieldset>
+
+            <div id="EditableTextField_b3b30" class="field text">
+                <label class="left" for="UserForm_Form_EditableTextField_b3b30">text 4</label>
+                <div class="middleColumn">
+                    <input type="text" name="EditableTextField_b3b30" class="text" id="UserForm_Form_EditableTextField_b3b30">
+                </div>
+            </div>
+
+        </fieldset>
+        <div class="clear"><!-- --></div>
+    </fieldset>
+
+<h2>SilverStripe specific form elements</h2>
+
+
+    <nav id="step-navigation" class="step-navigation" aria-hidden="false">
+        <ul class="step-buttons">
+            <li class="step-button-wrapper" aria-hidden="false">
+                <button class="step-button-prev" style="">Prev</button>
+            </li>
+            <li class="step-button-wrapper" aria-hidden="false">
+                <button class="step-button-next">Next</button>
+            </li>
+
+            <li class="step-button-wrapper Actions" style="display: none;">
+                <input type="submit" name="action_process" value="Submit form to get a reward type of longer text" class="action" id="UserForm_Form_action_process">
+                <input type="reset" name="action_clearForm" value="Reset form (can be CMS customised as well)" class="resetformaction" id="UserForm_Form_action_clearForm">
+            </li>
+
+        </ul>
+    </nav>
+
+</form>

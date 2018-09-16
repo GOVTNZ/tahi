@@ -1,0 +1,75 @@
+// ############################################
+// b-button
+// ############################################
+
+
+// ================================================
+// Block Styles
+// ================================================
+
+.b-link-list {
+
+
+    // ------------------------------------------------
+    // Block Level Styles
+    // ------------------------------------------------
+    padding: 0;
+    margin: rem($g-bu * 2.5) 0 rem($g-bu * 1.5);
+    list-style-type: none;
+
+    &__item {
+        display: block;
+        padding: 0 0 rem($g-bu * 2.5);
+        margin: 0;
+        list-style-type: none;
+    }
+
+    &__link {
+        position: relative;
+        display: inline-block;
+        padding: 0 rem($g-bu * 2) 0 rem($g-bu * 2.8);
+        text-decoration: none;
+
+
+        &:hover {
+            text-decoration: none;
+
+            #{e-nest()}__link-text {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__link-text {
+        color: $g-color-primary2;
+        text-decoration: none;
+    }
+
+    &__list-bullet-icon {
+        position: absolute;
+        top: .25em;
+        left: .05em;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        color: $g-color-primary2;
+    }
+    // ----------------
+    // Media Queries
+    // ----------------
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-small-and-up) {
+        // display: flex;
+        // flex-flow: row wrap;
+        margin: rem($g-bu * 2.5) 0 rem($g-bu * 2);
+
+        &__item {
+            // flex: 0 50%;
+            padding: 0 0 rem($g-bu * 2.5);
+        }
+
+        &__link {
+            padding: 0 rem($g-bu * 2) 0 rem($g-bu * 4);
+        }
+    }
+}

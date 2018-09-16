@@ -1,0 +1,89 @@
+{% macro iconbox(extra_class = '', modifier = false, at_top = false ,content_variation = false, icon = 'topic-icon-reserving', title = 'Title placeholder', is_dismissible = false, unique_id = 'dismissible_notification_23092017', content_msg = '') %}
+
+    <div class="b-icon-box-wrapper b-icon-box-wrapper--dismissable-js {% if modifier %}b-icon-box-wrapper--{{modifier}}{% endif %}" data-js-simple-hide-target="true" data-dismiss-expiry-time="100" id="{{unique_id}}">
+
+    {% if at_top %}
+            <div class="l-outer-container">
+    {% endif %}
+        <div class="b-icon-box {{extra_class}} {% if modifier %}b-icon-box--{{modifier}}{% endif %} {% if is_dismissible %}b-icon-box--dismissable-js{% endif %}" role="alert">
+
+            <svg class="h-icon h-icon--xx-large b-icon-box__icon">
+                <use xlink:href="../img/icons/svg-sprite.svg#{{icon}}"></use>
+            </svg>
+            <h2 class="b-icon-box__title">{{title}}</h2>
+
+            {% if content_variation %}
+                <div class="b-icon-box__content">
+
+                    {% if content_variation === '1' %}
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit id dolor id nibh ultricies vehicule.</p>
+
+                    {% elseif content_variation === '2' %}
+
+                        <address class="b-icon-box__address">
+                            <dl class="b-icon-box__address__definition-list">
+                                <dt class="b-icon-box__address__definition-list__title">New Zealand:</dt><dd class="b-icon-box__address__definition-list__data"><a href="tel:1800424969">0800 123 4567</a></dd>
+                                <dt class="b-icon-box__address__definition-list__title">Overseas:</dt><dd class="b-icon-box__address__definition-list__data"><a href="tel:1800424969">+64 4 123 4567</a></dd>
+                                <dt class="b-icon-box__address__definition-list__title">Email:</dt><dd class="b-icon-box__address__definition-list__data"><a href="mailto:">govtnz@dia.govt.nz</a></dd>
+                            </dl>
+                        </address>
+                        <p>Our working hours are 9am to 5pm, Monday to Friday.</p>
+
+                    {% elseif content_variation === '3' %}
+
+                    {% if content_msg %}
+                        <p>{{content_msg}}</p>
+                    {% else %}
+                        <p>From 1 July 2017 the fee will be $12.34 + GST.</p>
+                        <p>From 1 July 2018 the fee will be $13.44 + GST.</p>
+                        <p class="b-icon-box__link"><a href="/page">Read about the changes we are making</a></p>
+                    {% endif %}
+
+                    {% elseif content_variation === '4' %}
+
+                        <address class="b-icon-box__address">
+                            <dl class="b-icon-box__address__definition-list">
+                                <dt class="b-icon-box__address__definition-list__title">Phone:</dt><dd class="b-icon-box__address__definition-list__data"><a href="tel:11661216">1166 1216</a></dd>
+                                <dt class="b-icon-box__address__definition-list__title">Skype:</dt><dd class="b-icon-box__address__definition-list__data"><a href="skype:count_of_anjou?chat">count_of_anjou</a></dd>
+                                <dt class="b-icon-box__address__definition-list__title">Email:</dt><dd class="b-icon-box__address__definition-list__data"><a href="mailto:john@godkingofengland.uk">john@godkingofengland.uk</a></dd>
+                            </dl>
+                        </address>
+                        <p>The royal court is open 9am–5pm on week days.</p>
+
+                    {% elseif content_variation === '5' %}
+                    <p>We are experiencing unexpected network difficulties which means that our booking and case management systems are not available.<br><a href="#">Get updates via our Twitter feed</a></p>
+
+                    {% elseif content_variation === '6' %}
+                    <p>The site may be down or slow to respond for up to an hour from 10pm on 6 July.<br><a href="#">Read more details about what's changing</a></p>
+                    
+
+                    {% else %}
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit id dolor id nibh ultricies vehicule.</p>
+
+                    {% endif %}
+
+                </div>
+
+                {% if content_variation === '2' %}
+
+
+               {% endif %}
+           {% endif %}
+
+           {% if is_dismissible %}
+           <button class="b-icon-box__hide-box" data-js-simple-hide-trigger="true">
+                <svg class="h-icon h-icon--x-large b-icon-box__close-link__close-icon">
+                    <use xlink:href="../img/icons/svg-sprite.svg#close-icon"></use>
+                </svg>
+            </button>
+           {% endif %}
+
+        </div>
+    {% if at_top %}
+        </div>
+    {% endif %}
+    </div>
+
+{% endmacro %}

@@ -1,0 +1,94 @@
+// ############################################
+// Base List Styles
+// ############################################
+
+ul,
+ol {
+    @extend %h-section-margin;
+
+    padding-left: rem($g-bu * 2 + $g-hbu);
+    margin-right: 0;
+    margin-left: rem($g-bu * 2);
+
+    ul,
+    ol {
+        margin: rem($g-hbu) 0 0;
+    }
+
+    li {
+        margin-bottom: rem($g-hbu);
+    }
+}
+
+ul {
+    ul {
+        padding: 0 0 0 rem($g-bu * 2 + $g-hbu);
+        list-style-type: none;
+
+        li {
+            position: relative;
+
+            &::before {
+                position: absolute;
+                left: rem(-14);
+                content: '◦';
+            }
+        }
+
+        ul {
+            padding: 0 0 0 rem($g-bu * 2);
+
+            li {
+                &::before {
+                    content: '-';
+                }
+            }
+        }
+    }
+}
+
+ol {
+    ol {
+        list-style-type: lower-alpha;
+
+        ol {
+            list-style-type: lower-roman;
+        }
+    }
+}
+
+li {
+    line-height: rem($g-bu * 3);
+}
+
+// Definition lists default styles
+
+dl {
+    @extend %h-section-margin;
+
+    dt,
+    dd {
+        max-width: rem($g-bu * 20);
+    }
+
+    dd {
+        margin-bottom: rem($g-bu * 2);
+    }
+    // ----------------------------
+    // MEDIA
+    // ----------------------------
+    // scss-lint:disable DeclarationOrder
+    // @include media($small) {
+    //     // scss-lint:enable DeclarationOrder
+    //     > * {
+    //         @include span-columns(6 fo 12);
+    //         @include omega(2n);
+    //     }
+
+    //     dt,
+    //     dd {
+    //         margin-bottom: rem(12);
+    //     }
+    // }
+}
+

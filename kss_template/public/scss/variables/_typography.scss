@@ -1,0 +1,44 @@
+// -----------------------------------
+// Global sizing
+// -----------------------------------
+
+$g-em-base: 16px;
+$g-line-height: 1.2;
+
+
+// -----------------------------------
+// Modular scale Typography
+// -----------------------------------
+$major-second: 1;
+
+$ms-base: rem($g-bu * 2);
+$ms-fluid: false;
+$ms-ratio: $major-second;
+
+
+// -----------------------------------
+// Fonts
+// -----------------------------------
+
+$g-font-default: 'Source Serif Pro', serif;
+$g-font-opensans: OpenSans, Helvetica, Arial, sans-serif;
+$g-font-helvetica: Helvetica, Arial, sans-serif;
+$g-font-menlo: Menlo, 'Ubuntu Mono', 'Lucida Console', 'Courier New', Courier, monospace;
+
+$g-font-primary: $g-font-default;
+$g-font-secondary: $g-font-opensans;
+$g-font-tertiary: $g-font-helvetica;
+
+
+$kss-font-body             : $g-font-default;
+$kss-font-graphik		   : $g-font-default;
+$kss-font-code             : $g-font-menlo;
+
+
+$kss-font-size             : 16px;
+
+// -----------------------------------
+// Vertical Rhythm
+// -----------------------------------
+
+$kss-vertical-rhythm       : $kss-font-size * 1.5;

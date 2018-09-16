@@ -1,0 +1,39 @@
+// ############################################
+// Base Global Styles
+// ############################################
+
+html {
+    background-color: $g-color-white01;
+}
+
+
+body {
+    background-color: $g-color-white01;
+}
+
+html,
+body {
+    min-width: 320px;
+    padding: 0;
+    margin: 0;
+    font-size: $g-em-base + px;
+    line-height: $g-line-height;
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
+// the main section come in two colours white and gey
+
+.site-main {
+    padding-bottom: rem($g-bu * 8);
+
+    // --------------------------------------------
+    // modifier
+    // --------------------------------------------
+
+    &--bg-secondary {
+        background-color: $g-color-grey17;
+    }
+}

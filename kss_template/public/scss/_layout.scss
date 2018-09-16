@@ -1,0 +1,8 @@
+// Layout stylesheets
+
+// These stylesheets include definition of global layout containers and grids.
+// Each layout block defined should be prefixed with 'l-'
+
+@import
+'layout/outer-container',
+'layout/grid';

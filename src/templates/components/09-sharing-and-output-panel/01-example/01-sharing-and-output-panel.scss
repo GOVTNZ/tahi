@@ -1,0 +1,119 @@
+// Standard
+//
+// Markup: 01-sharing-and-output-panel.html
+//
+// Styleguide: 9.01
+//
+
+// ============================================
+// Component Styles
+// ============================================
+
+.c-sharing-and-output-panel {
+    @extend %h-section-margin;
+
+    margin-top: 1rem;
+    margin-right: 0;
+    margin-left: 0;
+
+    // --------------------------------------------
+    // Element Styles
+    // --------------------------------------------
+
+    &__title {
+        @extend %h-font-gustan-medium;
+
+        padding: 0 0 rem($g-bu * 1);
+        border-bottom: 2px solid $g-color-line-grey;
+        margin: 0 0 rem($g-bu * 2);
+        font-size: ms(2);
+        line-height: rem($g-bu * 4);
+    }
+
+
+    // --------------------------------------------
+    // Social List
+    // --------------------------------------------
+
+    &__social-list {
+        display: block;
+        padding: rem($g-bu * 2) 0 rem($g-bu * 1);
+        border-bottom: 1px solid $g-color-line-grey;
+        margin: 0;
+        font-size: ms(0);
+        list-style-type: none;
+    }
+
+    &__social-item {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+
+        &:last-child {
+            #{e-nest()}__social-link {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__social-link {
+        margin-right: rem($g-bu * 4);
+        line-height: rem($g-bu * 2.5);
+        color: $g-color-charcoal-light;
+        text-decoration: none;
+    }
+
+    // --------------------------------------------
+    // Tool List
+    // --------------------------------------------
+
+    &__tool-list {
+        display: block;
+        padding: rem($g-bu * 2) 0;
+        border-bottom: 1px solid $g-color-line-grey;
+        margin: 0;
+        font-size: ms(0);
+        list-style-type: none;
+    }
+
+    &__tool-item {
+        display: block;
+        padding: 0;
+        margin: 0 0 rem($g-bu * 1);
+        list-style-type: none;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__tool-link {
+        margin: 0;
+        font-size: ms(-1);
+        line-height: rem($g-bu * 2.5);
+        color: $g-color-charcoal-light;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__tool-icon {
+        vertical-align: -.25em;
+        margin-right: rem($g-bu * 2);
+    }
+
+    // ------------------------------------------------
+    // Media Queries
+    // ------------------------------------------------
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-small-and-up) {
+        &__social-list,
+        &__tool-list {
+            font-size: ms(0);
+        }
+    }
+}

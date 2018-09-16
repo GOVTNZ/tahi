@@ -1,0 +1,44 @@
+{% macro b_helptilelist(helptilelist_type = '1') %}
+    {% import "blocks/b-help-tile/b-help-tile.html" as b_helptile %}
+
+    <div class="b-help-tileholder">
+
+        <h2 class="h-visuallyhidden">List of help tiles</h2>
+
+        {% if helptilelist_type == '1' %}
+
+            <ul class="b-help-tileholder__list">
+                <li  class="b-help-tileholder__list-item">
+                    {{ b_helptile.b_helptile(title = 'Registering an audit firm', icon_name = 'topic-icon-registering', link_href = '/page', content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique facilisis commodo.') }}
+                </li>
+                <li  class="b-help-tileholder__list-item">
+                    {{ b_helptile.b_helptile(title = 'Licensing an auditor', icon_name = 'topic-icon-filing', link_href = '/page', content = 'Donec elementum, purus eget lacinia cursus, tortor velit tempor nunc, eu laoreet augue purus non tortor.') }}
+                </li>
+                <li  class="b-help-tileholder__list-item">
+                    {{ b_helptile.b_helptile(title = 'Changing details', icon_name = 'topic-icon-details', link_href = '/page', content = ' Sed aliquet, nunc sed porttitor auctor, justo orci finibus ipsum, at gravida orci tellus sed neque.') }}
+                </li>
+                <li  class="b-help-tileholder__list-item">
+                    {{ b_helptile.b_helptile(title = 'Forms and fees', icon_name = 'topic-icon-legal', link_href = '/page', content = 'Maecenas ut nibh ligula. Etiam tristique iaculis turpis vitae aliquet. Nam orci mi, viverra a vulputate sed, convallis in lacus.') }}
+                </li>
+            </ul>
+
+        {% else %}
+
+            <ul class="b-help-tileholder__list">
+                <li  class="b-help-tileholder__list-item">
+                    {{ b_helptile.b_helptile(heading = 'h2', title = 'Getting started', icon_name = 'topic-icon-getting-started', link_href = false, content = false, button_extra_class = 'b-button--small b-button--secondary', button_content = 'See 2 guides') }}
+                </li>
+                <li  class="b-help-tileholder__list-item">
+                    {{ b_helptile.b_helptile(heading = 'h2', title = 'Registering a company', icon_name = 'topic-icon-registering', link_href = false, content = false, button_extra_class = 'b-button--small b-button--secondary', button_content = 'See 6 guides') }}
+                </li>
+                <li  class="b-help-tileholder__list-item">
+                    {{ b_helptile.b_helptile(heading = 'h2', title = 'Directors', icon_name = 'topic-icon-directors', link_href = false, content = false, button_extra_class = 'b-button--small b-button--secondary', button_content = 'See 10 guides') }}
+                </li>
+                <li  class="b-help-tileholder__list-item">
+                    {{ b_helptile.b_helptile(heading = 'h2', title = 'Complying with the law', icon_name = 'topic-icon-legal', link_href = false, content = false, button_extra_class = 'b-button--small b-button--secondary', button_content = 'See 6 guides') }}
+                </li>
+            </ul>
+        {% endif %}
+    </div>
+
+{% endmacro %}

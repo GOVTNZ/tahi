@@ -1,0 +1,14 @@
+{% macro b_showhide(extra_class= '', trigger_content = false, is_opened = false, title = 'Default Accordion title', title_extra_class = '', icon_name = false, secondary_info = false, has_content = true, is_article_list = false, is_entity_list = false, content = false, trigger_tag = 'h3', has_chevron = true, extra_attr = '', logo_title = false) %}
+    <!-- '-expandmore' is a class added by the plugin, for consistency it is applied to all elements -->
+
+    <div class="b-show-hide-js-expandmore {{extra_class}}">
+        <div class="js-expandmore" data-hideshow-prefix-class="b-show-hide-js" {{extra_attr}}>
+
+            {{trigger_content}}
+
+        </div>
+        <div class="js-to_expand b-show-hide-js-expandmore__to-expand {% if is_opened %}is-opened{% endif %}">
+            {{content}}
+        </div>
+    </div>
+{% endmacro %}

@@ -1,0 +1,202 @@
+// ############################################
+// b-article-tile
+// ############################################
+
+
+.b-article-tile-list {
+
+
+    // ------------------------------------------------
+    // Block Level Styles
+    // ------------------------------------------------
+    @extend %h-section-margin;
+
+    padding: 0;
+    margin-right: 0;
+    margin-left: 0;
+    list-style-type: none;
+
+    &__item {
+        padding-right: 0;
+        padding-bottom: rem($g-bu * 1.5);
+        padding-left: rem($g-bu * 2);
+        margin: 0;
+        font-size: inherit;
+        line-height: inherit;
+        list-style-type: none;
+    }
+
+    &__link {
+        position: relative;
+        display: block;
+        text-decoration: none;
+
+        &:hover {
+            //text-decoration: underline;
+
+            #{e-nest()}__link-text {
+                text-decoration: underline;
+            }
+
+            #{e-nest()}__topic,
+            #{e-nest()}__description {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__list-icon {
+        position: absolute;
+        top: .5rem;
+        left: rem($g-bu * -2);
+    }
+
+    &__link-text {
+        display: block;
+    }
+
+    &__topic {
+        position: relative;
+        top: rem($g-bu * -.5);
+        padding-left: rem($g-bu * 2.5);
+        font-size: ms(-1);
+        line-height: rem($g-bu * 3);
+        color: $g-color-charcoal-light;
+        text-decoration: none;
+    }
+
+    &__topic-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1.13em;
+        height: 1.13em;
+        color: inherit;
+    }
+
+    &__description {
+        display: none;
+        font-size: inherit;
+        line-height: inherit;
+        color: $g-color-charcoal-light;
+        text-decoration: none;
+    }
+
+
+    // ================================================
+    // Modifiers
+    // ================================================
+
+    &--small {
+        //margin: rem($g-bu * 3.5) 0 rem($g-bu * 3);
+
+        #{m-nest()}__item {
+            padding-bottom: rem($g-bu * 1);
+            font-size: ms(0);
+        }
+    }
+
+    &--large {
+        //margin: rem($g-bu * 4.5) 0;
+
+        #{m-nest()}__item {
+            padding-bottom: rem($g-bu * 2);
+            margin: 0;
+            font-size: ms(1);
+            line-height: rem($g-bu * 3);
+        }
+
+        #{m-nest()}__list-icon {
+            top: .3rem;
+        }
+
+        #{m-nest()}__link {
+            padding: 0;
+        }
+    }
+
+    // ================================================
+    // Media Queries
+    // ================================================
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-medium-and-up) {
+        @include grid-row();
+        //margin: rem($g-bu * 3.5) 0 rem($g-bu * 2);
+
+
+        &__item {
+            @include span-column(1 / 2, 140px);
+
+            padding-bottom: rem($g-bu * 2.5);
+            margin-bottom: 0;
+            font-size: ms(2);
+            line-height: rem($g-bu * 3.5);
+        }
+
+        &__chevron-icon-right {
+            left: rem($g-bu * -2);
+        }
+
+        &__topic {
+            //
+        }
+
+        &__topic-icon {
+            //
+        }
+
+        &__description {
+            display: inline;
+        }
+
+
+        // ================================================
+        // Modifiers
+        // ================================================
+
+        &--small {
+            //margin: rem($g-bu * 4.5) 0 rem($g-bu * 6);
+
+            #{m-nest()}__item {
+                @include span-column(1 / 2, 36px);
+
+                margin-bottom: 0;
+                font-size: ms(1);
+                line-height: rem($g-bu * 3.5);
+            }
+
+            #{m-nest()}__description {
+                font-size: ms(-1);
+                line-height: rem($g-bu * 3);
+            }
+        }
+
+        &--large {
+            //margin: rem($g-bu * 6.5) 0 rem($g-bu * 9.5);
+
+            #{m-nest()}__item {
+                @include span-column(1 / 2, 40px);
+
+                padding-bottom: rem($g-bu * 4);
+                padding-left: rem($g-bu * 2.5);
+                margin-bottom: 0;
+                font-size: ms(3);
+            }
+
+            #{m-nest()}__chevron-icon-right {
+                top: .55em;
+                left: rem($g-bu * -2.5);
+            }
+
+            #{m-nest()}__link {
+                padding: 0 0 rem($g-bu * .5);
+            }
+
+            #{m-nest()}__description {
+                font-size: ms(1);
+                line-height: rem($g-bu * 3.5);
+            }
+        }
+    }
+}

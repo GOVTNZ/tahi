@@ -1,0 +1,31 @@
+{
+  "//": "Template and helpers refer to the CT kss-node template, so should be inside 'node_modules' folder",
+  "template": "node_modules/kss-node-template--tahi",
+  "helpers": "node_modules/kss-node-template--tahi/helpers",
+
+  "//": "Custom placeholders that can be used in the styleguide.",
+  "custom": [
+    "design-doc",
+    "ux-doc",
+    "structured-data",
+    "pattern",
+    "json-ld"
+  ],
+
+  "//": "The source and destination paths are relative to this file.",
+  "source": [
+    "build/"
+  ],
+  "destination":  "build/styleguide/",
+
+  "//": "The css and js paths are URLs relative to the style guide destination.",
+  "css": [
+    "../css/main.css"
+  ],
+  "js": [
+    "../js/custom.js"
+  ],
+
+  "//": "The homepage is relative to the source.",
+  "homepage": "styleguideHomepage.md"
+}

@@ -1,0 +1,196 @@
+.b-feedback-form {
+    @extend %h-section-margin;
+
+    padding-bottom: 4rem;
+    border-top: 3px solid $g-color-blue16;
+    border-bottom: 3px solid $g-color-blue16;
+
+    &__fieldset {
+        &--radios {
+            display: block;
+
+            .js-enabled & {
+                display: block;
+            }
+        }
+
+        &--inputs {
+            display: block;
+
+            .js-enabled & {
+                display: none;
+            }
+        }
+
+        &--confirmation {
+            display: none;
+
+            .js-enabled & {
+                display: none;
+            }
+        }
+    }
+
+    &__title {
+        display: block;
+        margin: rem($g-bu * 3) 0 rem($g-bu * 4);
+    }
+
+    &__input-radio-wrapper {
+        margin-bottom: rem($g-bu * 3);
+        font-size: 0;
+        text-align: center;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__input-radio {
+        position: absolute;
+        left: -9999rem;
+
+        + #{e-nest()}__input-radio-label {
+            @extend %h-font-gustan-bold;
+
+            display: block;
+            padding: rem($g-bu * 3);
+            border: 1px solid $g-color-grey11;
+            margin-right: rem($g-bu * 2);
+            margin-bottom: rem($g-bu * 2);
+            background-color: $g-color-primary2;
+            font-size: ms(1);
+            line-height: 1;
+            font-weight: 600 !important;
+            color: $g-color-white01;
+            text-align: center;
+
+            &::before {
+                display: none;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        &:checked {
+            + label {
+                background-color: $g-color-white01;
+                color: $g-color-primary2;
+            }
+        }
+
+        &:focus {
+            + label {
+                .js-wai-outline & {
+                    outline: 2px solid $g-color-secondary1;
+                    outline-offset: 2px;
+                }
+            }
+        }
+
+        &:last-child {
+            + label {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__fieldset--confirmation p {
+        text-align: center;
+    }
+
+    &__text-text-label,
+    &__text-area-label,
+    &__submit-label {
+        text-align: left;
+    }
+
+    &__text-area,
+    &__input-text {
+        text-align: left;
+    }
+
+    &__submit {
+        @extend %h-font-gustan-bold;
+
+        display: block;
+        padding: rem($g-bu * 3) !important;
+        border: 1px solid $g-color-grey11;
+        background-color: $g-color-primary2;
+        font-size: ms(1) !important;
+        line-height: 1;
+        font-weight: 600 !important;
+        color: $g-color-white01;
+        text-align: center;
+    }
+
+    &__success-icon {
+        display: block;
+        width: rem($g-bu * 16);
+        height: rem($g-bu * 16);
+        margin: rem($g-bu * 10) auto rem($g-bu * 6);
+        color: $g-color-blue16;
+    }
+
+    // ================================================
+    // Media queries
+    // ================================================
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-large-and-up) {
+        // scss-lint:enable DeclarationOrder
+        padding: 2rem;
+        border: 2px solid $g-color-blue16;
+
+        &__title {
+            display: block;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        &__input-radio {
+            + #{e-nest()}__input-radio-label {
+                display: inline-block;
+                min-width: rem($g-bu * 16);
+                padding: rem($g-bu * 2) rem($g-bu * 4);
+            }
+        }
+
+        &__input-radio-wrapper,
+        &__text-area-wrapper,
+        &__input-text-wrapper,
+        &__submit-wrapper {
+            max-width: rem($g-bu * 74);
+            margin-right: auto !important;
+            margin-left: auto !important;
+        }
+
+        &__fieldset--radios p,
+        &__fieldset--confirmation p {
+            max-width: rem($g-bu * 74);
+            margin-right: auto;
+            margin-left: auto;
+            text-align: center;
+        }
+
+        &__input-radio-label {
+            margin-bottom: 0;
+            text-align: right;
+        }
+
+        &__submit {
+            display: block !important;
+            padding: rem($g-bu * 2) rem($g-bu * 5) !important;
+            margin-right: auto !important;
+            margin-left: auto !important;
+        }
+
+        &__success-icon {
+            width: rem($g-bu * 12);
+            height: rem($g-bu * 12);
+            margin: rem($g-bu * 2) auto rem($g-bu * 6);
+        }
+    }
+}

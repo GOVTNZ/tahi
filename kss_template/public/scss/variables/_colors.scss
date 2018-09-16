@@ -1,0 +1,65 @@
+// -----------------------------------
+// Global Colours
+// -----------------------------------
+
+$g-color-white01: #fff;
+
+$g-color-offwhite01: #f4f4f4;
+$g-color-offwhite02: #DFE0E1;
+
+$g-color-grey01: rgba(49,49,49,0.5);
+$g-color-grey02: #828282;
+$g-color-grey03: #666;
+$g-color-grey04: #ccc;
+$g-color-grey05: #F3F3F5;
+
+$g-color-black01: #000;
+$g-color-black02: #111;
+$g-color-black03: #222;
+$g-color-black04: #444;
+$g-color-black05: #313131;
+$g-color-black06: #929292;
+
+$g-color-pink01: #f94493;
+
+$g-color-blue01: #0000ff;
+$g-color-blue02: #0645ad;
+$g-color-blue03: #0645ad;
+$g-color-blue04: #2272f7;
+$g-color-blue05: #222223;
+$g-color-blue06: #336699;
+$g-color-blue07: #1a4d80;
+$g-color-blue08: #58667B;
+
+$g-color-red01: #ff0000;
+$g-color-red02: #bd282d;
+
+$g-color-orange01: #faa700;
+
+$g-color-html-bg: $g-color-offwhite01;
+$g-color-body-bg: $g-color-offwhite01;
+$g-color-main-bg: $g-color-white01;
+$g-color-brand1: $g-color-blue05;
+$g-color-brand2: $g-color-grey02;
+
+
+
+$g-color-type: $g-color-black03;
+$g-color-error: $g-color-red01;
+
+$kss-color-background   : $g-color-white01;
+
+
+$kss-color-foreground	: $g-color-black04;
+
+$kss-color-heading		: $g-color-black02;
+
+$kss-color-quotes		: $g-color-grey03;
+
+$kss-color-link			: $g-color-blue06;
+
+$kss-color-link-visited	: $g-color-blue03;
+
+$kss-color-link-hover	: $g-color-blue07;
+
+$kss-color-link-active	: $g-color-orange01;

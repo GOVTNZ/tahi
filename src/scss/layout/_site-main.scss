@@ -1,0 +1,50 @@
+// ############################################
+// Site main layout
+// ############################################
+
+/* stylelint-disable order, media-feature-name-no-vendor-prefix */
+
+.l-site-main {
+    padding-bottom: rem($g-bu * 8);
+
+    &--with-404-background-image {
+        display: block;
+        padding-top: rem($g-bu * 4);
+        padding-bottom: rem($g-bu * 50);
+        background-image: url('../img/404/mobile.jpg');
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        background-size: auto 50%;
+        background-color: $g-color-grey19;
+
+        @media (-webkit-min-device-pixel-ratio: 2),
+            (min-resolution: 192dpi) {
+            background-image: url('../img/404/mobile-retina.jpg');
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        @include media($g-bp-medium-and-up) {
+            padding-bottom: rem($g-bu * 2);
+            background-size: auto 80%;
+        }
+
+        @include media($g-bp-wide-and-up) {
+            background-size: auto 100%;
+        }
+
+        @include media($g-bp-hyper-and-up) {
+            background-image: url('../img/404/desktop.jpg');
+            background-position: 100% 100%;
+
+            @media (-webkit-min-device-pixel-ratio: 2),
+                (min-resolution: 192dpi) {
+                background-image: url('../img/404/desktop-retina.jpg');
+            }
+        }
+    }
+}
+
+/* stylelint-enable order, media-feature-name-no-vendor-prefix */

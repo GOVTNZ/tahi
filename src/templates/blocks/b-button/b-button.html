@@ -1,0 +1,34 @@
+{% macro button(content = 'button placeholder', extra_content = false,  extra_class = '', icon_file = false, small_icon = false, is_anchor = false, theme_class = '', extra_attrs = false, is_disabled = false) %}
+
+        {% if is_disabled %}
+            {% if is_anchor %}
+                <span class="b-button {{extra_class}} {{theme_class}} b-button--disabled {% if icon_file %}b-button--with-icon{% endif %}" {% if extra_attrs %}{{extra_attrs}}{% endif %}>
+            {% else %}
+                <button class="b-button {{extra_class}} {{theme_class}} b-button--disabled {% if icon_file %}b-button--with-icon{% endif %}" disabled {% if extra_attrs %}{{extra_attrs}}{% endif %}>
+            {% endif %}
+        {% else %}
+            <{% if is_anchor %}a{% else %}button{% endif %} class="b-button {{extra_class}} {{theme_class}} {% if icon_file %}b-button--with-icon{% endif %}" {% if extra_attrs %}{{extra_attrs}}{% else %}href="/page"{% endif %}>
+        {% endif %}
+            {{content}}
+            {% if extra_content %}
+                <span class="b-button__extra-content">{{extra_content}}</span>
+            {% endif %}
+            {% if icon_file %}
+                <svg class="h-icon h-icon--button b-button__icon" aria-hidden="true">
+                    <use xlink:href="../img/icons/svg-sprite.svg#{{icon_file}}"></use>
+                </svg>
+            {% endif %}
+        {% if is_disabled %}
+            {% if is_anchor %}
+                </span>
+            {% else %}
+                </button>
+            {% endif %}
+        {% else %}
+            {% if is_anchor %}
+                </a>
+            {% else %}
+                </button>
+            {% endif %}
+        {% endif %}
+{% endmacro %}

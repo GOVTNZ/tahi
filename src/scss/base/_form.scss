@@ -1,0 +1,592 @@
+// ############################################
+// Base Form Styles
+// ############################################
+
+// The list below covers all possible input types and their selectors. These
+// can be cherry picked to extend default form styles.
+
+// button,
+// textarea,
+// input[type=checkbox'],
+// input[type='color'],
+// input[type='date'],
+// input[type='datetime-local'],
+// input[type='email'],
+// input[type='file'],
+// input[type='hidden'],
+// input[type='image'],
+// input[type='list'],
+// input[type='month'],
+// input[type='number'],
+// input[type='password'],
+// input[type='radio'],
+// input[type='range'],
+// input[type='reset'],
+// input[type='search'],
+// input[type='submit'],
+// input[type='tel'],
+// input[type='text'],
+// input[type='time'],
+// input[type='url'],
+// input[type='week']
+
+
+// ============================================
+// Form Variables
+// ============================================
+
+/* stylelint-disable string-no-newline */
+
+// Input types that require keyboard input.
+$form-input-text:
+    'input[type="text"],
+    input[type="password"],
+    input[type="search"],
+    input[type="email"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="url"],
+    input[type^="date"],
+    input[type="month"],
+    input[type="week"],
+    input[type="time"]';
+
+// Input types that commonly appear as buttons
+$form-input-buttons:
+    'input[type="submit"],
+    input[type="reset"],
+    input[type="button"]';
+
+// Input types grouped by all types but NOT checkbox or radio.
+$form-input-not-radio-not-checkbox:
+    'input:not([type="radio"]):not([type="checkbox"])';
+
+/* stylelint-enable string-no-newline */
+
+// ============================================
+// Default Form Styles, based on SS markup
+// ============================================
+
+input,
+textarea {
+    &::placeholder {
+        font-style: normal;
+        color: $g-color-charcoal;
+    }
+}
+
+button {
+    border-radius: 0;
+}
+
+form {
+    #{$form-input-not-radio-not-checkbox} {
+        margin-bottom: rem($g-bu);
+    }
+
+    #{$form-input-text},
+    textarea {
+        display: block;
+        width: 100%;
+        padding: rem($g-bu * 1.5 + 2) rem($g-bu * 2);
+        border: 1px solid $g-color-grey14;
+        border-radius: 0;
+        margin: 0 0 rem($g-bu * 1);
+        background-color: transparent;
+        font-size: ms(1);
+        color: $g-color-charcoal-light;
+        white-space: nowrap;
+        appearance: none;
+
+        &:focus {
+            padding: rem($g-bu * 1.5 + 1) rem($g-bu * 2 - 1);
+            border: 2px solid $g-color-blue16;
+        }
+    }
+
+    .no-list {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+
+        li {
+            padding: 0;
+            margin: 0 0 12px;
+        }
+    }
+
+    #{$form-input-buttons},
+    button {
+        @extend %b-button;
+
+        &.right {
+            margin-right: 0;
+            margin-left: rem($g-bu * 2);
+        }
+    }
+
+    input[type='checkbox'] {
+        position: absolute;
+        left: rem($g-bu - 999);
+        z-index: -1;
+        display: inline-block;
+
+        + label {
+            position: relative;
+            display: block;
+            padding: 0 0 0 2.25em;
+            margin: 0;
+            font-family: $g-font-firasans;
+            font-weight: 400;
+            cursor: pointer;
+
+            &::before {
+                position: absolute;
+                top: .1em;
+                display: inline-block;
+                content: '';
+                width: .95em;
+                height: .95em;
+                padding: 0;
+                border: 2px solid $dia-color-grey;
+                margin-left: -2.25em;
+                background-image: none;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-size: .7em .7em;
+                background-color: $g-color-white01;
+                color: $g-color-white01;
+            }
+        }
+
+        &:focus {
+            outline: none;
+
+            + label {
+                .js-enabled & {
+                    outline: 0;
+                }
+
+                .js-wai-outline & {
+                    outline: 2px solid $g-color-yellow04;
+                    outline-offset: 2px;
+                }
+            }
+        }
+
+        &:checked {
+            + label {
+                @extend %h-focusable;
+
+                &::before {
+                    border-color: $dia-color-blue;
+                    background-image: url('../img/icons/check-icon--white.svg');
+                    background-size: .75em;
+                    background-color: $dia-color-blue;
+                }
+            }
+        }
+
+        &[disabled] {
+            + label {
+                opacity: .5;
+            }
+        }
+
+
+        // ============================================
+        // Media Queries
+        // ============================================
+
+        // scss-lint:disable DeclarationOrder
+        @include media($g-bp-small-and-up) {
+            + label {
+                margin-right: 2.25em;
+            }
+        }
+    }
+
+    input[type='radio'] {
+        position: absolute;
+        left: rem($g-bu - 999);
+        z-index: -1;
+        display: inline-block;
+
+        + label {
+            position: relative;
+            display: inline-block;
+            padding: 0 0 0 2.25em;
+            margin: 0 2.25em 0 0;
+            font-family: $g-font-firasans;
+            font-weight: 400;
+            cursor: pointer;
+
+            &::before {
+                position: absolute;
+                top: 0;
+                display: inline-block;
+                content: '';
+                width: 20px;
+                height: 20px;
+                padding: 0;
+                border: 2px solid $dia-color-grey;
+                border-radius: 100%;
+                margin-left: -2.25em;
+                background-color: transparent;
+                color: $g-color-white01;
+            }
+        }
+
+        &:checked {
+            + label {
+                &::before {
+                    width: 10px;
+                    height: 10px;
+                    padding: 0;
+                    border-color: $dia-color-blue;
+                    border-width: 7px;
+                }
+            }
+        }
+
+        &:focus {
+            + label {
+                .js-enabled & {
+                    outline: 0;
+                }
+
+                .js-wai-outline & {
+                    outline: 2px solid $g-color-yellow01;
+                    outline-offset: 2px;
+                }
+            }
+        }
+
+        &[disabled] {
+            + label {
+                opacity: .5;
+            }
+        }
+    }
+
+    input[type='file'] {
+        width: 100%;
+        padding: rem($g-bu * 5);
+        border: 1px dashed $g-color-grey14;
+        cursor: pointer;
+    }
+
+    input[data-showcalendar] {
+        // background: red;
+    }
+
+    input {
+        &.date-alt {
+            background-image: url('../img/icons/calendar-icon.svg');
+            background-repeat: no-repeat;
+            background-position: calc(100% - 16px) center;
+            background-size: rem($g-bu * 2.5) rem($g-bu * 2.5);
+            background-color: transparent;
+        }
+    }
+
+    legend {
+        padding: 0 rem($g-bu * 1.5);
+        margin: 0 rem($g-bu * -1.5) rem($g-bu * 2.5);
+        font-size: ms(3);
+        font-weight: 400;
+    }
+
+    fieldset {
+        padding: 0;
+        border: 0;
+        margin: 0;
+
+
+        .field {
+            padding: 0;
+            border: 0;
+            margin-right: 0;
+            margin-left: 0;
+
+            &.checkbox {
+                @extend %h-section-margin;
+            }
+        }
+
+        > fieldset,
+        > div {
+            &.field:first-child {
+                margin-top: 0;
+            }
+        }
+
+        &.userformsgroup {
+            padding: 23px;
+            border: 1px solid $g-color-grey14;
+
+            > legend {
+                display: inline-block;
+                margin-bottom: 0;
+            }
+        }
+
+        &.optionset {
+            legend {
+                padding-top: rem($g-bu * 2.5);
+                margin-bottom: rem($g-bu * 3);
+            }
+        }
+    }
+
+    label {
+        @extend %h-font-gustan-medium;
+
+        display: inline-block;
+        margin: rem($g-bu * 2) 0 rem($g-bu * 1.5);
+        font-size: ms(1);
+        line-height: rem($g-bu * 2.5);
+        color: $g-color-charcoal;
+    }
+
+    .CompositeField,
+    .optionset {
+        .CompositeField,
+        .optionset {
+            @extend %h-section-margin;
+
+            .CompositeField,
+            .optionset {
+                margin: 0;
+            }
+        }
+    }
+
+    .optionset {
+        padding: 0;
+        list-style-type: none;
+
+        li {
+            display: block;
+            padding: 0;
+            margin: 0 0 rem($g-bu * 2.5);
+            list-style-type: none;
+        }
+
+        &.checkboxset {
+            li {
+                display: block;
+            }
+        }
+
+
+        // ============================================
+        // Media Queries
+        // ============================================
+
+        // scss-lint:disable DeclarationOrder
+        @include media($g-bp-small-and-up) {
+            li {
+                display: block;
+            }
+
+            &.checkboxset {
+                li {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    .right-title {
+        display: inline-block;
+        margin: rem($g-bu * 1) 0;
+        font-family: $g-font-gustan;
+        font-size: ms(-1);
+        line-height: rem($g-bu * 2.5);
+        font-weight: 300;
+    }
+
+
+    .error {
+        border-color: $g-color-red02 !important;
+        color: $g-color-red02 !important;
+    }
+
+    // input[type='color'] {
+    // }
+    // input[type='hidden'] {
+    // }
+
+    // input[type='image'] {
+    // }
+
+    // input[type='list'] {
+    // }
+
+    // input[type='radio'] {
+    // }
+
+    // input[type='range'] {
+    // }
+}
+
+// ============================================
+// SS markup, added to forms
+// ============================================
+
+.userform-progress {
+    margin-top: rem($g-bu * 11);
+
+    p {
+        font-size: ms(-2);
+        text-align: right;
+    }
+
+    .step-buttons {
+        position: relative;
+        border-bottom: 1px solid $g-color-blue16;
+        margin-right: rem($g-bu * 3);
+        margin-bottom: rem($g-bu * 7);
+        margin-left: rem($g-bu * 3);
+        list-style-type: none;
+
+
+        .step-button-wrapper {
+            button,
+            input {
+                margin-right: 1rem;
+            }
+
+            .step-button-jump {
+                position: absolute;
+                bottom: rem($g-bu * -3);
+                width: rem($g-bu * 6);
+                height: rem($g-bu * 6);
+                padding: 0 0 rem($g-bu * .5);
+                border: 2px solid $g-color-blue16;
+                border-radius: 100%;
+                margin: 0 rem($g-bu * -3) !important;
+                background-color: $g-color-white01;
+                font-size: ms(2);
+                line-height: rem($g-bu * 5.5);
+                font-weight: 500;
+                color: $g-color-blue06;
+                text-align: center;
+                cursor: default;
+            }
+
+            &.viewed .step-button-jump {
+                border: 2px solid $g-color-blue06;
+                background-color: $g-color-blue06;
+                color: $g-color-white01;
+                cursor: pointer;
+            }
+
+            &.current .step-button-jump {
+                //
+            }
+        }
+    }
+}
+
+.step-buttons {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    .step-button-wrapper {
+        display: inline-block;
+        margin: 0;
+        list-style-type: none;
+
+        button,
+        input[type='submit'] {
+            margin-right: rem($g-bu * 2);
+        }
+    }
+}
+
+.step-button-next {
+    @extend %h-font-gustan-bold;
+
+    font-size: ms(1);
+
+
+    &::after {
+        display: inline-block;
+        content: '';
+        width: 1em;
+        height: 1em;
+        margin: 0 0 -.2rem .5rem;
+        background-image: url('../img/icons/chevron-icon-right--white.svg');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: .75em .75em;
+        background-color: transparent;
+    }
+
+    // &:hover {
+    //     &::after {
+    //         background-image: url('../img/icons/chevron-icon-right--white.svg');
+    //     }
+    // }
+}
+
+.step-button-prev {
+    @extend %h-font-gustan-bold;
+
+    font-size: ms(1);
+
+    &::before {
+        display: inline-block;
+        content: '';
+        width: 1em;
+        height: 1em;
+        margin: 0 .5rem -.2rem 0;
+        background-image: url('../img/icons/chevron-icon-left--white.svg');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: .75em .75em;
+        background-color: transparent;
+    }
+
+    // &:hover {
+    //     &::before {
+    //             background-image: url('../img/icons/chevron-icon-left--white.svg');
+    //     }
+    // }
+}
+
+.progress {
+    position: relative;
+    height: 1em;
+    border: 1px solid $g-color-grey14;
+    background-color: $g-color-white01;
+
+    .progress-bar {
+        position: absolute;
+        height: 1em;
+        background-color: $g-color-blue16;
+    }
+}
+
+.error-container {
+    * {
+        color: $g-color-red02;
+    }
+
+    h4 {
+        @extend %h-font-firasans;
+
+        padding: rem($g-bu * 1.5)  rem($g-bu * 2)  rem($g-bu * 1.5) rem($g-bu * 5.5);
+        background-image: url('../img/icons/bell-icon--white.svg');
+        background-repeat: no-repeat;
+        background-position: rem($g-bu * 2) rem($g-bu * 1.5);
+        background-size: rem($g-bu * 2.5) rem($g-bu * 2.5);
+        background-color: $g-color-red02;
+        font-size: ms(-1);
+        line-height: rem($g-bu * 2.5);
+        color: $g-color-white01;
+    }
+}

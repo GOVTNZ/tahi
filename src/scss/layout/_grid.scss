@@ -1,0 +1,157 @@
+// ############################################
+// Class Based Grid Layout Styles
+// ############################################
+
+// Note these are used to layout components / blocks and should not be used inside the
+// components / blocks themselves.
+
+// ============================================
+// Row Declarations
+// ============================================
+
+.l-row {
+    @include grid-row();
+}
+
+.l-row--centered {
+    @include grid-row('center');
+}
+
+// ============================================
+// Column Declarations
+// ============================================
+
+[class*='l-grid-'] {
+    width: 100%;
+
+    > *:first-child {
+        @include media($g-bp-large-and-up) {
+            margin-top: 0;
+        }
+    }
+}
+
+@include media($g-bp-small-and-up) {
+    @for $i from 1 through $g-grid-columns {
+        .l-grid-small-#{$i}of#{$g-grid-columns} {
+            @include span-column(#{$i}/#{$g-grid-columns});
+        }
+    }
+}
+
+@include media($g-bp-medium-and-up) {
+    @for $i from 1 through $g-grid-columns {
+        .l-grid-medium-#{$i}of#{$g-grid-columns} {
+            @include span-column(#{$i}/#{$g-grid-columns});
+        }
+    }
+}
+
+@include media($g-bp-large-and-up) {
+    @for $i from 1 through $g-grid-columns {
+        .l-grid-large-#{$i}of#{$g-grid-columns} {
+            @include span-column(#{$i}/#{$g-grid-columns});
+        }
+    }
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    max-width: 50rem;
+    padding: 0 2rem;
+    margin: 0 auto;
+
+    &__row {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+
+        @include media($g-bp-small-and-up) {
+            flex-direction: row;
+        }
+
+        &.no-margin {
+            margin: 0;
+        }
+    }
+
+    &__col {
+        padding: 0 15px;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+        &--full {
+            width: 100%;
+        }
+
+        &--half {
+            width: 100%;
+
+            @include media($g-bp-small-and-up) {
+                width: 50%;
+            }
+        }
+
+        &--one-third {
+            width: 100%;
+
+            @include media($g-bp-small-and-up) {
+                width: 33%;
+            }
+        }
+
+        &--two-thirds {
+            width: 100%;
+
+            @include media($g-bp-small-and-up) {
+                width: 66%;
+            }
+        }
+
+        &--quarter {
+            width: 100%;
+
+            @include media($g-bp-small-and-up) {
+                width: 25%;
+            }
+        }
+    }
+}
+
+// .grid {
+//     margin-bottom: 2rem;
+//     max-width: 50rem;
+//     width: 100%;
+
+//     &-wrapper {
+//         display: flex;
+//         margin: 0 auto 2rem;
+//         padding: 0 2rem;
+//         max-width: 100%;
+//     }
+
+//     &__full-col {
+//         max-width: 100%;
+//         margin: 0 auto 2rem;
+//         padding: 0 2rem;
+//     }
+
+//     &__half-col {
+//         max-width: 50%;
+//     }
+
+//     &__one-third-col {
+//         max-width: 33.333%;
+//     }
+
+//     &__two-third-col {
+//         max-width: 66.666%;
+//     }
+// }

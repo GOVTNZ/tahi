@@ -1,0 +1,15 @@
+{% macro imageinline(has_caption = false, extra_class = 'left') %}
+	<!-- possible values for extra_class : 	center, leftAlone, right, left -->
+
+	{% if has_caption %}
+		<div class="captionImage {{extra_class}}" style="width: 372px;">
+			<img class="{{extra_class}}" title="Title text (tooltip)" src="http://placehold.it/372x199" alt="images3" width="372" height="199">
+			<p class="caption {{extra_class}}">Caption text, this could be long, and could even contain a <a href="google.com">link</a>.</p>
+		</div>
+	{% else %}
+		<p>
+			<img class="{{extra_class}}" title="Title text (tooltip)" src="http://placehold.it/372x199" alt="images2" width="372" height="199">
+		</p>
+	{% endif %}
+
+{% endmacro %}

@@ -1,0 +1,33 @@
+// ############################################
+// Button cta list
+// ############################################
+
+.b-button-cta-list {
+    @extend %h-section-margin;
+
+    padding: 0;
+    margin-left: 0;
+    list-style: none;
+
+    &__item {
+        padding: 0;
+        margin: 0 0 rem($g-bu * 2);
+        list-style: none;
+
+        * {
+            margin: 0;
+        }
+    }
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-small-and-up) {
+        // scss-lint:enable DeclarationOrder
+        @include grid-row();
+
+        &__item {
+            @include span-column(1 / 2, rem($g-bu * 4));
+
+            margin-bottom: rem($g-bu * 3);
+        }
+    }
+}

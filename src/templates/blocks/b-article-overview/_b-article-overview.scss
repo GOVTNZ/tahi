@@ -1,0 +1,30 @@
+// ################################################
+// b-article-overview
+// ################################################
+
+
+// ================================================
+// Component Styles
+// ================================================
+
+.b-article-overview {
+
+    // --------------------------------------------
+    // Block Level Styles
+    // --------------------------------------------
+    padding: 0 0 rem($g-bu * 5 - 3);
+    border-bottom: 3px solid $g-color-grey04;
+
+    > *:first-child {
+        margin-top: 0;
+    }
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-large-and-up) {
+        padding: 0 0 rem($g-bu * 6 - 3);
+    }
+}

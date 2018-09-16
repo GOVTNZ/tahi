@@ -1,0 +1,126 @@
+// ############################################
+// Typographic Helpers
+// ############################################
+
+.h-heading2-underline {
+    @extend %h-font-gustan-book;
+
+    padding-bottom: rem($g-bu * 2.5 - 3);
+    border-bottom: 3px solid $g-color-grey04;
+    margin: rem($g-bu * 3) 0 rem($g-bu * 2.5);
+    font-size: ms(3);
+    line-height: rem($g-bu * 4);
+    color: $g-color-grey05;
+
+    @include media($g-bp-large-and-up) {
+        padding-bottom: rem($g-bu * 3 - 4);
+        border-bottom: 4px solid $g-color-grey04;
+        font-size: ms(4);
+        line-height: rem($g-bu * 4);
+    }
+}
+
+.h-heading2-down {
+    margin-top: rem($g-bu * 9.5);
+}
+
+// ============================================
+// Gustan
+// ============================================
+
+%h-font-gustan-light {
+    font-family: $g-font-gustan;
+    font-weight: 200;
+}
+
+%h-font-gustan-book {
+    font-family: $g-font-gustan;
+    font-weight: 300;
+}
+
+%h-font-gustan-medium {
+    font-family: $g-font-gustan;
+    font-weight: 400;
+}
+
+%h-font-gustan-bold {
+    font-family: $g-font-gustan;
+    font-weight: 700;
+}
+
+%h-font-gustan-black {
+    font-family: $g-font-gustan;
+    font-weight: 900;
+}
+
+
+// ============================================
+// Fira Sans
+// ============================================
+
+%h-font-firasans {
+    font-family: $g-font-firasans;
+    font-weight: 400;
+}
+
+%h-font-firasans-500 {
+    font-family: $g-font-firasans;
+    font-weight: 500;
+}
+
+%h-font-firasans-600 {
+    font-family: $g-font-firasans;
+    font-weight: 600;
+}
+
+%h-font-firasans-700 {
+    font-family: $g-font-firasans;
+    font-weight: 700;
+}
+
+%h-font-firasans-800 {
+    font-family: $g-font-firasans;
+    font-weight: 800;
+}
+
+.h1 {
+    @extend %h1 !optional;
+}
+
+.h2 {
+    @extend %h2 !optional;
+}
+
+.h3 {
+    @extend %h3 !optional;
+}
+
+.h4 {
+    @extend %h4 !optional;
+}
+
+.h5 {
+    @extend %h5 !optional;
+}
+
+.h6 {
+    @extend %h6 !optional;
+}
+
+.intro p,
+.intro li {
+    @extend %h-font-gustan-light;
+
+    font-size: ms(3);
+    line-height: rem($g-bu * 3.5);
+
+
+    // --------------------------------------------
+    // Media Queries
+    // --------------------------------------------
+
+    @include media($g-bp-large-and-up) {
+        font-size: ms(4);
+        line-height: rem($g-bu * 4.5);
+    }
+}

@@ -1,0 +1,649 @@
+// ############################################
+// Print Stylesheet
+// ############################################
+
+// Styleguide: MBIE Print style sheet best practice
+
+@charset 'utf-8';
+
+// Entry point
+@import '../lib',
+    '../tools',
+    '../variables',
+    '../helpers',
+    '../helpers/print',
+    '../layout';
+
+// Styleguide #2: Set text colour to black and font size of content at 12 point.
+// 12pt is 16px - see https://www.bhalash.com/archives/13544803803
+// note that element sizing is relative to this and is set by a SASS generated Modular Scale
+
+html,
+body {
+    /* stylelint-disable declaration-property-unit-whitelist */
+    font-size: 12pt;
+    /* stylelint-enable declaration-property-unit-whitelist */
+}
+
+.b-register-small-header {
+    padding: 0;
+}
+
+.b-hero__content {
+    padding-top: 2rem;
+}
+
+.b-register-print-logo {
+    text-decoration: none;
+
+    &__image {
+        width: 1.83rem;
+        height: 2.8rem;
+        max-width: 2rem;
+        min-width: 1.83rem;
+    }
+
+    &__chevron {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.b-register-logo {
+    display: none;
+
+    .b-register-print-logo & {
+        /* stylelint-disable value-no-vendor-prefix */
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        /* stylelint-enable value-no-vendor-prefix */
+        display: flex;
+    }
+}
+
+// Styleguide #6: Display site logo in black and white
+// using rems here results in blurry edges
+
+.c-branded-header__logo--print {
+    width: 175px;
+    height: auto;
+}
+
+.c-branded-header--register .c-branded-header__logo--print {
+    width: 175px;
+    height: auto;
+}
+
+// display in noscript/expanded state
+
+.js-enabled .b-show-hide-js-expandmore__button {
+    padding: 0;
+    margin: 0;
+}
+
+// display in noscript/expanded state
+// overflow reduces the gap between heading and adjacent text block:
+
+.b-show-hide-js-expandmore__to_expand,
+.b-show-hide-js-expandmore__to_expand[data-hidden=true] {
+    max-height: none;
+    overflow: visible;
+    padding: 0;
+    visibility: visible;
+    opacity: 1;
+}
+
+// Styleguide #12: Remove breadcrumb navigation
+
+.c-breadcrumbs {
+    display: none;
+}
+
+// Styleguide #13: Remove header graphic and header navigation
+
+.b-icon-box-wrapper--dismissable-js,
+.c-navigation-bar-js__list {
+    display: none;
+}
+
+// specific class to hide elements on print
+
+.h-hide-print {
+    display: none !important;
+}
+
+// hide redundant elements
+/* stylelint-disable no-duplicate-selectors */
+
+.modaal-overlay,
+.modaal-close,
+.b-modal-back-link__wrapper,
+.ajax-placeholder,
+.ajax-placeholder-auditor-tile,
+.search-result-tile-placeholder-card,
+.js-enabled .b-show-hide-js-expandmore__indicator,
+.b-section-subnav,
+.h-visuallyhidden,
+.b-nav-registers-js,
+.b-nav-realme,
+.b-site-search-js,
+.b-scroll-trigger-js__left,
+.b-scroll-trigger-js__right,
+.b-show-hide-js-expandmore--transcript .b-show-hide-js-expandmore__title,
+.b-hero__hero-graphic,
+.b-video-js__icon,
+.b-register-banner__button,
+.l-ajax-js--inline-loader,
+.c-sharing-and-output-panel__tool-list,
+.ajax-placeholder,
+.b-login-status-bar,
+.c-sharing-and-output-panel,
+.b-icon-box-wrapper--dismissable-js {
+    display: none !important;
+}
+/* stylelint-enable no-duplicate-selectors */
+
+.l-ajax-js--inline-loader:not(.ajax-loaded) + .b-show-hide-js-expandmore__to-expand {
+    display: none;
+}
+
+// hide all content NOT modal
+
+.modaal-noscroll .l-site-main {
+    display: none;
+}
+
+.modaal-wrapper,
+.b-modal-inner .b-modal-inner__header,
+.b-modal-inner .b-modal-inner__scroll-wrapper,
+.b-search-field-and-options--modal,
+.b-search-results-wrapper--modal {
+    position: static;
+}
+
+// expand responsive content
+
+.b-table-js .l-overflow-liner {
+    overflow: visible;
+}
+
+// Styleguide Recommendation #2: Display the destination of links
+// by showing the full URL of hyperlinks in brackets after the hyperlink text.
+
+a::after {
+    display: inline-block;
+    content: '(' attr(href) ')';
+    margin-left: .25em;
+}
+
+// overruling
+
+a[href^='#'] {
+    text-decoration: none;
+
+    .h-icon {
+        display: inline-block;
+    }
+}
+
+// display link destination after block links
+
+.c-document-list__link,
+.b-cta__link,
+.c-branded-header a {
+    &::after {
+        display: block;
+        margin-top: rem($g-bu);
+        font-size: ms(-1);
+    }
+}
+
+@include media($g-bp-large-and-up) {
+    .b-insight-article-tile {
+        &::after {
+            padding-right: 2rem;
+            padding-bottom: 2rem;
+            padding-left: 2rem;
+        }
+    }
+
+    .b-insight-article-tile--featured {
+        &::after {
+            width: 100%;
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+}
+
+// Styleguide #3: Link text underlined
+
+h1,
+.h1,
+h2,
+.h2,
+.b-help-tile--large-title .b-help-tile__title,
+h3,
+.h3,
+.b-help-tile__title,
+h4,
+.h4,
+.b-insight-tile-list-wrapper .b-insight-tile-list-title,
+.b-listings-pagination__year,
+h5,
+.h5,
+h6,
+.h6 {
+    a {
+        text-decoration: underline;
+    }
+}
+
+// underline block links
+
+.c-document-list__link .c-document-list__file-title {
+    text-decoration: underline;
+}
+
+// Styleguide #14: Remove sidebar content, unless it applies to the main content
+// Styleguide #16: Remove dimensions from containers
+// linearise page
+
+.l-grid-large-9of12,
+.l-grid-large-3of12 {
+    flex-basis: 100%;
+    max-width: 100%;
+}
+
+@include media($g-bp-large-and-up) {
+    .b-hero__content {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}
+
+// Styleguide #11: Remove Background images
+// remove background image
+
+.b-hero,
+.b-hero--dark::before {
+    background: none;
+}
+
+.h-themed__theme1__glow {
+    background: none !important;
+}
+
+// Styleguide #4: Set Background colour to white
+// remove background color
+
+html,
+.captionImage .caption,
+.c-branded-header,
+table,
+table th,
+.h-bg-grey,
+.c-box-out,
+.c-box-out--alert,
+.c-box-out--tip,
+.c-box-out--warning,
+.b-caption,
+.b-show-hide-js-expandmore--transcript,
+.b-tag--link,
+.b-button,
+form input[type=submit],
+form input[type=reset],
+form input[type=button],
+form button,
+.b-feedback-form__input-radio + .b-feedback-form__input-radio-label,
+.c-mbie-footer,
+.b-search-field-and-options .b-search-field-and-options__form__search-submit,
+.userform-progress .step-buttons .step-button-wrapper.viewed .step-button-jump {
+    background-color: #fff;
+}
+
+// Styleguide #2: Set text colour to black and font size of content at 12 point.
+
+html,
+body,
+a,
+table th,
+table tbody th,
+.b-show-hide-js-expandmore__title,
+blockquote .c-block-quote__icon,
+.c-box-out--tip .c-box-out__icon,
+.c-box-out--alert .c-box-out__icon,
+.c-box-out--warning .c-box-out__icon,
+.c-document-list__file-title,
+.b-tag--link,
+.b-button,
+form input[type=submit],
+form input[type=reset],
+form input[type=button],
+form button,
+.b-feedback-form__input-radio + .b-feedback-form__input-radio-label,
+.c-mbie-footer,
+h1,
+.h1,
+h2,
+.h2,
+.b-help-tile--large-title .b-help-tile__title,
+h3,
+.h3,
+.b-help-tile__title,
+h4,
+.h4,
+.b-listings-pagination__year,
+.b-insight-tile-list-wrapper .b-insight-tile-list-title,
+h5,
+.h5,
+h6,
+.h6,
+.b-hero__title--secondary,
+.b-insight-article-tile,
+.b-hero--dark .b-hero__title,
+.b-hero--dark .b-hero__intro,
+.b-search-field-and-options .b-search-field-and-options__form__search-submit,
+.b-search-field-and-options .b-search-field-and-options__form__category-set__radio-label,
+.b-button__extra-content,
+.b-auditor-tile__pseudo-link,
+.b-auditor-tile__head__secondary-info,
+.userform-progress .step-buttons .step-button-wrapper .step-button-jump {
+    color: #000;
+}
+
+.userform-progress .step-buttons .step-button-wrapper.viewed .step-button-jump {
+    background-color: #000;
+    color: #fff;
+}
+
+// remove borders
+
+.c-branded-header,
+blockquote {
+    border: 0;
+}
+
+// make borders black
+
+.c-branded-header,
+.b-show-hide-js-expandmore,
+.b-tag--link,
+.b-feedback-form,
+.b-feedback-form__input-radio + .b-feedback-form__input-radio-label,
+table td,
+.b-sidebar-note,
+.b-search-field-and-options .b-search-field-and-options__form__search-input,
+.b-search-field-and-options .b-search-field-and-options__form__search-submit,
+.b-search-field-and-options .b-search-field-and-options__form__category-set__radio-label::before,
+.userform-progress .step-buttons .step-button-wrapper.viewed .step-button-jump,
+.userform-progress .step-buttons .step-button-wrapper .step-button-jump,
+.userform-progress .step-buttons {
+    border-color: #000;
+}
+
+// replace background color with border
+
+.c-box-out,
+.c-box-out--alert,
+.c-box-out--tip,
+.c-box-out--warning,
+.b-button,
+form input[type=submit],
+form input[type=reset],
+form input[type=button],
+form button,
+.b-insight-article-tile,
+.b-insight-article-tile--with-border {
+    border: 1px solid #000;
+}
+
+// where it's not viable to replace background color with border
+// remove horizontal padding
+//.c-document-list__link,
+
+.captionImage .caption,
+.b-video-js .b-caption,
+.b-video-js .b-show-hide-js-expandmore--transcript,
+    //.b-cta__liner,
+.b-show-hide-js-expandmore--logo .b-show-hide-js-expandmore__content {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+@include media($g-bp-tiny-and-up) {
+    .b-hero,
+    .b-help-tile {
+        &__title {
+            padding-left: 0;
+        }
+
+        &__content {
+            padding-left: 0;
+        }
+
+        &--large-title {
+            #{m-nest()}__title {
+                padding-left: rem($g-bu * 6.5);
+            }
+
+            #{m-nest()}__content {
+                padding-left: rem($g-bu * 6.5);
+            }
+        }
+    }
+}
+
+@include media($g-bp-small-and-up) {
+    .c-document-list__link,
+    .b-caption,
+    .b-show-hide-js-expandmore--logo .b-show-hide-js-expandmore__content {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .b-insights-metric-panel__text-value,
+    .b-insights-metric-panel__text {
+        text-align: left;
+    }
+}
+
+@include media($g-bp-medium-and-up) {
+    .b-show-hide-js-expandmore--logo .b-show-hide-js-expandmore__content {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+@include media($g-bp-large-and-up) {
+    .b-show-hide-js-expandmore--logo .b-show-hide-js-expandmore__content {
+        padding-right: 0;
+        padding-left: 0;
+
+        &--large-title {
+            #{m-nest()}__title {
+                padding-left: rem($g-bu * 12);
+            }
+
+            #{m-nest()}__content {
+                padding-left: rem($g-bu * 12);
+            }
+        }
+    }
+}
+
+// remove excess vertical padding
+@include media($g-bp-large-and-up) {
+    .b-hero__content,
+    .b-hero--no-breadcrumb .b-hero__content {
+        padding-top: 0;
+    }
+
+    .b-hero__content, {
+        padding-bottom: 0;
+    }
+}
+
+// override print media query in SASS include
+
+.l-site-main {
+    padding-bottom: 0;
+}
+
+// table headers when tables break across pages
+
+thead {
+    display: table-header-group;
+}
+
+// Styleguide Recommendation #3: Consider a print-only message or disclaimer
+// that this content will change over time and can go out of date.
+
+.c-mbie-footer__content-disclaimer {
+    p {
+        margin-bottom: rem($g-bu * 2);
+        font-size: ms(-1);
+    }
+}
+
+// Styleguide #15: Remove footer links and MBIE and NZ Gov logos
+
+.c-mbie-footer__nav-wrapper,
+.c-mbie-footer__logo-list,
+.c-mbie-footer__global-nav__item {
+    display: none;
+}
+
+.c-mbie-footer__nav-group {
+    padding-bottom: 0;
+}
+
+// Styleguide #8: Display copyright information at the bottom of the printout
+
+.c-mbie-footer__global-nav__item.c-mbie-footer__global-nav__copyright {
+    display: block;
+    width: 100%;
+}
+
+// Styleguide Recommendation #1: Display full URL at the end of the print out
+// if the URL is long and could get cut off the default lower left footer of the print out.
+
+.c-mbie-footer__page-url {
+    p {
+        margin-top: 0;
+        margin-bottom: rem($g-bu * 4); // target:2rem
+        font-size: ms(-1);
+    }
+}
+
+.b-insight-article-tile--orange,
+.b-insight-article-tile--blue-light,
+.b-insight-article-tile--orange-light,
+.b-insight-article-tile--green-light,
+.b-insight-article-tile--blue,
+.b-insight-article-tile--white {
+    background-color: #fff;
+    color: #000;
+    outline-color: #fff;
+}
+
+.b-insight-article-tile--blue-light .b-insight-article-tile__title,
+.b-insight-article-tile--blue-light .b-insight-article-tile__chevron-icon-right,
+.b-insight-article-tile--green-light .b-insight-article-tile__title,
+.b-insight-article-tile--green-light .b-insight-article-tile__chevron-icon-right,
+.b-insight-article-tile--blue .b-insight-article-tile__title,
+.b-insight-article-tile--blue .b-insight-article-tile__chevron-icon-right,
+.b-insight-article-tile--white .b-insight-article-tile__title,
+.b-insight-article-tile--white .b-insight-article-tile__chevron-icon-right,
+.b-insight-article-tile__header--with-image .b-insight-article-tile__title,
+.b-insight-article-tile__header--with-image .b-insight-article-tile__chevron-icon-right,
+.b-insight-article-introduction__title--secondary,
+.b-insights-metric-panel__icon--red,
+.b-hero__title,
+.dk-select [role=combobox].hidden-option,
+.b-filter-title,
+.b-article-entity__title {
+    color: #000;
+}
+
+.dk-select [role=combobox] {
+    background: none;
+}
+
+.b-listings-pagination__button--current {
+    &::after {
+        border-color: #000;
+        background-color: #000;
+    }
+}
+
+.b-hero__filter-radio + label {
+    border-color: #000;
+    background-color: #fff;
+    color: #000;
+}
+
+.b-hero__filter-radio:checked + label {
+    background-color: #000;
+    color: #fff;
+}
+
+.b-insight-article-tile--white .b-insight-article-tile__header {
+    &::after {
+        left: 0;
+        width: 100%;
+    }
+}
+
+// Theming resets
+
+.h-themed__theme1__linear-gradient-small,
+.h-themed__theme2__linear-gradient-small,
+.h-themed__theme3__linear-gradient-small,
+.b-news-tile {
+    &::before {
+        background: #000 !important; // override !important
+    }
+}
+
+.h-themed__theme1__color-secondary,
+.h-themed__theme2__color-secondary,
+.h-themed__theme3__color-secondary {
+    color: #000 !important;
+}
+
+.h-themed__theme1__button,
+.h-themed__theme2__button,
+.h-themed__theme3__button {
+    border-color: #000 !important;
+    color: #000 !important;
+}
+
+.b-insight-article-tile__tag {
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    background-color: #fff;
+    color: #000;
+}
+
+/* stylelint-disable no-duplicate-selectors */
+
+.b-section-subnav__list-item-active > .b-section-subnav__link,
+.b-section-subnav__sub-list-item-active > .b-section-subnav__link,
+.b-section-subnav__list-item-active > .b-section-subnav__link,
+.b-section-subnav__sub-list-item-active > .b-section-subnav__link,
+.b-section-subnav__sub-list-item-active__icon,
+.b-section-subnav__list-item-active__icon {
+    color: #000;
+}
+
+/* stylelint-enable no-duplicate-selectors */
+
+// TODO
+// * b-image-full caption wider than picture
+// * dividers between hidden ajax placeholders - http://192.168.0.140:4567/statics/C-notice-article-co.html
+// * position of generated content after first .b-insight-tile-list__list-item - http://192.168.0.140:4567/statics/E-insights-article.html
+// * there are some print styles being inherited from somewhere, which change the text size hierarchy
+// * .h-themed__theme1__glow  reset is not working - http://192.168.0.140:4567/statics/U-C-companies-register-home.html
+// * some blue outlines: http://192.168.0.140:4567/statics/form-elements.html

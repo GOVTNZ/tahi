@@ -1,0 +1,187 @@
+// ------------------------------------------------------------------------------
+// navigation in sidebar-area
+// ------------------------------------------------------------------------------
+
+body.kss-node {
+
+    .kss-nav {
+        max-height: 100%;
+        padding: 63px 28px 0;
+        overflow-y: auto;
+
+        &__ref {
+            display: none !important;
+        }
+
+        &.stuck {
+            width: 100%;
+            min-width: auto;
+        }
+
+        h2 {
+            padding-top: 0;
+            padding-bottom: 14px;
+            margin: 0;
+            font-size: $kss-font-size * 1.875;
+            font-weight: 900;
+            color: $g-color-type;
+            border-bottom: 2px solid #161717;
+        }
+
+        .kss-nav__menu {
+            display: block;
+            padding: 0;
+            margin-top: ($kss-vertical-rhythm / 2);
+            margin-bottom: ($kss-vertical-rhythm / 2);
+            list-style-type: none;
+        }
+
+        .kss-nav__menu-item {
+            display: block;
+            position: relative;
+            padding: 0;
+            font-size: $kss-font-size * 1;
+            border-bottom: 1px solid $g-color-grey04;
+
+            a {
+                display: inline-block;
+                width: 100%;
+                color: #161717;
+                font-weight: 700;
+                font-size: $kss-font-size * 1.25;
+                text-decoration: none;
+                padding-top: ($kss-vertical-rhythm / 2);
+                padding-bottom: ($kss-vertical-rhythm /    2);
+
+                &:focus,
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            &.highlight > a {
+                color: #0C8DF9;
+            }
+            &.active > a {
+
+                &::after {
+                    display: inline-block;
+                    font-weight: 500;
+                    color: $g-color-brand2;
+                    content: '→';
+                }
+            }
+
+            .show_hide-content-button {
+                position: absolute;
+                top: 13px;
+                right: 0;
+                display: inline-block;
+                width: $kss-font-size * 1.375;
+                height: $kss-font-size * 1.375;
+                font-size: $kss-font-size * 1.375;
+                color: $g-color-grey01;
+                background-color: transparent;
+                padding: 0;
+                border: 1px solid $g-color-grey04;
+                border-radius: 50%;
+
+              &::after {
+                position: absolute;
+                top: -4px;
+                left: 0;
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                font-size: 23px;
+                line-height: 1;
+                text-align: center;
+                content: '+';
+              }
+            }
+
+            &.open .show_hide-content-button {
+
+              &:after {
+                content: '-';
+              }
+            }
+
+            &.hassubnav {
+                padding-right: 30px;
+            }
+
+            .kss-nav__menu-child {
+                display: none;
+                padding: 0;
+                margin: 0 -30px 0 0;
+                border-top: 1px solid $g-color-grey04;
+
+                .kss-nav__menu-item {
+                    display: block;
+                    border: 0;
+                    padding: 0;
+                    margin: 0 0 0 10px;
+
+                    a {
+                        display: block;
+                        padding-top: ($kss-vertical-rhythm / 4);
+                        padding-bottom: ($kss-vertical-rhythm / 4);
+                        padding-left: ($kss-vertical-rhythm / 1.5);
+                        line-height: 1.4;
+                        font-weight: 400;
+                        font-size: 18px;
+                        border: 0;
+                        padding: 6px 0;
+                        margin: 0;
+                    }
+
+                    &.active > a {
+                        color: $g-color-brand1;
+                        font-weight: 500;
+
+                        &::after {
+                            display: inline-block;
+                            color: $g-color-brand2;
+                            content: '→';
+                        }
+                    }
+
+                }
+            }
+
+            &.open .kss-nav__menu-child {
+                display: block;
+            }
+
+            .kss-nav__ref {
+                //
+            }
+
+            .kss-nav__name {
+                //
+            }
+        }
+    }
+
+    @media screen and (min-width: 769px) {
+
+        .kss-nav {
+            padding: 63px 28px 0;
+
+            &.stuck {
+                width: 20%;
+                min-width: 300px;
+            }
+
+            .kss-nav__menu-item {
+            //
+            }
+
+            .kss-nav__menu-child {
+            //
+            }
+        }
+    }
+}

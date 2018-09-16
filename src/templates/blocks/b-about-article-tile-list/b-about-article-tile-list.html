@@ -1,0 +1,20 @@
+{% macro b_aboutarticletilelist(no_of_tiles = '3') %}
+	{% import "blocks/b-about-article-tile/b-about-article-tile.html" as b_aboutarticletile %}
+
+	<div class="b-about-article-tile-wrapper">
+		<ul class="b-about-article-tile-wrapper__list">
+
+			<li class="b-about-article-tile-wrapper__list-item">
+				{{ b_aboutarticletile.b_aboutarticletile(heading_modifier = 'light', heading_linked = true, title = 'What is a Limited Partnership?', content = 'The Companies Office administers a number of registers to support the economic development of New Zealand. This includes this and that and some other things.', link_text = 'Read more') }}
+			</li>
+			{% if no_of_tiles =='3' %}
+				<li class="b-about-article-tile-wrapper__list-item">
+					{{ b_aboutarticletile.b_aboutarticletile(heading_modifier = 'light', heading_linked = true, title = 'What is a pertnership agreement?', content = 'The Companies Office administers a number of registers to support the economic development of New Zealand. This includes this and that and some other things.', link_text = 'Read more') }}
+				</li>
+				<li class="b-about-article-tile-wrapper__list-item">
+					{{ b_aboutarticletile.b_aboutarticletile(heading_modifier = 'light', heading_linked = true, title = 'Powers of the Registrar', content = 'The Companies Office administers a number of registers to support the economic development of New Zealand. This includes this and that and some other things.', link_text = 'Read more') }}
+				</li>
+			{% endif %}
+		</ul>
+	</div>
+{% endmacro %}

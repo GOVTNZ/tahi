@@ -1,0 +1,13 @@
+// Tools stylesheets.
+
+// These stylesheets include all project global variables.
+// They should not generate any CSS, but provide a set of variables referenced by the rest of the boilerplate.
+// All variables set at this level should be prefixed with 'g-' for global. This allows them to be easily distinguished from component specific variables.
+// NB: while not strictly speaking variables, for ease of access, font face declarations have also been included here.
+
+@import
+'variables/general',
+'variables/font-face',
+'variables/typography',
+'variables/breakpoints',
+'variables/colors';

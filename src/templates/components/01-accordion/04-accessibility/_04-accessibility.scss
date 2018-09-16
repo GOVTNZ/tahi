@@ -1,0 +1,16 @@
+// Accessibility
+//
+// The component has the following features to support accessibility:
+//
+// - Accordion controls show focus when using tab key and are accessible using a keyboard.
+// - The accordion has a dynamic tab order that takes account of the opening and closing of sections.
+//
+// In the context of a full page, consider the following:
+//
+// - Ensure headings are marked up correctly with the right ranking.
+//   For example if you have an `<h1>` page heading followed by an accordion the accordion heading should be marked up as an `<h2>`.
+// - Accordion controls must be placed in the correct tab order in their page context.
+// - If placed on a non-white background, ensure the contrast between the accordion text and its background still meets
+//   the [AAA contrast and luminosity ratio standard of 4.5:1](http:www.rte.ie).
+//
+// Styleguide: 1.05

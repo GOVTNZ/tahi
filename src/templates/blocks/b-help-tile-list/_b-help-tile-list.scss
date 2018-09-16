@@ -1,0 +1,37 @@
+
+.b-help-tileholder {
+    @extend %h-section-margin;
+
+    margin-right: 0;
+    margin-left: 0;
+
+    &__list {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+
+    &__list-item {
+        padding: 0;
+        border-bottom: 1px solid $g-color-grey11;
+        margin: 0;
+        list-style-type: none;
+    }
+
+    // --------------------------------------------
+    // Media Queries
+    // --------------------------------------------
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-small-and-up) {
+        &__list {
+            @include grid-row('flex-start');
+        }
+
+        &__list-item {
+            @include span-column(1 / 2, rem($g-bu * 5), true, 2);
+
+            margin-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+@charset 'utf-8';
+
+// Entry point
+@import
+'lib',
+'tools',
+'variables',
+'helpers',
+'base',
+'layout',
+'components';
+
+
+// ------------------------------------------------------------------------------
+// Wrap all of this template's base HTML styling inside a .kss-style selector.
+// ------------------------------------------------------------------------------
+
+.kss-style {
+    font-family: $kss-font-body;
+    font-size: $kss-font-size;
+    line-height: $kss-vertical-rhythm;
+    color: $kss-color-foreground;
+}

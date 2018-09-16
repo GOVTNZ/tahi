@@ -1,0 +1,18 @@
+{
+  "name": "kss-node-template--tahi",
+  "description": "KSS template for Tahi",
+  "dependencies": {
+    "fs-find": "^0.4.0",
+    "node-json2html": "^1.1.1",
+    "promise": "^7.1.1",
+    "recursive-readdir-sync": "^1.0.6"
+  },
+  "devDependencies": {
+    "jquery": "^1.12.4"
+  },
+  "scripts": {
+    "sass": "sass --watch public/scss/main.scss:public/css/main.css --style compressed",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}

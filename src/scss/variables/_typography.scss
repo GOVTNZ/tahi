@@ -1,0 +1,31 @@
+// ############################################
+// Typographic
+// ############################################
+
+
+// ============================================
+// Global sizing
+// ============================================
+
+$g-em-base: 16;
+$g-line-height: 1.2;
+
+
+// ============================================
+// Modular Scale Typography
+// ============================================
+
+// These are settings for the modular scale plugin and therefore use their
+// own naming convention.
+$ms-base: rem($g-bu * 2);
+$ms-fluid: false;
+$ms-ratio: $major-second;
+
+
+// ============================================
+// Fonts
+// ============================================
+
+$g-font-firasans: 'FiraSans', Helvetica, Arial, sans-serif;
+$g-font-gustan: $g-font-firasans;
+// $g-font-gustan: Gustan, Helvetica, Arial, sans-serif;

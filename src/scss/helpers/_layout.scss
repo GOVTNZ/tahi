@@ -1,0 +1,113 @@
+// ############################################
+// Layout Helpers
+// ############################################
+
+// Define all helpers related to layout in this stylesheet
+
+.h-block {
+    display: block !important;
+}
+
+.h-hide {
+    display: none !important;
+}
+
+.h-hide-small {
+    @include media($g-bp-below-medium) {
+        display: none !important;
+    }
+}
+
+.h-no-overflow {
+    overflow: hidden;
+}
+
+.h-content-max-width-half > * {
+    max-width: 75%;
+
+    // ------------------------------------------------
+    // Media Queries
+    // ------------------------------------------------
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-tiny-and-up) {
+        // scss-lint:enable DeclarationOrder
+        max-width: 50%;
+    }
+}
+
+
+// Global margin settings - used by all top level blocks for consistent layout
+
+%h-section-margin {
+    margin-top: rem($g-bu * 4);
+    margin-bottom: rem($g-bu * 2);
+}
+
+%h-section-margin-bottom-only {
+    margin-top: 0;
+    margin-bottom: rem($g-bu * 8);
+}
+
+// Hide only visually, but have it available for screen readers:
+// http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+// Defined as mixin because often used at different media levels
+
+@mixin h-visuallyhidden() {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+}
+
+@mixin h-visuallyshown() {
+    position: inherit;
+    width: inherit;
+    height: inherit;
+    overflow: inherit;
+    padding: inherit;
+    border: inherit;
+    margin: inherit;
+    clip: auto;
+}
+
+.h-visuallyhidden,
+%h-visuallyhidden {
+    @include h-visuallyhidden();
+}
+
+.h-visuallyshown,
+%h-visuallyshown {
+    @include h-visuallyshown();
+}
+
+.h-visuallyhidden.h-focusable:active,
+.h-visuallyhidden.h-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    margin: 0;
+    clip: auto;
+}
+
+// Hide visually and from screen readers, but maintain layout
+
+.h-invisible {
+    visibility: hidden;
+}
+
+// Hide elements which should only display in print media
+
+.h-print,
+.h-print-inline,
+.h-print-inline-block,
+.h-print-block,
+.h-print-flex,
+.h-print-table {
+    display: none !important;
+}

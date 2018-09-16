@@ -1,0 +1,10 @@
+// Accessibility
+//
+// In the context of a full page, consider the following:
+//
+// - Ensure headings are marked up correctly with the right ranking.
+//   For example if you have an `<h1>` page heading followed by an accordion the accordion heading should be marked up as an `<h2>`.
+// - If placed on a non-white background, ensure the contrast between the icon and its background still meets
+//   the [AAA contrast and luminosity ratio standard of 4.5:1](https://webaim.org/resources/contrastchecker/).
+//
+// Styleguide: 2.05

@@ -1,0 +1,18 @@
+// BEM helpers
+// m-nest, use when nesting inside a modifier
+// Use it like this - #{m-nest()}__ElementName { ...
+
+// e-nest use when nesting inside an element
+// Use it like this - #{e-nest()}__ElementName { ...
+
+@function m-nest() {
+    $selector: str-slice(inspect(&), 2, -2);
+    $index: str-index($selector, '--') - 1;
+    @return str-slice($selector, 0, $index);
+}
+
+@function e-nest() {
+    $selector: str-slice(inspect(&), 2, -2);
+    $index: str-index($selector, '__') - 1;
+    @return str-slice($selector, 0, $index);
+}

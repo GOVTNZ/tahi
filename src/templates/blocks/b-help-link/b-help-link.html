@@ -1,0 +1,13 @@
+{% macro helplink(link_text = 'Default link text', extra_class = '', icon_file = 'topic-icon-getting-started') %}
+
+	<a class="b-help-link {{extra_class}}" href="/page">
+		<svg class="h-icon b-help-link__icon b-help-link__icon--topic h-themed__theme1__color-secondary">
+			<use xlink:href="../img/icons/svg-sprite.svg#{{icon_file}}"></use>
+		</svg>
+		<span class="b-help-link__text">{{link_text}}</span>
+		<svg class="h-icon h-icon--small b-help-link__icon b-help-link__icon--arrow-icon-right">
+			<use xlink:href="../img/icons/svg-sprite.svg#arrow-icon-right"></use>
+		</svg>
+	</a>
+
+{% endmacro %}

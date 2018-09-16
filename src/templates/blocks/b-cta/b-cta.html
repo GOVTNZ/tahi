@@ -1,0 +1,74 @@
+{% macro calltoaction(cta_text = false, extra_class = '', cta_help_text = false , cta_icon_file = false, cta_icon_after = false, ext_link = false, button_icon_file = false, button_help_text = false , button_text = false, button_modifier = '', file_size = false, cta_icon_extra_class = false) %}
+
+	<span class="b-cta {{extra_class}}">
+
+		{% if cta_text %}
+
+			<a class="b-cta__link" href="/page">
+				<span class="b-cta__liner">
+					<span class="b-cta__text">
+
+						{% if cta_icon_after %}
+							{{cta_text}}
+							<svg class="h-icon b-cta__icon {% if cta_icon_extra_class %}{{cta_icon_extra_class}}{% endif %}">
+								<use xlink:href="../img/icons/svg-sprite.svg#{{cta_icon_file}}"></use>
+							</svg>
+						{% else %}
+
+							{% if cta_icon_file %}
+								<svg class="h-icon h-icon--large b-cta__icon {% if cta_icon_extra_class %}{{cta_icon_extra_class}}{% endif %}">
+									<use xlink:href="../img/icons/svg-sprite.svg#{{cta_icon_file}}"></use>
+								</svg>
+							{% endif %}
+
+							{{cta_text}}
+
+							{% if file_size %}
+								<span class="c-document-list__file-size">{{file_size}}</span>
+							{% else %}
+								{% if not ext_link %}
+									<svg class="h-icon h-icon--small b-cta__link-icon b-cta__link-icon--chevron-icon-right" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../img/icons/svg-sprite.svg#chevron-icon-right"></use>
+									</svg>
+								{% endif %}
+							{% endif %}
+						{% endif%}
+
+					</span>
+
+					{% if cta_help_text %}
+						<span class="b-cta__help-text">{{cta_help_text}}
+
+							{% if ext_link %}
+								<svg class="h-icon h-icon--small b-cta__icon b-cta__icon--ex-link-icon">
+									<use xlink:href="../img/icons/svg-sprite.svg#ex-link-icon"></use>
+								</svg>
+							{% endif %}
+
+						</span>
+					{% endif %}
+
+				</span>
+
+			</a>
+
+		{% endif %}
+
+		{% if button_text %}
+			{% import "blocks/b-button/b-button.html" as button %}
+
+			{% if button_icon_file %}
+				{{ button.button(is_anchor = true, extra_class = 'b-cta__button b-button'+button_modifier, content = button_text, has_icon = true, icon_file = button_icon_file) }}
+			{% else %}
+				{{ button.button(is_anchor = true, extra_class = 'b-cta__button b-button'+button_modifier, content = button_text, has_icon = false) }}
+			{% endif %}
+
+			{% if button_help_text %}
+				<p class="b-cta__button-help-text b-cta__button-help-text{{button_modifier}}">{{button_help_text}}</p>
+			{% endif %}
+
+		{% endif %}
+
+	</span>
+
+{% endmacro %}

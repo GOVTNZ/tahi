@@ -1,0 +1,35 @@
+// ############################################
+// b-linked-document
+// ############################################
+
+
+// ================================================
+// Block Styles
+// ================================================
+
+.b-linked-document {
+    position: relative;
+    display: block;
+    padding: 0 0 0 rem($g-bu * 3);
+    margin: rem($g-bu * 1.5) 0 rem($g-bu * .5);
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &__icon {
+        position: absolute;
+        top: .15em;
+        left: -.1em;
+        color: $g-color-charcoal-dark;
+
+        // --------------------------------------------
+        // modifier
+        // --------------------------------------------
+
+        &--pdf-icon {
+            color: $g-color-red01;
+        }
+    }
+}

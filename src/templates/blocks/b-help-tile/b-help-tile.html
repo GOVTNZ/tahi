@@ -1,0 +1,36 @@
+{% macro b_helptile(heading= 'h3', title = 'Default title', icon_name = false, link_href = false, content = false, button_content = false, button_icon_file = 'chevron-icon-right', button_extra_class = '', button_has_icon = true, button_is_anchor = false) %}
+
+    <div class="b-help-tile {% if heading == 'h2' %}b-help-tile--large-title {% endif %}">
+        <h3 class="b-help-tile__title">
+            {% if link_href %}
+                <a href='{{link_href}}' class="b-help-tile__link">
+            {% endif %}
+                {% if icon_name %}
+                    <svg class="h-icon h-icon--large b-help-tile__icon h-themed__theme1__color-secondary" aria-hidden="true">
+                        <use xlink:href="../img/icons/svg-sprite.svg#{{icon_name}}"></use>
+                    </svg>
+                {% endif %}
+                {{title}}
+            {% if link_href %}
+                    <svg class="h-icon h-icon--x-small b-help-tile__icon-link" aria-hidden="true">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../img/icons/svg-sprite.svg#chevron-icon-right"></use>
+                    </svg>
+                </a>
+            {% endif %}
+        </h3>
+        {% if content %}
+            <div class="b-help-tile__content">
+                <p class="b-help-tile__content-text">{{content}}</p>
+            </div>
+        {% endif %}
+        {% if button_content %}
+            <div class="b-help-tile__content">
+
+                {% import "blocks/b-button/b-button.html" as button %}
+                {{ button.button(content = button_content,  extra_class = button_extra_class, icon_file = button_icon_file, has_icon = button_has_icon, is_anchor = button_is_anchor) }}
+
+            </div>
+        {% endif %}
+    </div>
+
+{% endmacro %}

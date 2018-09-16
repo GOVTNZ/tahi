@@ -1,0 +1,149 @@
+// ############################################
+// b-image-inline
+// ############################################
+
+
+// ================================================
+// Block Styles
+// ================================================
+
+// markup is based on SilverStripe default markup
+
+.captionImage {
+    display: block;
+    float: none;
+    margin: rem($g-bu * 2) 0;
+
+    img {
+        float: none;
+        margin: 0;
+
+        &.right,
+        &.left,
+        &.center,
+        &.LeftAlone {
+            float: none;
+            margin: 0;
+        }
+    }
+
+    .caption {
+        @extend %h-font-firasans;
+
+        float: none;
+        padding: rem($g-bu * 2);
+        margin: 0;
+        background-color: $g-color-grey01;
+        font-size: ms(-2);
+        line-height: rem($g-bu * 2.5);
+        color: $g-color-charcoal-light;
+
+        a {
+            color: $g-color-charcoal-light;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    // ------------------------------------------------
+    // Media Queries
+    // ------------------------------------------------
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-tiny-and-up) {
+        &.left {
+            float: left;
+            width: auto;
+            max-width: 100%;
+            margin-right: 2.5rem;
+            margin-left: 0;
+        }
+
+        &.right {
+            float: right;
+            width: auto;
+            max-width: 100%;
+            margin-right: 0;
+            margin-left: 2.5rem;
+        }
+
+        &.center {
+            display: block;
+            float: none;
+            width: auto;
+            max-width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        &.LeftAlone {
+            display: block;
+            float: none;
+            margin-right: 0;
+            margin-left: 0;
+
+            &::after {
+                display: table;
+                clear: both;
+            }
+        }
+    }
+}
+
+img {
+    &.left,
+    &.right,
+    &.center,
+    &.LeftAlone {
+        float: none;
+        max-width: 100%;
+        margin: rem($g-bu * 2) 0;
+    }
+
+    // ------------------------------------------------
+    // Media Queries
+    // ------------------------------------------------
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-tiny-and-up) {
+        &.LeftAlone {
+            display: block;
+            max-width: 100%;
+            margin-right: 0;
+            margin-left: 0;
+
+            &::after {
+                display: table;
+                clear: both;
+            }
+        }
+
+        &.left {
+            float: left;
+            width: auto;
+            max-width: 100%;
+            margin-right: 2.5rem;
+            margin-left: 0;
+        }
+
+        &.right {
+            float: right;
+            width: auto;
+            max-width: 100%;
+            margin-right: 0;
+            margin-left: 2.5rem;
+        }
+
+        &.center {
+            display: block;
+            float: none;
+            width: auto;
+            max-width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+}

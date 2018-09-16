@@ -1,0 +1,21 @@
+{% macro imagefull(has_caption = true, extra_class = '', is_xtralarge = false) %}
+
+	<figure class="b-image-full {{extra_class}}">
+		<picture>
+			{% if is_xtralarge %}
+				<source srcset="http://placehold.it/1220x672 1x, http://placehold.it/2440x1344 2x" media="(min-width: 1000px)">
+			{% endif %}
+			<source srcset="../img/test/img-910x501.png 1x, ../img/test/img-1820x1002.png 2x" media="(min-width: 784px)">
+			<source srcset="../img/test/img-740x397.png 1x, ../img/test/img-1480x794.png 2x" media="(min-width: 624px)">
+			<source srcset="../img/test/img-612x328.png 1x, ../img/test/img-1224x656.png 2x" media="(min-width: 512px)">
+			<source srcset="../img/test/img-500x268.png 1x, ../img/test/img-1000x536.png 2x">
+			<img src="../img/test/img-910x501.png" alt="A placeholder figure image."/>
+		</picture>
+		{% if has_caption %}
+			<figcaption>
+				{% include "blocks/b-caption/b-caption.html" %}
+			</figcaption>
+		{% endif %}
+	</figure>
+
+{% endmacro %}

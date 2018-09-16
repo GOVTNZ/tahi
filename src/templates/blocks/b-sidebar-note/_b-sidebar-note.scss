@@ -1,0 +1,106 @@
+// ############################################
+// Sidebar note
+// ############################################
+
+
+// ============================================
+// Component Styles
+// ============================================
+
+.b-sidebar-note {
+    @extend %h-section-margin;
+
+    padding: rem($g-bu * 3);
+    border: 1px solid $g-color-line-grey;
+    margin-right: 0;
+    margin-left: 0;
+
+    // --------------------------------------------
+    // Element Styles
+    // --------------------------------------------
+
+    h2,
+    &__title {
+        @extend %h-font-gustan-book;
+
+        margin: 0 0 rem($g-bu);
+        font-size: ms(3);
+        line-height: rem($g-bu * 3.5);
+    }
+
+    &__cc-image {
+        display: block;
+        margin: 0 0 rem($g-bu * 2);
+    }
+
+    &__content,
+    &__link {
+        @extend %h-font-gustan-book;
+
+        position: relative;
+        font-size: ms(-1);
+        line-height: rem($g-bu * 2 + $g-hbu);
+
+        > * {
+            margin: rem($g-bu) 0;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__alert-icon {
+        //
+    }
+
+    &__arrow-down-icon {
+        //
+    }
+
+    // ============================================
+    // Modifiers
+    // ============================================
+
+    &--anchor {
+        position: relative;
+        padding: rem($g-bu * 2) rem($g-bu * 3) rem($g-bu * 2) rem($g-bu * 6.5);
+        margin-top: 0;
+
+        #{m-nest()}__content {
+            > * {
+                margin-bottom: 0;
+            }
+        }
+
+        #{m-nest()}__alert-icon {
+            position: absolute;
+            top: rem($g-bu * 2);
+            left: rem($g-bu * 2);
+        }
+    }
+
+    &--copyright {
+        padding: 0;
+        border: 0;
+    }
+    // ================================================
+    // Media Queries
+    // ================================================
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-large-and-up) {
+
+        // ============================================
+        // Modifiers
+        // ============================================
+
+        &--anchor {
+            display: none;
+        }
+    }
+}

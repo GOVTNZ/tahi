@@ -1,0 +1,57 @@
+// ############################################
+// b-scroll-trigger
+// ############################################
+
+// Styles for the html added by the ct-overflow-helper.js
+
+.b-scroll-trigger-js {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
+    width: rem($g-bu * 5);
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    // visibility: hidden;
+    opacity: 0;
+    transition: opacity $g-anim-hover ease-in-out;
+    pointer-events: none;
+
+    &__button {
+        position: absolute;
+        top: 48%;
+        right: rem($g-bu * .5);
+        width: rem($g-bu * 4);
+        height: rem($g-bu * 4);
+        padding: 0;
+        border: 1px solid $g-color-primary2;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: rem($g-bu * 2.5);
+        background-color: $g-color-white01;
+        cursor: pointer;
+    }
+
+    &__icon {
+        vertical-align: -.25em;
+        color: $g-color-primary2;
+    }
+
+    &--active {
+        opacity: .5;
+        pointer-events: auto;
+
+        &:hover,
+        &:focus {
+            opacity: .8;
+        }
+    }
+
+    &__left {
+        right: auto;
+        left: 0;
+        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    }
+}

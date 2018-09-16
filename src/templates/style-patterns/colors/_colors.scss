@@ -1,0 +1,115 @@
+// Colours
+//
+// Site colour pallete.
+//
+// Markup: colors.html
+//
+// pattern: true
+//
+// Styleguide: 11.3
+
+.pattern-color {
+    @include grid-row('center');
+
+    padding: rem($g-bu * 4);
+
+    &__item {
+        @include span-column(1 / 5);
+
+        text-align: center;
+
+        * {
+            margin: 0 auto;
+
+            &:first-child {
+                border: 1px solid #ddd;
+            }
+        }
+    }
+
+    &__name {
+        margin: rem($g-bu) 0 0;
+    }
+
+    &__variable {
+        margin-top: 5px;
+        margin-bottom: 0;
+
+        &::before {
+            content: 'var: ';
+        }
+    }
+
+    &__hex {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        &::before {
+            content: 'hex: ';
+        }
+    }
+
+    &__charcoal-dark {
+        display: block;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: $g-color-charcoal-dark;
+    }
+
+    &__charcoal {
+        display: block;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: $g-color-charcoal;
+    }
+
+    &__charcoal-light {
+        display: block;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: $g-color-charcoal-light;
+    }
+
+    &__primary1 {
+        display: block;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: $g-color-primary1;
+    }
+
+    &__primary2 {
+        display: block;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: $g-color-primary2;
+    }
+
+    &__secondary1 {
+        display: block;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: $g-color-secondary1;
+    }
+
+    &__secondary2 {
+        display: block;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: $g-color-secondary2;
+    }
+
+    &__line-grey {
+        display: block;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: $g-color-line-grey;
+    }
+}

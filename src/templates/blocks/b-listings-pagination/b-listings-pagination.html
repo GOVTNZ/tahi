@@ -1,0 +1,105 @@
+{% macro listingspagination(extra_class = '') %}
+	{% import "blocks/b-button/b-button.html" as button %}
+
+	<nav class="b-listings-pagination" aria-label="Pagination based on years and date ranges">
+		<ul class="b-listings-pagination__list-years">
+			<li class="b-listings-pagination__list-years__list-item">
+				<span class="b-listings-pagination__year"><span class="h-visuallyhidden">Year</span>2017</span>
+
+				<ul class="b-listings-pagination__list-months" aria-label="month ranges">
+					<li class="b-listings-pagination__list-months__list-item">
+						{{ button.button(
+							content = '<span class="h-visuallyhidden">This is the current page. </span>January - March <span class="b-listings-pagination__list-months__quantity small"><span class="h-visuallyhidden"> Number of items within this date-range: </span>(7)</span>',
+							has_icon = false,
+							is_anchor = true,
+							is_disabled = true,
+							extra_class = 'b-button--wide b-button--secondary b-listings-pagination__button b-listings-pagination__button--current')
+						}}
+					</li>
+				</ul>
+			</li>
+			<li class="b-listings-pagination__list-years__list-item">
+				<span class="b-listings-pagination__year"><span class="h-visuallyhidden">Year</span>2016</span>
+
+				<ul class="b-listings-pagination__list-months" aria-label="month ranges">
+					<li class="b-listings-pagination__list-months__list-item">
+						{{ button.button(
+							content = 'January - February <span class="b-listings-pagination__list-months__quantity small"><span class="h-visuallyhidden">Number of items within this date-range: </span>(10)</span>',
+							has_icon = false,
+							is_anchor = true,
+							extra_class = 'b-button--wide b-button--secondary b-listings-pagination__button')
+						}}
+					</li>
+					<li class="b-listings-pagination__list-months__list-item">
+						{{ button.button(
+							content = 'March -April <span class="b-listings-pagination__list-months__quantity small"><span class="h-visuallyhidden">Number of items within this date-range: </span>(10)</span>',
+							has_icon = false,
+							is_anchor = true,
+							extra_class = 'b-button--wide b-button--secondary b-listings-pagination__button')
+						}}
+					</li>
+					<li class="b-listings-pagination__list-months__list-item">
+						{{ button.button(
+							content = 'May - June <span class="b-listings-pagination__list-months__quantity small"><span class="h-visuallyhidden">Number of items within this date-range: </span>(12)</span>',
+							has_icon = false,
+							is_anchor = true,
+							extra_class = 'b-button--wide b-button--secondary b-listings-pagination__button')
+						}}
+					</li>
+					<li class="b-listings-pagination__list-months__list-item">
+						{{ button.button(
+							content = 'July - August <span class="b-listings-pagination__list-months__quantity small"><span class="h-visuallyhidden">Number of items within this date-range: </span>(12)</span>',
+							has_icon = false,
+							is_anchor = true,
+							extra_class = 'b-button--wide b-button--secondary b-listings-pagination__button')
+						}}
+					</li>
+					<li class="b-listings-pagination__list-months__list-item">
+						{{ button.button(
+							content = 'September - October <span class="b-listings-pagination__list-months__quantity small"><span class="h-visuallyhidden">Number of items within this date-range: </span>(12)</span>',
+							has_icon = false,
+							is_anchor = true,
+							extra_class = 'b-button--wide b-button--secondary b-listings-pagination__button')
+						}}
+					</li>
+					<li class="b-listings-pagination__list-months__list-item">
+						{{ button.button(
+							content = 'November - December <span class="b-listings-pagination__list-months__quantity small"><span class="h-visuallyhidden">Number of items within this date-range: </span>(9)</span>',
+							has_icon = false,
+							is_anchor = true,
+							extra_class = 'b-button--wide b-button--secondary b-listings-pagination__button')
+						}}
+					</li>
+				</ul>
+			</li>
+			<li class="b-listings-pagination__list-years__list-item">
+				<span class="b-listings-pagination__year"><span class="h-visuallyhidden">Year</span>2015</span>
+
+				<ul class="b-listings-pagination__list-months" aria-label="month ranges">
+					<li class="b-listings-pagination__list-months__list-item">
+						{{ button.button(
+							content = 'January - December <span class="b-listings-pagination__list-months__quantity small"><span class="h-visuallyhidden">Number of items within this date-range: </span>(7)</span>',
+							has_icon = false,
+							is_anchor = true,
+							extra_class = 'b-button--wide b-button--secondary b-listings-pagination__button')
+						}}
+					</li>
+				</ul>
+			</li>
+			<li class="b-listings-pagination__list-years__list-item">
+				<span class="b-listings-pagination__year"><span class="h-visuallyhidden">Year</span>2014</span>
+
+				<ul class="b-listings-pagination__list-months" aria-label="month ranges">
+					<li class="b-listings-pagination__list-months__list-item">
+						{{ button.button(
+							content = 'January - December <span class="b-listings-pagination__list-months__quantity small"><span class="h-visuallyhidden">Number of items within this date-range: </span>(13)</span>',
+							has_icon = false,
+							is_anchor = true,
+							extra_class = 'b-button--wide b-button--secondary b-listings-pagination__button')
+						}}
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+{% endmacro %}

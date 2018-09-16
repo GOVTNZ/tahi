@@ -1,0 +1,95 @@
+// ############################################
+// Font Face
+// ############################################
+
+// Note these are not variables, but are used like variables so included in this location.
+
+
+// ============================================
+// Gustan
+// ============================================
+
+@font-face {
+    font-family: Gustan;
+    font-weight: 200;
+    font-style: normal;
+    src: url($g-font-path + 'Gustan/Gustan-Light.woff') format('woff'),
+        url($g-font-path + 'Gustan/Gustan-Light.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: Gustan;
+    font-weight: 300;
+    font-style: normal;
+    src: url($g-font-path + 'Gustan/Gustan-Book.woff') format('woff'),
+        url($g-font-path + 'Gustan/Gustan-Book.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: Gustan;
+    font-weight: 400;
+    font-style: normal;
+    src: url($g-font-path + 'Gustan/Gustan-Medium.woff') format('woff'),
+        url($g-font-path + 'Gustan/Gustan-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: Gustan;
+    font-weight: 700;
+    font-style: normal;
+    src: url($g-font-path + 'Gustan/Gustan-Bold.woff') format('woff'),
+        url($g-font-path + 'Gustan/Gustan-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: Gustan;
+    font-weight: 900;
+    font-style: normal;
+    src: url($g-font-path + 'Gustan/Gustan-Black.woff') format('woff'),
+        url($g-font-path + 'Gustan/Gustan-Black.woff2') format('woff2');
+}
+
+
+// ============================================
+// Fira Sans
+// ============================================
+
+@font-face {
+    font-family: 'FiraSans';
+    font-weight: normal;
+    font-style: normal;
+    src: url($g-font-path + 'FiraSans/fira-sans-v7-latin-ext_latin-regular.woff2') format('woff2'),
+        url($g-font-path + 'FiraSans/fira-sans-v7-latin-ext_latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'FiraSans';
+    font-weight: 500;
+    font-style: normal;
+    src: url($g-font-path + 'FiraSans/fira-sans-v7-latin-ext_latin-500.woff2') format('woff2'),
+        url($g-font-path + 'FiraSans/fira-sans-v7-latin-ext_latin-500.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'FiraSans';
+    font-weight: 600;
+    font-style: normal;
+    src: url($g-font-path + 'FiraSans/fira-sans-v7-latin-ext_latin-600.woff2') format('woff2'),
+        url($g-font-path + 'FiraSans/fira-sans-v7-latin-ext_latin-600.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'FiraSans';
+    font-weight: 700;
+    font-style: normal;
+    src: url($g-font-path + 'FiraSans/fira-sans-v7-latin-ext_latin-700.woff2') format('woff2'),
+        url($g-font-path + 'FiraSans/fira-sans-v7-latin-ext_latin-700.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'FiraSans';
+    font-weight: 800;
+    font-style: normal;
+    src: url($g-font-path + 'FiraSans/fira-sans-v7-latin-ext_latin-800.woff2') format('woff2'),
+        url($g-font-path + 'FiraSans/fira-sans-v7-latin-ext_latin-800.woff') format('woff');
+}

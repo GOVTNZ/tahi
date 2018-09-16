@@ -1,0 +1,89 @@
+// ############################################
+// Colors
+// ############################################
+@import '../variables/_colors';
+
+.pattern-color {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__item {
+        width: 100%;
+        max-width: 170px;
+        border-radius: 12px;
+        margin: 12px;
+    }
+
+    &__name {
+        margin: 0;
+        font-family: Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    &__variable {
+        display: none;
+    }
+
+    &__hex {
+        font-family: Helvetica, sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    &__tile {
+        width: 150px;
+        height: 150px;
+
+        &--blue {
+            background-color: $dia-color-blue;
+        }
+
+        &--blue-hover {
+            background-color: $dia-color-blue-hover;
+        }
+
+        &--light-blue {
+            background-color: $dia-color-light-blue;
+        }
+
+        &--orange {
+            background-color: $dia-color-orange;
+        }
+
+        &--orange-hover {
+            background-color: $dia-color-orange-hover;
+        }
+
+        &--purple {
+            background-color: $dia-color-purple;
+        }
+
+        &--black {
+            background-color: $dia-color-black;
+        }
+
+        &--dark-grey {
+            background-color: $dia-color-dark-grey;
+        }
+
+        &--dark-grey-hover {
+            background-color: $dia-color-dark-grey-hover;
+        }
+
+        &--grey {
+            background-color: $dia-color-grey;
+        }
+
+        &--dove {
+            background-color: $dia-color-dove;
+        }
+
+        &--white {
+            border: 1px solid $dia-color-dove;
+            background-color: $dia-color-white;
+        }
+    }
+}

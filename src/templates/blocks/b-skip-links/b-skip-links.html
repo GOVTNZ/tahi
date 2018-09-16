@@ -1,0 +1,13 @@
+{% macro skiplinks(extra_class =  '', has_search = false, has_section_navigation = false) %}
+	<div class="b-skip-links">
+		<a class="b-skip-links__anchor" href="#site-main">Skip to main content</a>
+		{% if has_search %}
+			<a class="b-skip-links__anchor" href="#search_input_text">Skip to search</a>
+		{% endif %}
+		<a class="b-skip-links__anchor" href="#site-primary-nav">Skip to primary navigation</a>
+		{% if has_section_navigation %}
+			<a class="b-skip-links__anchor" href="#sectionNavigation">Skip to section navigation</a>
+		{% endif %}
+
+	</div>
+{% endmacro %}

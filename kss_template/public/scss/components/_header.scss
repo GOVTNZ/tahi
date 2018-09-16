@@ -1,0 +1,57 @@
+// ------------------------------------------------------------------------------
+// header (top of the page full width)
+// ------------------------------------------------------------------------------
+
+
+body.kss-node {
+
+    .kss-header {
+        display: block;
+        width: 100%;
+        min-height: 91px;
+        padding: 36px;
+        background-color: $g-color-white01;
+
+        a {
+            display: block;
+            text-decoration: none;
+
+            .kss-chrome-logo {
+                height: 57px;
+                float: none;
+                margin: 0;
+            }
+
+            .kss-doc-title {
+                margin: 0;
+                font-size: $kss-font-size * 2.25;
+                font-weight: 900;
+                color: $g-color-type;
+                border-bottom: 0;
+            }
+
+            &:focus,
+            &:hover {
+                text-decoration: none;
+
+            }
+        }
+    }
+    &.kss-overview {
+
+        .kss-header {
+            background-color: $g-color-white01;
+            color: $g-color-black03;
+        }
+    }
+
+    @media screen and (min-width: 769px) {
+
+        .kss-header {
+
+            .kss-doc-title {
+                font-size: 1.5em;
+            }
+        }
+    }
+}

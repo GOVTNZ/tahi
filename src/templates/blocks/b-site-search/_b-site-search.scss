@@ -1,0 +1,113 @@
+// ############################################
+// Site Search
+// ############################################
+
+.b-site-search-js {
+    &__link {
+        @extend %h-font-gustan-medium;
+
+        position: absolute;
+        top: 0;
+        right: rem($g-bu * .5);
+        display: flex;
+        align-items: center;
+        height: 100%;
+        // bottom: 0;
+        padding: rem($g-bu * 1) rem($g-bu * 1.5);
+        // border-left: 1px solid $g-color-primary3;
+        margin: auto;
+        font-size: ms(0);
+        line-height: rem($g-bu * 4);
+        color: $g-color-white01;
+        text-decoration: none;
+
+        // Required for Companies app integration
+
+        &:visited,
+        &:link {
+            color: $g-color-white01;
+        }
+
+        &:hover {
+            color: $g-color-white01;
+
+            #{e-nest()}__icon {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__text {
+        @extend %h-visuallyhidden;
+    }
+
+    &__icon {
+        display: block;
+        vertical-align: middle;
+        width: rem(21);
+        height: rem(21);
+        opacity: .6;
+        transition: opacity linear $g-anim-hover;
+    }
+
+    &--alt {
+        #{m-nest()}__link {
+            border-color: $g-color-grey15;
+        }
+
+        #{m-nest()}__icon,
+        #{m-nest()}__text {
+            color: $g-color-charcoal-light;
+        }
+    }
+
+
+    // ============================================
+    // Media
+    // ============================================
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-small-and-up) {
+        // scss-lint:enable DeclarationOrder
+
+        &__link {
+            padding-top: rem($g-bu * 2);
+            padding-bottom: rem($g-bu * 2);
+            border: 0;
+        }
+    }
+
+    @include media($g-bp-medium-and-up) {
+        &__link {
+            right: rem($g-bu * 3);
+        }
+    }
+
+    @include media($g-bp-large-and-up) {
+        &__link {
+            bottom: 0;
+            display: block;
+            padding-right: rem($g-bu * 4);
+        }
+
+        &__text {
+            @include h-visuallyshown();
+
+            position: static;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        &__icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            display: inline-block;
+            margin: auto;
+            margin-left: rem($g-bu * .5);
+        }
+    }
+}

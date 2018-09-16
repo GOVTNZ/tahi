@@ -1,0 +1,48 @@
+// ############################################
+// Article Entity
+// ############################################
+
+.b-article-entity {
+    font-size: ms(-1);
+    line-height: rem($g-bu * 2.5);
+
+    &__title {
+        margin: 0 0 rem($g-bu);
+        font-size: ms(0);
+        line-height: rem($g-bu * 2.5);
+        font-weight: 900;
+        color: $g-color-primary1;
+        text-transform: uppercase;
+    }
+
+    &__number {
+        &::before {
+            content: '|';
+            margin: 0 rem($g-bu) 0 rem($g-bu * .5);
+            color: $g-color-grey13;
+        }
+    }
+
+    &__name,
+    &__address,
+    &__details {
+        margin: 0;
+    }
+
+    &__address {
+        font-style: normal;
+    }
+
+    &__surname {
+        text-transform: uppercase;
+    }
+
+    &__date {
+        display: block;
+    }
+
+    &__link {
+        display: inline-block;
+        margin-top: rem($g-bu * .5);
+    }
+}

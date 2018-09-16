@@ -1,0 +1,9 @@
+// Rationale
+//
+// The design uses a right aligned caret icon supported by a text label, where space allows.
+// The caret was selected over alternatives (a text label, plus/minus icons) as carets are commonly used in other controls that reveal content in situ (such as select lists)
+// where as all other alternatives have more ambiguous meanings (e.g. a plus might mean "Add").
+//
+// The heading has been styled as a link so users know to select it to get more information and the hover state reinforces the interactive and link-like behaviour of the component.
+//
+// Styleguide: 1.06

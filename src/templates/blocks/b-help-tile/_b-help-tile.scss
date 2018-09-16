@@ -1,0 +1,92 @@
+.b-help-tile {
+    padding-bottom: rem($g-bu * 2);
+
+    &__title {
+        @extend %h3;
+
+        position: relative;
+        padding-left: rem($g-bu * 6);
+    }
+
+    &__icon {
+        position: absolute;
+        left: 0;
+        margin-top: .1em;
+    }
+
+    &__content {
+        padding-left: rem($g-bu * 6);
+    }
+
+    // ============================================
+    // Modifiers
+    // ============================================
+
+    &--large-title {
+        padding-bottom: rem($g-bu * 2);
+
+        #{m-nest()}__title {
+            @extend %h2;
+
+            padding-left: rem($g-bu * 6.5);
+        }
+
+        #{m-nest()}__content {
+            padding-left: 0;
+        }
+    }
+
+
+    // --------------------------------------------
+    // Media Queries
+    // --------------------------------------------
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-tiny-and-up) {
+        // scss-lint:enable DeclarationOrder
+        padding-bottom: rem($g-bu * 3);
+
+        &__title {
+            padding-left: rem($g-bu * 6);
+        }
+
+        &__content {
+            padding-left: rem($g-bu * 6);
+        }
+
+        // ============================================
+        // Modifiers
+        // ============================================
+
+        &--large-title {
+            padding-bottom: rem($g-bu * 5);
+
+            #{m-nest()}__title {
+                padding-left: rem($g-bu * 6.5);
+            }
+
+            #{m-nest()}__content {
+                padding-left: rem($g-bu * 6.5);
+            }
+        }
+    }
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-large-and-up) {
+        // scss-lint:enable DeclarationOrder
+        // ============================================
+        // Modifiers
+        // ============================================
+
+        &--large-title {
+            padding-bottom: rem($g-bu * 5);
+
+            #{m-nest()}__title {
+                padding-left: rem($g-bu * 12);
+            }
+
+            #{m-nest()}__content {
+                padding-left: rem($g-bu * 12);
+            }
+        }
+    }
+}

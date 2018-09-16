@@ -1,0 +1,92 @@
+// ############################################
+// Jquery UI datepicker custom styles
+// ############################################
+
+.ui-datepicker {
+    padding: rem($g-bu * .5);
+    border: 1px solid $g-color-grey12;
+    border-radius: 3px;
+    background-color: $g-color-white01;
+
+    .ui-datepicker-header {
+        position: relative;
+        padding: rem($g-bu) rem($g-bu * 4);
+    }
+
+    .ui-datepicker-title {
+        display: block;
+        font-weight: 800;
+        text-align: center;
+    }
+
+    .ui-datepicker-calendar {
+        margin: 0;
+        background: none;
+
+        th {
+            padding: rem($g-bu);
+            line-height: rem($g-bu * 1.5);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        td {
+            padding: rem(1);
+            border: 0;
+            line-height: rem($g-bu * 2);
+            font-weight: 500;
+            text-align: right;
+        }
+
+        tr:last-child {
+            border: 0;
+        }
+    }
+
+    .ui-datepicker-prev,
+    .ui-datepicker-next {
+        position: absolute;
+        top: rem(2);
+        display: block;
+        width: rem($g-bu * 5);
+        height: rem($g-bu * 5);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: rem($g-bu * 2.5);
+        transition: $g-anim-hover background linear;
+
+        &:hover {
+            border-radius: 3px;
+            background-color: $g-color-grey10;
+            cursor: pointer;
+        }
+
+        .ui-icon {
+            @extend %h-visuallyhidden;
+        }
+    }
+
+    .ui-datepicker-prev {
+        left: 0;
+        background-image: url($g-image-path + 'icons/chevron-icon-left--blue02.svg');
+    }
+
+    .ui-datepicker-next {
+        right: 0;
+        background-image: url($g-image-path + 'icons/chevron-icon-right--blue02.svg');
+    }
+
+    .ui-state-default {
+        display: block;
+        padding: rem($g-bu);
+        background: $g-color-grey10;
+        text-decoration: none;
+        transition: $g-anim-hover background linear, $g-anim-hover color linear;
+
+        &.ui-state-active,
+        &:hover {
+            background: $g-color-blue09;
+            color: $g-color-white01;
+        }
+    }
+}

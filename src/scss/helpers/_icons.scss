@@ -1,0 +1,101 @@
+// ############################################
+// Icon Helpers
+// ############################################
+
+// Default icon styling. See https://fvsch.com/code/svg-icons/how-to/
+
+.h-icon {
+    // Nice visual alignment for icons alongside text. (I got a few questions about this and: with most fonts and styles,
+    // this works better than just vertical-align:middle. Try it and see what you like best.
+    vertical-align: -.15em;
+
+    // Inherit the text’s size. Also allows sizing the icon by changing its font-size.
+    width: 1em;
+    height: 1em;
+
+    // Paths and strokes that overflow the viewBox can show in IE. If you use normalize.css, it already sets this.
+    overflow: hidden;
+
+    // Lets the icon inherit the text color.
+    fill: currentColor;
+
+    // size modifiers
+
+    &--xx-large {
+        vertical-align: 0;
+        width: 3em;
+        height: 3em;
+    }
+
+    &--x-large {
+        vertical-align: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    &--large {
+        vertical-align: 0;
+        width: 1.2em;
+        height: 1.2em;
+    }
+
+    &--medium {
+        vertical-align: 0;
+        width: .95em;
+        height: .95em;
+    }
+
+    &--x-medium {
+        vertical-align: 0;
+        width: .75em;
+        height: .75em;
+    }
+
+    &--small {
+        vertical-align: 0;
+        width: .7em;
+        height: .7em;
+    }
+
+    &--x-small {
+        vertical-align: 0;
+        width: .6em;
+        height: .6em;
+    }
+
+    &--xx-small {
+        vertical-align: 0;
+        width: .35em;
+        height: .35em;
+    }
+
+    // other modifiers
+
+    &--red {
+        color: $g-color-red01;
+    }
+
+    &--green {
+        color: $dia-color-green;
+    }
+
+    &--blue {
+        color: $dia-color-blue;
+    }
+
+    &--black {
+        color: $dia-color-black;
+    }
+
+    &--button {
+        vertical-align: 0;
+        width: .8em;
+        height: .8em;
+        margin-left: .5rem;
+    }
+
+    &--ext-link {
+        vertical-align: .025em;
+        margin-left: .25em;
+    }
+}

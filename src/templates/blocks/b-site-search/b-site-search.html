@@ -1,0 +1,13 @@
+{% macro site_search(extra_class = '') %}
+
+    <div class="b-site-search-js {{extra_class}}">
+        <!-- default for this should be link to the search page for no js -->
+        <a href="/page" class="b-site-search-js__link modaal--search" data-modal-id="#modaal-inline02">
+            <span class="b-site-search-js__text">Search</span>
+            <svg class="h-icon b-site-search-js__icon">
+                <use xlink:href="../img/icons/svg-sprite.svg#search-icon"></use>
+            </svg>
+        </a>
+    </div>
+
+{% endmacro %}

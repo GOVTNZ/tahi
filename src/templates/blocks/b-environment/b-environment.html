@@ -1,0 +1,25 @@
+{% macro b_environment(has_EAT = false, has_BUT = false, content = '') %}
+    <div class="b-environment-indicator-wrapper">
+        {% if has_EAT %}
+            <ul class="b-environment-indicator-link-list">
+                <li class="b-environment-indicator-link-list__item">
+                    <a href="/page" class="b-environment-indicator-link-list__link">Login to Catalyst
+                        <svg class="h-icon h-icon--small b-environment-indicator-link-list__link-icon" aria-hidden="true">
+                            <use xlink:href="../img/icons/svg-sprite.svg#lock-icon"></use>
+                       </svg>
+                    </a>
+                </li>
+                <li class="b-environment-indicator-link-list__item">
+                    <a href="/page" class="b-environment-indicator-link-list__link">Login to ADFS
+                        <svg class="h-icon h-icon--small b-environment-indicator-link-list__link-icon" aria-hidden="true">
+                            <use xlink:href="../img/icons/svg-sprite.svg#lock-icon"></use>
+                       </svg>
+                    </a>
+                </li>
+            </ul>
+            <p class="environment-indicator {% if has_EAT%}environment-indicator--eat{% endif %}{% if has_BUT%}environment-indicator--but{% endif %}">{{content}}</p>
+        {% else %}
+            <p class="environment-indicator {% if has_EAT%}environment-indicator--eat{% endif %}{% if has_BUT%}environment-indicator--but{% endif %}">{{content}}</p>
+        {% endif %}
+    </div>
+{% endmacro %}

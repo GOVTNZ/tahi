@@ -1,0 +1,10 @@
+// Helper stylesheets
+
+// These stylesheets include global helper classes that can be extended within modules or referenced directly in the html.
+// As a rule of thumb there should not be nested selectors inside these stylesheets. They should all be prefixed with 'h-'
+
+@import
+'helpers/type',
+'helpers/layout',
+'helpers/icons',
+'helpers/state';

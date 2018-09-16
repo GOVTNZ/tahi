@@ -1,0 +1,194 @@
+{% macro b_searchandoptions(
+    extra_class = '',
+    is_in_modal = false,
+    is_fspr = false,
+    default_filter='help-and-updates'
+) %}
+
+    {% if not is_in_modal %}
+        <div class="b-search-field-and-options {{extra_class}}" data-js-search-and-filters="true">
+    {% endif %}
+
+        <form class="b-search-field-and-options__form" autocomplete="off" action="../ajaxed/test-quick-search.php">
+
+            <fieldset class="b-search-field-and-options__form__fieldset b-search-field-and-options__form__fieldset--search-field">
+
+                <legend class="b-search-field-and-options__form__legend b-search-field-and-options__form__fieldset--search-field__legend">Search form</legend>
+
+                <div class="b-search-field-and-options__form__search-wrapper">
+                    <label for="search_input_text{% if is_in_modal %}-modal{% endif %}" class="h-visuallyhidden">Search term</label>
+                    <input type="search" name="keyword" placeholder="Search for a company name or number" class="b-search-field-and-options__form__search-input" id="search_input_text{% if is_in_modal %}-modal{% endif %}" data-js-search-default-filter="{{ default_filter }}" data-js-search-text-input="{% if is_in_modal %}modal{% else %}true{% endif %}" aria-controls="searchresults{% if is_in_modal %}-modal{% endif %}"/>
+                    <div class="b-search-field-and-options__form__clear-search-wrapper" data-js-clear-search-text-input-wrapper="true" style="display: none;">
+                        <label for="clear-search{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__clear-search-label h-visuallyhidden">Clear the text input</label>
+                        <button type="reset" class="b-search-field-and-options__form__clear-search" id="clear-search{% if is_in_modal %}-modal{% endif %}" data-js-clear-search-text-input="true">
+                            <span class="b-search-field-and-options__form__clear-search__text">Clear search</span>
+                            <svg class="h-icon b-search-field-and-options__form__clear-search__icon">
+                                <use xlink:href="../img/icons/svg-sprite.svg#close-icon"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <label for="search-submit{% if is_in_modal %}-modal{% endif %}" class="h-visuallyhidden">Submit your search term</label>
+                    <button type="submit" class="b-search-field-and-options__form__search-submit" id="search-submit{% if is_in_modal %}-modal{% endif %}" data-js-search-submit="">
+                        <span class="b-search-field-and-options__form__search-submit__text">Search</span>
+                        <svg class="h-icon b-search-field-and-options__form__search-submit__icon">
+                            <use xlink:href="../img/icons/svg-sprite.svg#search-icon"></use>
+                        </svg>
+                    </button>
+
+                    {% if is_in_modal %}
+                        <label for="show-hide-more-search-options{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__more-link-label h-visuallyhidden">Show/hide more search options</label>
+                        <button class="b-search-field-and-options__form__more-link b-simple-dd-js-search__trigger" data-b-simple-dd-js-search-trigger="true" data-b-simple-dd-js-search-target="simple-dd2" id="show-hide-more-search-options{% if is_in_modal %}-modal{% endif %}" data-js-more-options-link="true">
+                            <span class="b-search-field-and-options__form__more-link__inner">
+                                <span class="h-visuallyhidden">Show/hide more search options</span>
+                                <svg class="h-icon h-icon--small c-navigation-bar-js__icon b-search-field-and-options__form__more-link-icon" aria-hidden="true" data-js-more-options-link-icon="true">
+                                    <use xlink:href="../img/icons/svg-sprite.svg#chevron-icon-down"></use>
+                                </svg>
+                            </span>
+                        </button>
+                    {% endif %}
+
+                </div>
+
+            </fieldset>
+
+            <div class="b-simple-dd-js-search">
+
+               {% if is_in_modal %}
+                    <div class="b-simple-dd-js-search__target b-search-field-and-options__form__hideable-content" id="simple-dd2" aria-hidden="false" data-b-simple-dd-js-search-target="true" data-js-hideable-content="true">
+                {% endif %}
+
+                    <fieldset class="b-search-field-and-options__form__fieldset b-search-field-and-options__form__fieldset--categories field" data-js-search-and-filters-categories="true">
+
+                        <legend class="b-search-field-and-options__form__legend b-search-field-and-options__form__fieldset--categories__legend">categories</legend>
+
+                            <ul class="b-search-field-and-options__form__category-set">
+                                {% if is_fspr %}
+                                    <li class="b-search-field-and-options__form__category-set__item">
+                                        <input type="radio" value="fspr" id="fspr{% if is_in_modal %}-modal{% endif %}" name="category" class="b-search-field-and-options__form__category-set__radio-input" data-js-filters="data-js-fspr-filter" checked="checked" data-placeholder="Search FSP name or number, or NZBN number"/>
+                                        <label for="fspr{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__category-set__radio-label">Financial Service Providers</label>
+                                    </li>
+                                    <li class="b-search-field-and-options__form__category-set__item">
+                                        <input type="radio" value="help-and-updates" id="help_and_updates{% if is_in_modal %}-modal{% endif %}" name="category" class="b-search-field-and-options__form__category-set__radio-input" data-js-filters="data-js-help-and-updates-filter" data-placeholder="Search help and updates"/>
+                                        <label for="help_and_updates{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__category-set__radio-label">Help & updates</label>
+                                    </li>
+                                {% else %}
+                                    <li class="b-search-field-and-options__form__category-set__item">
+                                        <input type="radio" value="companies" id="companies{% if is_in_modal %}-modal{% endif %}" name="category" class="b-search-field-and-options__form__category-set__radio-input" data-js-filters="data-js-companies-filter" checked="checked" data-placeholder="Search for a company name or number"/>
+                                        <label for="companies{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__category-set__radio-label">Companies</label>
+                                    </li>
+                                    <li class="b-search-field-and-options__form__category-set__item">
+                                        <input type="radio" value="directors-and-shareholders" id="directors_and_shareholders{% if is_in_modal %}-modal{% endif %}" name="category" class="b-search-field-and-options__form__category-set__radio-input" data-js-filters="data-js-directors-and-shareholders-filter" data-placeholder="Search directors and shareholders"/>
+                                        <label for="directors_and_shareholders{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__category-set__radio-label">Directors & shareholders</label>
+                                    </li>
+                                    <li class="b-search-field-and-options__form__category-set__item">
+                                        <input type="radio" value="help-and-updates" id="help_and_updates{% if is_in_modal %}-modal{% endif %}" name="category" class="b-search-field-and-options__form__category-set__radio-input" data-js-filters="data-js-help-and-updates-filter" data-placeholder="Search help and updates"/>
+                                        <label for="help_and_updates{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__category-set__radio-label">Help & updates</label>
+                                    </li>
+                                {% endif %}
+                            </ul>
+
+                         {% if not is_in_modal %}
+                            <div class="b-search-field-and-options__form__advanced-search-wrapper">
+                                <p class="b-search-field-and-options__form__advanced-search">
+                                    <a href="/page">Advanced Search</a>
+                                </p>
+                            </div>
+                        {% endif %}
+
+                    </fieldset>
+
+                    <fieldset class="b-search-field-and-options__form__fieldset b-search-field-and-options__form__fieldset--filters field" data-js-filter-sets-wrapper="true">
+
+                        <legend class="b-search-field-and-options__form__legend b-search-field-and-options__form__fieldset--filters__legend">Filters</legend>
+
+                        <div class="b-search-field-and-options__form__filter-and-results-wrapper">
+
+                            {% if is_fspr %}
+                                <div data-js-filter-set="true" data-js-fspr-filter="true">
+                                    <h3 class="h-visuallyhidden">Financial Service Providers filters</h3>
+
+                                    <ul class="b-search-field-and-options__form__filter-set">
+                                        <li class="b-search-field-and-options__form__filter-set__item">
+                                            <input type="checkbox" value="registered" id="registered{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__filter-set__checkbox-input checkbox" checked="checked"/>
+                                            <label for="registered{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__filter-set__checkbox-label">Registered</label>
+                                        </li>
+                                        <li class="b-search-field-and-options__form__filter-set__item">
+                                            <input type="checkbox" value="deregistered" id="deregistered{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__filter-set__checkbox-input checkbox" checked="checked"/>
+                                            <label for="deregistered{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__filter-set__checkbox-label">Deregistered</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            {% else %}
+                                <div data-js-filter-set="true" data-js-companies-filter="true">
+
+                                    <h3 class="h-visuallyhidden">Companies filters</h3>
+
+                                    <ul class="b-search-field-and-options__form__filter-set">
+                                        <li class="b-search-field-and-options__form__filter-set__item">
+                                            <input type="checkbox" value="registered" id="registered{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__filter-set__checkbox-input checkbox" checked="checked"/>
+                                            <label for="registered{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__filter-set__checkbox-label">Registered</label>
+                                        </li>
+                                        <li class="b-search-field-and-options__form__filter-set__item">
+                                            <input type="checkbox" value="removed" id="removed{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__filter-set__checkbox-input checkbox" checked="checked"/>
+                                            <label for="removed{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__filter-set__checkbox-label">Removed</label>
+                                        </li>
+                                        <li class="b-search-field-and-options__form__filter-set__item">
+                                            <input type="checkbox" value="external_admin" id="external_admin{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__filter-set__checkbox-input checkbox" checked="checked"/>
+                                            <label for="external_admin{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__filter-set__checkbox-label">External admin</label>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div data-js-filter-set="true" data-js-directors-and-shareholders-filter="true"  style="display:none;">
+
+                                    <h3 class="h-visuallyhidden">Directors & shareholders filters</h3>
+
+                                    <ul class="b-search-field-and-options__form__filter-set">
+                                        <li class="b-search-field-and-options__form__filter-set__item">
+                                            <input type="checkbox" value="shareholders" id="shareholders{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__filter-set__checkbox-input checkbox"/>
+                                            <label for="shareholders{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__filter-set__checkbox-label">Shareholders</label>
+                                        </li>
+                                        <li class="b-search-field-and-options__form__filter-set__item">
+                                            <input type="checkbox" value="directors" id="directors{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__filter-set__checkbox-input checkbox"/>
+                                            <label for="directors{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__filter-set__checkbox-label">Directors</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            {% endif %}
+
+                            <div data-js-filter-set="true"  data-js-help-and-updates-filter="true"  style="display:none;">
+
+                                <h3 class="h-visuallyhidden">Help & updates filters</h3>
+
+                                <ul class="b-search-field-and-options__form__filter-set">
+                                    <li class="b-search-field-and-options__form__filter-set__item">
+                                        <input type="checkbox" value="help" id="help{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__filter-set__checkbox-input checkbox"/>
+                                        <label for="help{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__filter-set__checkbox-label">Help</label>
+                                    </li>
+                                    <li class="b-search-field-and-options__form__filter-set__item">
+                                        <input type="checkbox" value="news" id="news{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__filter-set__checkbox-input checkbox"/>
+                                        <label for="news{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__filter-set__checkbox-label">News</label>
+                                    </li>
+                                    <li class="b-search-field-and-options__form__filter-set__item">
+                                        <input type="checkbox" value="notices" id="notices{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__filter-set__checkbox-input checkbox"/>
+                                        <label for="notices{% if is_in_modal %}-modal{% endif %}" class="b-search-field-and-options__form__filter-set__checkbox-label">Notices</label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="b-search-field-and-options__form__results-text-wrapper">
+                            </div>
+                        </div>
+                    </fieldset>
+               {% if is_in_modal %}
+                    </div>
+                {% endif %}
+            </div>
+
+        </form>
+    {% if not is_in_modal %}
+    </div>
+    {% endif %}
+
+
+{% endmacro %}

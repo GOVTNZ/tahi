@@ -1,0 +1,31 @@
+// Base form styles defined in this stylesheet
+.kss-style {
+
+    input[type=text] {
+        display: block;
+        width: 100%;
+        padding: rem($g-bu * 2) rem($g-bu * 3);
+        margin-bottom: rem($g-bu);
+        font-size: ms(1);
+        color: darken($g-color-type, 50%);
+        white-space: nowrap;
+        border: 0;
+        border-radius: 1px;
+    }
+
+    label {
+        display: block;
+    }
+
+    button,
+    input[type=submit] {
+        display: inline-block;
+        height: auto;
+        padding: 4px 13px;
+        margin: 0;
+        margin-bottom: 14px;
+        color: #444;
+        border: 1px solid #ccc;
+        border-radius: 0;
+    }
+}

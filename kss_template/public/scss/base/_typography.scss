@@ -1,0 +1,173 @@
+// Base type sizing and colors defined in this stylesheet
+body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    color: $g-color-type;
+    text-rendering: auto;
+}
+
+body,
+input,
+textarea {
+    @extend %h-font-primary;
+
+    // This is used for staged font loading,currently WIP
+    // .fonts-stage-1 & {
+    //     font-family: MetricSubset,sans-serif;
+    // }
+
+    // .fonts-stage-2  & {
+    //     font-family: Metric,sans-serif;
+    // }
+}
+
+a {
+    color: $g-color-blue-06;
+}
+
+.kss-style {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: $kss-vertical-rhythm 0 0;
+        font-family: $g-font-default;
+        line-height: 1.15em;
+        color: $g-color-black03;
+    }
+
+
+    h4,
+    h5,
+    h6 {
+        font-weight: bold;
+    }
+
+    h1 {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 48px;
+    }
+
+    h2 {
+        font-size: $kss-font-size * 2.75;
+        font-weight: 300;
+        color: $g-color-brand1;
+    }
+
+    h3 {
+        font-size: $kss-font-size * 1.75;
+        font-weight: 400;
+    }
+
+    h4 {
+        font-size: $kss-font-size * 1.5;
+        font-weight: 500;
+    }
+
+    h5 {
+        font-size: $kss-font-size * 1.875;
+        font-weight: 400;
+}
+
+    h6 {
+        font-size: $kss-font-size * 1.75;
+        font-weight: 400;
+   }
+
+    p {
+        margin: ($kss-vertical-rhythm / 2) 0 $kss-vertical-rhythm;
+        font-size: ms(0);
+        line-height: rem($g-bu * 3);
+    }
+
+    a {
+        color: $kss-color-link;
+        text-decoration: underline;
+        transition-duration: .5s;
+        transition-property: color;
+
+        &:visited {
+            color: $kss-color-link-visited;
+        }
+
+        &:hover,
+        &:focus {
+            color: $kss-color-link-hover;
+        }
+
+        &:active {
+            color: $kss-color-link-active;
+        }
+
+        &:hover,
+        &:active {
+            outline: 0;
+        }
+    }
+
+    blockquote {
+        padding-left: $kss-vertical-rhythm;
+        margin: 0;
+        color: $kss-color-quotes;
+        border-left: .5em mix($kss-color-quotes, $kss-color-background, 25%) solid;
+    }
+
+    hr {
+        display: block;
+        height: 2px;
+        padding: 0;
+        margin: $kss-vertical-rhythm 0;
+        border: 0;
+        border-top: 1px solid lighten($kss-color-foreground, 60%);
+        border-bottom: 1px solid darken($kss-color-background, 10%);
+    }
+
+    pre,
+
+    code,
+
+    kbd,
+
+    samp {
+        font-family: $kss-font-code;
+        font-size: 1em;
+        color: mix($kss-color-foreground, $kss-color-heading, 50%);
+    }
+
+    pre {
+        overflow: scroll;
+        white-space: pre;
+    }
+
+    ins {
+        color: $kss-color-heading;
+        text-decoration: none;
+        background: #ff9;
+    }
+
+    mark {
+        font-weight: bold;
+        color: $kss-color-heading;
+        background: #ff0;
+    }
+
+    sub,
+    sup {
+        position: relative;
+        font-size: 75%;
+        line-height: 0;
+        vertical-align: baseline;
+    }
+
+    sup {
+        top: -.5em;
+    }
+
+    sub {
+        bottom: -.25em;
+    }
+}

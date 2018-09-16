@@ -1,0 +1,20 @@
+%h-focusable {
+    // pink outline
+    &:focus {
+        .js-enabled & {
+            outline: 0;
+        }
+
+        .wai-outline & {
+            outline: 2px solid $g-color-brand1;
+            outline-offset: 2px;
+        }
+    }
+}
+
+// For anything focused when js is enabled as should use the above mechanism to apply focus state
+:focus {
+    .js-enabled & {
+        outline: 0;
+    }
+}

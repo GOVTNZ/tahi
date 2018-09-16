@@ -1,0 +1,30 @@
+// ############################################
+// Print Helpers
+// ############################################
+
+// Define all helpers related to print in this stylesheet
+
+.h-print-inline {
+    display: inline !important;
+}
+
+.h-print-inline-block {
+    display: inline-block !important;
+}
+
+.h-print,
+.h-print-block {
+    display: block !important;
+}
+
+.h-print-flex {
+    display: flex !important;
+}
+
+.h-print-table {
+    display: table !important;
+}
+
+.h-screen {
+    display: none !important;
+}

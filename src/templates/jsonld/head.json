@@ -1,0 +1,35 @@
+[{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "name": "Preferred site name",
+  "url": "https://siteURL"
+},
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "url": "https://siteURL",
+  "logo": "https://siteURL/themes/dist_build/img/logos/co-logo-black.png",
+  "sameAs" : [
+    "https://www.facebook.com/MBIEgovtNZ",
+    "https://twitter.com/mbiegovtnz",
+    "https://www.linkedin.com/company/ministry-of-business-innovation-and-employment"
+  ],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "+64 0508 266 726",
+    "contactType": "customer service",
+    "areaServed": "NZ"
+  },
+  {
+    "@type": "ContactPoint",
+    "telephone": "+61 1800 424 969",
+    "contactType": "customer service",
+    "areaServed": "Australia"
+  },
+  {
+    "@type": "ContactPoint",
+    "telephone": "+64 3 962 2602",
+    "contactType": "customer service",
+    "areaServed": "International"
+  }]
+}]

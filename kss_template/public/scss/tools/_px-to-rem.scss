@@ -1,0 +1,19 @@
+@function strip-units($value) {
+    @return ($value / ($value * 0 + 1));
+}
+
+// Convert pixels to rems. Used like this - rem(16).
+
+@function rem($pxval) {
+    @if not unitless($pxval) {
+        $pxval: strip-units($pxval);
+    }
+
+    $base: $g-em-base;
+
+    @if not unitless($base) {
+        $base: strip-units($base);
+    }
+
+    @return ($pxval / $base) * 1rem;
+}

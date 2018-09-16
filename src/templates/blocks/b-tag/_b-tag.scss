@@ -1,0 +1,46 @@
+.b-tag {
+    @extend %h-font-gustan-bold;
+
+    display: inline-block;
+    vertical-align: baseline;
+    padding: .1em 1.1em 0;
+    border: 1px solid $g-color-grey03;
+    border-radius: rem($g-bu * 2);
+    margin: 0 rem($g-bu * .5) rem($g-bu * 1) 0;
+    background-color: $g-color-grey03;
+    font-size: .65em;
+    line-height: rem($g-bu * 2.5);
+    color: $g-color-grey02;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &--link {
+        border-color: $g-color-blue18;
+        background-color: $g-color-blue18;
+        color: $g-color-charcoal;
+
+        &:hover {
+            border-color: $g-color-blue16;
+            background-color: $g-color-blue16;
+            color: $g-color-white01;
+        }
+    }
+
+    &--black {
+        border-color: $g-color-charcoal-dark;
+        background-color: $g-color-charcoal-dark;
+        color: $g-color-white01;
+    }
+
+    &--grey {
+        border-color: $g-color-grey03;
+        background-color: $g-color-grey03;
+        color: $g-color-charcoal;
+    }
+
+    &--white {
+        border-color: $g-color-grey03;
+        background-color: $g-color-white01;
+        color: $g-color-charcoal;
+    }
+}

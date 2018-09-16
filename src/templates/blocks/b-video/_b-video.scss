@@ -1,0 +1,91 @@
+// ############################################
+// b-video
+// ############################################
+
+
+.b-video-js {
+    margin: rem($g-bu * 2) 0;
+
+    &__inner {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-top: 56%;
+        background-color: #000;
+    }
+
+    &__iframe {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+    }
+
+    &__trigger {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        padding: 0;
+        border: 0;
+        outline: none;
+        margin: 0;
+        text-indent: -999em;
+        opacity: 1;
+        transition: opacity 800ms, height 0s;
+        transition-delay: 0s, 0s;
+        cursor: pointer;
+
+        &:hover {
+            #{e-nest()}__icon {
+                opacity: .7;
+                transform: scale(1.15);
+            }
+        }
+    }
+
+    &__poster {
+        position: relative;
+        z-index: 1;
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        display: block;
+        width: rem($g-bu * 12);
+        height: rem($g-bu * 12);
+        margin: auto;
+        color: $g-color-white01;
+        opacity: 1;
+        transition: opacity ease-out .2s, transform ease-out .2s;
+    }
+
+    &--active {
+        #{m-nest()}__trigger {
+            height: 0;
+            opacity: 0;
+            transition-delay: 0s, 800ms;
+        }
+    }
+}

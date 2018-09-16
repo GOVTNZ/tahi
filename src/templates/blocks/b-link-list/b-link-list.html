@@ -1,0 +1,27 @@
+{% macro linklist(extra_class = '') %}
+
+    <ul class="b-link-list {{extra_class}}">
+        <li class="b-link-list__item {{extra_class}}__item">
+            <a class="b-link-list__link {{extra_class}}__link" href="/page">
+                <svg class="h-icon h-icon--medium b-link-list__list-bullet-icon {{extra_class}}__list-bullet-icon" aria-hidden="true">
+                    <use xlink:href="../img/icons/svg-sprite.svg#chevron-icon-right"></use>
+                </svg><span class="b-link-list__link-text {{extra_class}}__link-text">Advanced Search</span>
+            </a>
+        </li>
+        <li class="b-link-list__item {{extra_class}}__item">
+            <a class="b-link-list__link" href="/page">
+                <svg class="h-icon h-icon--medium b-link-list__list-bullet-icon {{extra_class}}__list-bullet-icon" aria-hidden="true">
+                    <use xlink:href="../img/icons/svg-sprite.svg#chevron-icon-right"></use>
+                </svg><span class="b-link-list__link-text {{extra_class}}__link-text">Disqualified/Prohibited director or manager</span>
+            </a>
+        </li>
+        <li class="b-link-list__item {{extra_class}}__item">
+            <a class="b-link-list__link" href="/page">
+                <svg class="h-icon h-icon--medium b-link-list__list-bullet-icon {{extra_class}}__list-bullet-icon" aria-hidden="true">
+                    <use xlink:href="../img/icons/svg-sprite.svg#chevron-icon-right"></use>
+                </svg><span class="b-link-list__link-text {{extra_class}}__link-text">All help guides</span>
+            </a>
+        </li>
+    </ul>
+
+{% endmacro %}

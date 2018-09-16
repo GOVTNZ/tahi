@@ -1,0 +1,143 @@
+{% import "blocks/b-show-hide/b-show-hide.html" as b_showhide %}
+
+{% set content %}
+    <ul class="b-section-subnav__sub-list">
+        <li class="b-section-subnav__sub-list-item b-section-subnav__sub-list-item-active">
+            <svg class="h-icon h-icon--x-small b-section-subnav__sub-list-item-active__icon" aria-hidden="true">
+                <use xlink:href="../img/icons/svg-sprite.svg#chevron-icon-right"></use>
+            </svg>
+            <a href="/page" class="b-section-subnav__link">
+                <span class="b-section-subnav__link-inner"><span class="h-visuallyhidden">Current page:</span>Some page</span>
+            </a>
+        </li>
+        <li class="b-section-subnav__sub-list-item">
+            <a href="/page" class="b-section-subnav__link"><span class="b-section-subnav__link-inner">Legislation</span></a>
+        </li>
+        <li class="b-section-subnav__sub-list-item">
+            <a href="/page" class="b-section-subnav__link"><span class="b-section-subnav__link-inner">Registry integrety and enforcement</span></a>
+        </li>
+    </ul>
+{% endset %}
+
+{% set content2 %}
+    <ul class="b-section-subnav__sub-list">
+        <li class="b-section-subnav__sub-list-item b-section-subnav__list-item-has_subnav">
+            <a href="/page" class="b-section-subnav__link">
+                <span class="b-section-subnav__link-inner">
+                    Deepnav parent
+                </span>
+            </a>
+            {{ b_showhide.b_showhide(
+                extra_class= 'b-show-hide-js-expandmore--nav',
+                title = 'Show sub navigation',
+                title_extra_class = 'h-visuallyhidden',
+                trigger_tag = 'span',
+                has_chevron = false,
+                is_opened = false,
+                content = '
+                    <ul class="b-section-subnav__sub-list">
+                        <li class="b-section-subnav__sub-list-item">
+                            <a href="/page" class="b-section-subnav__link"><span class="b-section-subnav__link-inner">Deepnav 01</span></a>
+                        </li>
+                        <li class="b-section-subnav__sub-list-item">
+                            <a href="/page" class="b-section-subnav__link"><span class="b-section-subnav__link-inner">Deepnav 02</span></a>
+                        </li>
+                    </ul>
+                ')
+            }}
+        </li>
+        <li class="b-section-subnav__sub-list-item">
+            <a href="/page" class="b-section-subnav__link"><span class="b-section-subnav__link-inner">Subnav 02</span></a>
+        </li>
+        <li class="b-section-subnav__sub-list-item">
+            <a href="/page" class="b-section-subnav__link"><span class="b-section-subnav__link-inner">Subnav 03</span></a>
+        </li>
+    </ul>
+{% endset %}
+
+
+{% macro b_asidesubnav(title = 'Default title',  extra_class = '') %}
+
+    <nav class="b-section-subnav {{extra_class}}" id="sectionNavigation">
+        <h2 class="b-section-subnav__title">Also in this section</h2>
+
+        <div class="b-section-subnav__nav-wrapper" id="site-secondary-nav">
+            <ul class="b-section-subnav__list">
+                <li class="b-section-subnav__list-item b-section-subnav__list-item-has_subnav b-section-subnav__list-item-has_active-child">
+                    <a href="/page" class="b-section-subnav__link"><span class="b-section-subnav__link-inner">Our People</span></a>
+
+                    {{ b_showhide.b_showhide(
+                        extra_class= 'b-show-hide-js-expandmore--nav',
+                        title = 'Show sub navigation',
+                        title_extra_class = 'h-visuallyhidden',
+                        trigger_tag = 'span',
+                        has_chevron = false,
+                        is_opened = true,
+                        content = content)
+                    }}
+
+                </li>
+                <li class="b-section-subnav__list-item b-section-subnav__list-item-has_subnav">
+                    <a href="/page" class="b-section-subnav__link"><span class="b-section-subnav__link-inner">Sollicitudin Fusce</span></a>
+
+                    {{ b_showhide.b_showhide(
+                        extra_class= 'b-show-hide-js-expandmore--nav',
+                        title = 'Show sub navigation',
+                        title_extra_class = 'h-visuallyhidden',
+                        trigger_tag = 'span',
+                        has_chevron = false,
+                        content = content2)
+                    }}
+                </li>
+                <li class="b-section-subnav__list-item">
+                    <a href="/page" class="b-section-subnav__link"><span class="b-section-subnav__link-inner">This item has no children which is a shame</span></a>
+                </li>
+                <li class="b-section-subnav__list-item b-section-subnav__list-item-has_subnav">
+                    <a href="/page" class="b-section-subnav__link"><span class="b-section-subnav__link-inner">Egestas Vehicula Nibh</span></a>
+
+                    {{ b_showhide.b_showhide(
+                        extra_class= 'b-show-hide-js-expandmore--nav',
+                        title = 'Show sub navigation',
+                        title_extra_class = 'h-visuallyhidden',
+                        trigger_tag = 'span',
+                        has_chevron = false,
+                        content = content2)
+                    }}
+                </li>
+                <li class="b-section-subnav__list-item b-section-subnav__list-item-has_subnav">
+                    <a href="/page" class="b-section-subnav__link"><span class="b-section-subnav__link-inner">This item has children and is a very long one</span></a>
+
+                    {{ b_showhide.b_showhide(
+                        extra_class= 'b-show-hide-js-expandmore--nav',
+                        title = 'Show sub navigation',
+                        title_extra_class = 'h-visuallyhidden',
+                        trigger_tag = 'span',
+                        has_chevron = false,
+                        content = content2)
+                    }}
+                </li>
+
+                <li class="b-section-subnav__list-item b-section-subnav__list-item-has_subnav b-section-subnav__list-item-active">
+                    <svg class="h-icon h-icon--small b-section-subnav__list-item-active__icon" aria-hidden="true">
+                        <use xlink:href="../img/icons/svg-sprite.svg#chevron-icon-right"></use>
+                    </svg>
+                    <a href="/page" class="b-section-subnav__link">
+                        <span class="b-section-subnav__link-inner"><span class="h-visuallyhidden">Current page:</span>Top level page</span>
+                    </a>
+
+                    {{ b_showhide.b_showhide(
+                        extra_class= 'b-show-hide-js-expandmore--nav',
+                        title = 'Show sub navigation',
+                        title_extra_class = 'h-visuallyhidden',
+                        trigger_tag = 'span',
+                        has_chevron = false,
+                        is_opened = true,
+                        content = content2)
+                    }}
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+{% endmacro %}

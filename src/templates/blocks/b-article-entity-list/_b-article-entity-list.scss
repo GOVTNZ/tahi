@@ -1,0 +1,46 @@
+// ############################################
+// Article Entity List
+// ############################################
+
+.b-article-entity-list {
+    @extend %h-section-margin;
+
+    padding: 0;
+    border-bottom: 2px solid $g-color-grey11;
+    margin-right: 0;
+    margin-left: 0;
+
+    &__inner {
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        padding: rem($g-bu * 3) 0;
+        border-bottom: 1px solid $g-color-grey11;
+        margin: 0;
+        margin-bottom: rem(-1);
+        list-style: none;
+    }
+
+    &--collapsed {
+        margin: 0;
+    }
+
+    // ------------------------------------------------
+    // Media Queries
+    // ------------------------------------------------
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-medium-and-up) {
+        &__inner {
+            @include grid-row();
+        }
+
+        &__item {
+            @include span-column(1 / 2, rem($g-bu * 10));
+
+            margin-bottom: rem(-1);
+        }
+    }
+}

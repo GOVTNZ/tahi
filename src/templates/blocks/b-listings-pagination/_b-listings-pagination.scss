@@ -1,0 +1,177 @@
+// ############################################
+// b-listings-pagination
+// ############################################
+
+.b-listings-pagination {
+    @extend %h-section-margin;
+
+    &__list-years {
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+
+        &__list-item {
+            padding: 0 0 rem($g-bu * 1);
+            margin: 0;
+            list-style-type: none;
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+
+    &__year {
+        @extend %h4;
+
+        display: block;
+        padding: 0;
+        margin: 0 0 rem($g-bu * 1);
+    }
+
+    &__list-months {
+        @include grid-row('flex-start');
+
+        flex-direction: column-reverse;
+        padding: 0;
+        margin-top: rem($g-bu * 1);
+        margin-right: 0;
+        margin-bottom: rem($g-bu * 1);
+        margin-left: 0;
+        list-style-type: none;
+
+        &__list-item {
+            padding: 0;
+            margin-top: rem($g-bu * 1);
+            margin-right: 0;
+            margin-bottom: rem($g-bu * 1);
+            margin-left: 0;
+            list-style-type: none;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        &__quantity {
+            // margin-left: rem(2);
+            color: $g-color-blue07;
+        }
+    }
+
+    &__button {
+        display: block;
+        margin: 0;
+        text-align: center;
+
+        .small {
+            @extend %h-font-gustan-book;
+        }
+
+        // ------------------------------------------------
+        // Modifier Styles
+        // ------------------------------------------------
+
+        &--current {
+            position: relative;
+            border: 3px solid $g-color-primary2;
+            margin-bottom: rem($g-bu * 4);
+
+            &::after {
+                @extend %h-font-gustan-medium;
+
+                position: absolute;
+                top: 100%;
+                right: -3px;
+                left: -3px;
+                display: block;
+                content: 'CURRENTLY SHOWING ABOVE';
+                padding: rem($g-bu * .5) rem($g-bu * 1);
+                border: 3px solid $g-color-primary2;
+                margin: 0;
+                background-color: $g-color-primary2;
+                font-size: .8em;
+                line-height: 1.6em;
+                color: $g-color-white01;
+                text-align: center;
+            }
+
+            .b-button__extra-content {
+                display: block;
+            }
+        }
+    }
+
+    // ============================================
+    // Media Queries
+    // ============================================
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-small-and-up) {
+        // scss-lint:enable DeclarationOrder
+
+        &__list-years {
+            @include grid-row('flex-start');
+
+            &__list-item {
+                @include span-column(1 / 2, rem($g-bu * 5), true, 2);
+
+                padding: 0 0 0 rem($g-bu * 5);
+                border-left: 1px solid $g-color-grey08;
+
+                &:first-child,
+                &:nth-child(3n) {
+                    padding: 0;
+                    border-left: 0;
+                }
+            }
+        }
+
+        &__year {
+            margin: 0 0 rem($g-bu * 2);
+        }
+
+        &__list-months {
+            flex-direction: column;
+            margin-top: rem($g-bu * 1);
+            margin-right: 0;
+            margin-bottom: rem($g-bu * 1);
+            margin-left: 0;
+
+            &__list-item {
+                margin-top: rem($g-bu * 1);
+                margin-right: rem($g-bu * 1);
+                margin-bottom: rem($g-bu * 1);
+            }
+        }
+    }
+    // ============================================
+    // Media Queries
+    // ============================================
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-large-and-up) {
+        // scss-lint:enable DeclarationOrder
+
+        &__list-years {
+            @include grid-row('flex-start');
+
+            &__list-item {
+                @include span-column(1 / 4, rem($g-bu * 2), true, 4);
+
+                padding: 0 0 0 rem($g-bu * 2);
+                border-left: 1px solid $g-color-grey08;
+
+                &:nth-child(3n) {
+                    padding: 0 0 0 rem($g-bu * 2);
+                    border-left: 1px solid $g-color-grey08;
+                }
+
+                &:nth-child(5n) {
+                    padding: 0;
+                    border-left: 0;
+                }
+            }
+        }
+    }
+}

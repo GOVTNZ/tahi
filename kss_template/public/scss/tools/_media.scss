@@ -1,0 +1,22 @@
+// Generates media queries and their declarations
+@function new-breakpoint($type, $value, $value2: false) {
+    $query: false;
+    @if $value2 {
+        $value2: ($value2 - 1);
+        $query: $type + '-width:' + $value + ') and (max-width:' + $value2;
+    } @else {
+        @if (#{$type}==max) {
+            $value: ($value - 1);
+            $query: $type + '-width:' + $value;
+        } @else {
+            $query: $type + '-width:' + $value;
+        }
+    }
+    @return $query;
+}
+
+@mixin media($query) {
+    @media screen and ($query) {
+        @content;
+    }
+}

@@ -1,0 +1,39 @@
+.b-modal-back-link__wrapper {
+    position: absolute;
+    top: 0;
+    margin: rem($g-bu * 2) 0;
+    color: $g-color-white01;
+
+    .b-modal-back-link {
+        position: relative;
+        top: 0;
+        right: auto;
+        display: inline-block;
+        padding: 0;
+        border: 0;
+        margin: 0 .25rem;
+        background-color: transparent;
+        font-size: ms(-1);
+        line-height: rem($g-bu * 1.5);
+        color: $g-color-white01;
+        text-decoration: none;
+
+        &::after {
+            display: none;
+        }
+
+        &:hover {
+            background-color: transparent;
+            color: $g-color-white01;
+            text-decoration: underline;
+        }
+    }
+
+    .b-modal-inner--auditor & {
+        color: $g-color-charcoal;
+
+        .b-modal-back-link {
+            color: $g-color-charcoal;
+        }
+    }
+}

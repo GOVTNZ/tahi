@@ -1,0 +1,27 @@
+// ################################################
+// Layout Outer Container
+// ################################################
+
+// These styles set the outer boundary for a centered web page
+
+.l-outer-container,
+%l-outer-container {
+    padding: 0 rem($g-bu * 1);
+
+    @include media($g-bp-tiny-and-up) {
+        padding: 0 rem($g-bu * 2);
+    }
+
+    @include media($g-bp-small-and-up) {
+        padding: 0 rem($g-bu * 2);
+    }
+
+    @include media($g-bp-medium-and-up) {
+        padding: 0 rem($g-bu * 4);
+        margin: 0 auto;
+    }
+
+    @include media($g-bp-large-and-up) {
+        max-width: rem($g-width-wide);
+    }
+}

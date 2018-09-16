@@ -1,0 +1,15 @@
+<svg id="logo-chevron-print-icon" data-name="chevron" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 38 52">
+  <defs>
+    <linearGradient id="linear-gradient" y1="584.5" x2="38" y2="584.5" gradientTransform="translate(0 -558.5)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00050a"/>
+      <stop offset="0.05" stop-color="#00050a" stop-opacity="0.76"/>
+      <stop offset="0.15" stop-color="#00050a" stop-opacity="0.62"/>
+      <stop offset="0.27" stop-color="#00050a" stop-opacity="0.32"/>
+      <stop offset="0.39" stop-color="#00050a" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#00050a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <title>chevron-print</title>
+  <polygon id="register-colour" points="38 22.3 23.5 0 10.5 0 24.6 21.6 0 52 14 52 38 22.3" fill="#7a7a7a"/>
+  <polygon id="gradient-overlay-2" points="38 22.3 23.5 0 10.5 0 24.6 21.6 0 52 14 52 38 22.3" opacity="0.5" fill="url(#linear-gradient)" style="isolation: isolate"/>
+</svg>

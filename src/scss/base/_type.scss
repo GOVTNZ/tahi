@@ -1,0 +1,262 @@
+// ############################################
+// Base Typographic Styles
+// ############################################
+
+body {
+    line-height: rem($g-bu * 3);
+    color: $g-color-charcoal-light;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: auto;
+
+    @include media($g-bp-large-and-up) {
+        font-size: ms(1);
+        line-height: rem($g-bu * 3 + $g-hbu);
+    }
+}
+
+body,
+input,
+textarea {
+    @extend %h-font-firasans;
+
+    font-variant-numeric: lining-nums;
+}
+
+h1,
+%h1,
+h2,
+%h2 {
+    @extend %h-font-gustan-light;
+}
+
+h3,
+%h3 {
+    @extend %h-font-gustan-book;
+
+    margin: rem($g-bu * 3) 0 rem($g-bu + $g-hbu);
+    font-size: ms(4);
+    line-height: rem($g-bu * 4);
+    font-weight: 700;
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-large-and-up) {
+        // scss-lint:enable DeclarationOrder
+        font-size: ms(6);
+        line-height: rem($g-bu * 5);
+    }
+}
+
+h4,
+%h4 {
+    @extend %h-font-gustan-medium;
+
+    margin: rem($g-bu * 3) 0 rem($g-bu + $g-hbu);
+    font-size: ms(3);
+    line-height: rem($g-bu * 4);
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-large-and-up) {
+        // scss-lint:enable DeclarationOrder
+        font-size: ms(4);
+        line-height: rem($g-bu * 4);
+    }
+}
+
+h5,
+%h5,
+h6,
+%h6 {
+    @extend %h-font-gustan-bold;
+}
+
+/* stylelint-disable no-duplicate-selectors */
+
+h1,
+%h1,
+h2,
+%h2,
+h3,
+%h3,
+h4,
+%h4,
+h5,
+%h5,
+h6,
+%h6 {
+    color: $g-color-charcoal;
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            color: $g-color-primary1;
+        }
+    }
+
+    + p {
+        margin-top: 0;
+    }
+}
+
+h1,
+%h1 {
+    margin: 0 0 rem($g-bu * 2);
+    font-size: rem(36.49px);
+    line-height: rem(48px);
+    font-weight: 700;
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-large-and-up) {
+        // scss-lint:enable DeclarationOrder
+        font-size: rem(51.95px);
+        line-height: rem(64px);
+    }
+}
+
+h2,
+%h2 {
+    margin: 0 0 rem($g-bu * 2);
+    font-size: rem(28.83px);
+    line-height: rem(36px);
+    font-weight: 700;
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-large-and-up) {
+        // scss-lint:enable DeclarationOrder
+        font-size: rem(41.05px);
+        line-height: rem(54px);
+    }
+}
+
+h3,
+%h3 {
+    margin: 0 0 rem($g-bu * 2);
+    font-size: rem(25.62px);
+    line-height: rem(32px);
+
+    @include media($g-bp-large-and-up) {
+        font-size: rem(32.44px);
+        line-height: rem(40px);
+    }
+}
+
+h4,
+%h4 {
+    margin: 0 0 rem($g-bu * 2);
+    font-size: rem(20.25px);
+    line-height: rem(32px);
+
+    @include media($g-bp-large-and-up) {
+        font-size: rem(25.62px);
+        line-height: rem(32px);
+    }
+}
+
+h5,
+%h5 {
+    margin: 0 0 rem($g-bu * 2);
+    font-size: rem(18px);
+    line-height: rem(24px);
+
+    @include media($g-bp-large-and-up) {
+        font-size: rem(20.25px);
+        line-height: rem(32px);
+    }
+}
+
+h6,
+%h6 {
+    margin: 0 0 rem($g-bu * 2);
+    font-size: rem(16px);
+    line-height: rem(24px);
+
+    @include media($g-bp-large-and-up) {
+        font-size: rem(18px);
+    }
+}
+
+/* stylelint-enable no-duplicate-selectors */
+
+p {
+    margin: rem($g-bu * 2) 0;
+}
+
+a {
+    color: $g-color-primary2;
+    word-wrap: break-word;
+
+    &:hover {
+        color: $g-color-primary1;
+    }
+}
+
+hr {
+    width: 100%;
+    border-color: $g-color-charcoal;
+
+    &.light {
+        @extend %h-section-margin;
+
+        border-color: $g-color-grey15;
+    }
+}
+
+mark {
+    border-bottom: 3px solid $g-color-blue16;
+    background-color: transparent;
+    color: inherit;
+}
+
+a,
+button,
+input,
+textarea,
+select,
+[tabIndex*=''] {
+    @extend %h-focusable;
+}
+
+.kss-title {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #f3f3f5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-weight: bold;
+    color: #57657b;
+}
+
+.bp-l {
+    display: none;
+
+    @include media($g-bp-large-and-up) {
+        display: block;
+    }
+}
+
+.bp-s {
+    display: block;
+
+    @include media($g-bp-large-and-up) {
+        display: none;
+    }
+}
+
+.kss-title--level-3 {
+    padding-top: 42px;
+    padding-bottom: 22px;
+    font-size: 22px;
+    line-height: 22px;
+}
+
+.kss-title--level-3 + .kss-title--level-4 {
+    padding-top: 12px;
+}
+
+.kss-title--level-4 {
+    padding-top: 42px;
+    padding-bottom: 12px;
+    font-size: 19px;
+    line-height: 19px;
+}

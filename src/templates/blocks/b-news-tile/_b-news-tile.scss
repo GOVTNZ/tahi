@@ -1,0 +1,146 @@
+// ############################################
+// News tile
+// ############################################
+
+.b-news-tile {
+    position: relative;
+
+    &__inner {
+        @include grid-row();
+
+        padding: rem($g-bu * 2) 0 rem($g-bu * 4);
+    }
+
+    &__block {
+        // IE10 Needs this
+        @include span-column(12 / 12);
+
+        &:last-child {
+            order: 0;
+        }
+
+        &:first-child {
+            order: 1;
+        }
+    }
+
+    &__headline {
+        @extend %h-font-gustan-medium;
+
+        margin: 0 0 rem($g-bu);
+        font-size: ms(4);
+        line-height: rem($g-bu * 4);
+
+        &-link {
+            color: $g-color-charcoal;
+        }
+    }
+
+    &__link-wrapper {
+        //
+    }
+
+    &__link {
+        display: inline-block;
+        margin-top: rem($g-bu);
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    &__register {
+        @extend %h-font-gustan-bold;
+
+        display: block;
+        margin-bottom: rem($g-bu * 1.5);
+        font-size: ms(-2);
+        line-height: rem($g-bu * 2);
+        text-transform: uppercase;
+    }
+
+    &__date {
+        @extend %h-font-firasans;
+
+        display: block;
+        margin-bottom: rem($g-bu);
+        font-size: ms(-1);
+        line-height: rem($g-bu * 2);
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        display: block;
+        content: '';
+        width: 100%;
+        height: rem(5);
+        background: linear-gradient(to right, $g-color-charcoal-light 0%, $g-color-grey13 50%, $g-color-grey13 100%);
+    }
+
+    // ============================================
+    // Modifiers
+    // ============================================
+
+    &--three-columns {
+        #{m-nest()}__block {
+            &:nth-child(2) {
+                order: 2;
+            }
+        }
+    }
+
+    // ============================================
+    // Media
+    // ============================================
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-medium-and-up) {
+        // scss-lint:enable DeclarationOrder
+
+        &__inner {
+            padding: rem($g-bu * 4) 0 rem($g-bu * 6);
+        }
+
+        &__block {
+            &:last-child {
+                @include span-column(2 / 9);
+
+                margin-bottom: 0;
+            }
+
+            &:first-child {
+                @include span-column(7 / 9);
+
+                margin-bottom: 0;
+            }
+        }
+
+        &__register {
+            margin-top: rem($g-bu);
+        }
+
+        &__date {
+            font-size: ms(0);
+            line-height: rem($g-bu * 2);
+        }
+
+        // ============================================
+        // Modifiers
+        // ============================================
+
+        &--three-columns {
+            #{m-nest()}__block {
+                &:first-child {
+                    @include span-column(4 / 9);
+
+                    margin-bottom: 0;
+                }
+
+                &:nth-child(2) {
+                    @include span-column(3 / 9);
+
+                    margin-bottom: 0;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}

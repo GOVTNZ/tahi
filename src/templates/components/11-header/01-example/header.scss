@@ -1,0 +1,31 @@
+// Standard
+//
+// Markup: 01-header.html
+//
+// Styleguide: 12.01
+//
+
+// ============================================
+// Component Styles
+// ============================================
+.govtnz-header{
+    background: #0B0C0C;
+    padding: 10px 0;
+    .logo {
+        max-width: 7%;
+        display: inline-block
+    }
+}
+.govtnz-header__link{
+    text-decoration: none;
+    color:#eee;
+}
+.govtnz-header__logotype-text{
+    display: inline;
+    position: relative;
+    left: 10px;
+    top: 10px;
+    font-weight: 700;
+    font-size: 2em;
+
+}

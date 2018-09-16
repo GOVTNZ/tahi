@@ -1,0 +1,30 @@
+{
+  "//": "Template and helpers refer to the CT kss-node template, so should be inside 'node_modules' folder",
+  "template": "../node_modules/ct__kss-node-template-gulp/",
+  "helpers": "../node_modules/ct__kss-node-template-gulp/helpers",
+
+  "//": "Custom placeholders that can be used in the styleguide.",
+  "custom": [
+    "design-doc",
+    "ux-doc",
+    "structured-data"
+  ],
+
+  "//": "The source and destination paths are relative to this file.",
+  "source": [
+    "../dev/templates"
+  ],
+  "destination":  "../dev_build/styleguide/",
+
+  "//": "The css and js paths are URLs relative to the style guide destination.",
+  "css": [
+    "../css/main.css"
+  ],
+  "js": [
+    "../js/lib-postdom.js",
+    "../js/custom.js"
+  ],
+
+  "//": "The homepage is relative to the source.",
+  "homepage": "styleguideHomepage.md"
+}

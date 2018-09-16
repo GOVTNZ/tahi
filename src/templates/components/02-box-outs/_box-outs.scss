@@ -1,0 +1,115 @@
+// Box out
+//
+// Box-outs are an excerpt of text and/or links that serve as visual clue to draw the eye. They are used to help direct a user's attention to important pieces of information or information that is deemed distinctive enough to distinguish for a quick user scan.  There are different types of box-out listed below.
+//
+// Styleguide: 2
+
+//: ############################################
+//: Out box
+//: ############################################
+
+//: ============================================
+//: Component Styles
+//: ============================================
+
+.c-box-out {
+    @extend %h-section-margin;
+
+    position: relative;
+    padding: rem($g-bu * 3) rem($g-bu * 2) rem($g-bu * 2.5);
+    border: 0;
+    margin: 0;
+    background-color: $g-color-blue02;
+
+    //: --------------------------------------------
+    //: Element Styles
+    //: --------------------------------------------
+
+    &__icon {
+        position: absolute;
+        top: rem($g-bu * 2.5);
+        left: rem($g-bu * 2);
+        //width: rem($g-bu * 3);
+        //height: rem($g-bu * 3);
+        color: $g-color-primary1;
+    }
+
+    &__title {
+        @extend %h-font-firasans;
+
+        padding: 0 0 0 rem($g-bu * 4.5);
+        margin: 0 0 rem($g-bu * 1.5);
+        font-size: ms(1);
+        line-height: rem($g-bu * 2.5);
+        font-weight: 500;
+        color: $g-color-charcoal;
+        letter-spacing: .01em;
+    }
+
+    &__content {
+        @extend %h-font-firasans;
+
+        padding: 0;
+        font-size: ms(-1);
+        line-height: rem($g-bu * 2.5);
+        color: $g-color-charcoal-light;
+
+        p {
+            margin: rem($g-bu * .5) 0;
+        }
+
+        > :last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    //: --------------------------------------------
+    //: modifier
+    //: --------------------------------------------
+
+    &--tip {
+        background-color: $g-color-blue02;
+
+        #{m-nest()}__icon {
+            color: $g-color-primary1;
+        }
+    }
+
+    &--alert {
+        background-color: $g-color-yellow02;
+
+        #{m-nest()}__icon {
+            color: $g-color-yellow01;
+        }
+    }
+
+    &--warning {
+        background-color: $g-color-orange01;
+
+        #{m-nest()}__icon {
+            color: $g-color-secondary1;
+        }
+    }
+
+    // scss-lint:disable DeclarationOrder
+    @include media($g-bp-small-and-up) {
+        padding: rem($g-bu * 3) rem($g-bu * 4.5);
+
+        &__icon {
+            top: rem($g-bu * 3.5);
+            left: rem($g-bu * 3);
+            width: rem($g-bu * 4);
+            height: rem($g-bu * 4);
+        }
+
+        &__title {
+            padding: 0 0 0 rem($g-bu * 5);
+            margin: 0 0 rem($g-bu * .5);
+            font-size: ms(0);
+        }
+
+        &__content {
+            padding: 0 0 0 rem($g-bu * 5);
+        }
+    }
+}

@@ -1,0 +1,32 @@
+// Font helpers defined in this stylesheet
+
+%h-font-primary {
+    font-family: $g-font-primary;
+}
+
+// Open Sans
+
+%h-font-opensans-300 {
+    font-family: $g-font-opensans;
+    font-weight: 300;
+}
+
+%h-font-opensans {
+    font-family: $g-font-opensans;
+    font-weight: 500;
+}
+
+%h-font-opensans-600 {
+    font-family: $g-font-opensans;
+    font-weight: 600;
+}
+
+%h-font-opensans-700 {
+    font-family: $g-font-opensans;
+    font-weight: 700;
+}
+
+%h-font-opensans-800 {
+    font-family: $g-font-opensans;
+    font-weight: 800;
+}

@@ -1,0 +1,44 @@
+{% macro b_showhide(extra_class= '', is_opened = false, title = 'Default Accordion title', title_extra_class = '', icon_name = false, secondary_info = false, has_content = true, is_article_list = false, is_entity_list = false, content = false, trigger_tag = 'h3', has_chevron = true, extra_attr = '', logo_title = false) %}
+    <!-- '-expandmore' is a class added by the plugin, for consistency it is applied to all elements -->
+
+    <div class="b-show-hide-js-expandmore {{extra_class}}">
+        <{{trigger_tag}} class="js-expandmore b-show-hide-js-expandmore__title" data-hideshow-prefix-class="b-show-hide-js" {{extra_attr}}>
+
+            <div class="b-show-hide-js-expandmore__trigger-wrap">
+                {% if icon_name %}
+                    <svg class="h-icon b-show-hide-js-expandmore__icon h-themed__theme1__color-secondary" aria-hidden="true">
+                        <use xlink:href="../img/icons/svg-sprite.svg#{{icon_name}}"></use>
+                    </svg>
+                {% endif %}
+                <span class="b-show-hide-js-expandmore__title-text {{title_extra_class}}">
+                {% if logo_title %}
+                    {{logo_title}}
+                {% else %}
+                    {{title}}
+                {% endif %}
+                </span>
+
+                {% if secondary_info %}
+                    <span class="b-show-hide-js-expandmore__secondary-info">{{secondary_info}}</span>
+                {% endif %}
+
+                {% if has_chevron %}
+                    <svg class="h-icon h-icon--small b-show-hide-js-expandmore__indicator" aria-hidden="true">
+                        <use xlink:href="../img/icons/svg-sprite.svg#chevron-icon-down"></use>
+                    </svg>
+                {% endif %}
+
+            </div>
+        </{{trigger_tag}}>
+        <div class="js-to_expand b-show-hide-js-expandmore__to-expand {% if is_opened %}is-opened{% endif %}">
+            <div class="b-show-hide-js-expandmore__content">
+                {% if content_msg %}
+                    {{content_msg}}
+                {% else %}
+                    <h3>Header inside accordion</h3>
+                    <p>This is general content for the accordion. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit <a href="#">amet risus</a>.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endmacro %}

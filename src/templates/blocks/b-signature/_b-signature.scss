@@ -1,0 +1,28 @@
+// ############################################
+// Article Signature
+// ############################################
+
+.b-signature {
+    &__img {
+        display: block;
+        padding: 0;
+        margin: 0;
+
+        img {
+            display: block;
+            float: none;
+        }
+    }
+
+    &__name {
+        @extend %h-font-firasans-700;
+
+        margin-top: 0;
+        margin-bottom: rem($g-bu * .5);
+        text-transform: uppercase;
+    }
+
+    &__function {
+        margin-top: 0;
+    }
+}

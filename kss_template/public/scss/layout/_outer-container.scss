@@ -1,0 +1,17 @@
+.l-outer-container,
+%l-outer-container {
+    padding: 0 rem($g-bu * 2);
+
+    @include media($bp-small) {
+        padding: 0 rem($g-bu * 3);
+    }
+
+    @include media($bp-medium) {
+        margin: 0 auto;
+    }
+
+    @include media($bp-large) {
+        max-width: rem($g-width-wide);
+        padding: 0 rem($g-bu * 5);
+    }
+}
